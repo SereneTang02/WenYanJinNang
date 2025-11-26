@@ -1,0 +1,266 @@
+/* pages/word-detail/word-detail.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 150rpx;
+}
+
+/* 顶部词卡区 */
+.word-header {
+  background-color: #fff;
+  padding: 40rpx 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 0 0 30rpx 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.card-white {
+  background-color: #fff;
+}
+
+.card-yellow {
+  background: linear-gradient(135deg, #fffbe6 0%, #fff 100%);
+  border-left: 8rpx solid #faad14;
+}
+
+.card-orange {
+  background: linear-gradient(135deg, #fff1f0 0%, #fff 100%);
+  border-left: 8rpx solid #ff4d4f;
+}
+
+.word-title-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 25rpx;
+}
+
+.word-title {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.pinyin {
+  font-size: 30rpx;
+  color: #999;
+}
+
+/* 标签区 */
+.tags-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.tag {
+  padding: 8rpx 20rpx;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  margin-right: 15rpx;
+  margin-bottom: 10rpx;
+}
+
+.tag-grade {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.tag-difficulty {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.tag-category {
+  background-color: #f9f0ff;
+  color: #722ed1;
+}
+
+.tag-yi-ci-duo-yi {
+  background-color: #fff7e6;
+  color: #fa8c16;
+}
+
+.tag-zhong-kao-gao-pin {
+  background-color: #fff0f6;
+  color: #eb2f96;
+}
+
+.tag-duo-yin-zi {
+  background-color: #f6ffed;
+  color: #52c41a;
+}
+
+/* 学习进度 */
+.progress-section {
+  padding: 15rpx 20rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 12rpx;
+}
+
+.progress-text {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 义项列表 */
+.meanings-section {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.meaning-item {
+  margin-bottom: 35rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx dashed #e8e8e8;
+}
+
+.meaning-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* 义项标题 */
+.meaning-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.meaning-number {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #1890ff;
+  margin-right: 10rpx;
+}
+
+.meaning-gloss {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+.core-badge {
+  padding: 4rpx 12rpx;
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 8rpx;
+  font-weight: bold;
+}
+
+/* 用法说明 */
+.usage-note {
+  display: flex;
+  padding: 15rpx;
+  background-color: #f9f9f9;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+
+.note-label {
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 8rpx;
+  font-weight: bold;
+}
+
+.note-text {
+  font-size: 26rpx;
+  color: #666;
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* 例句列表 */
+.examples-list {
+  margin-top: 15rpx;
+}
+
+.example-item {
+  padding: 20rpx;
+  background-color: #fafafa;
+  border-left: 4rpx solid #1890ff;
+  margin-bottom: 15rpx;
+  border-radius: 8rpx;
+}
+
+.example-item:last-child {
+  margin-bottom: 0;
+}
+
+.example-text {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 10rpx;
+}
+
+.example-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-source {
+  font-size: 24rpx;
+  color: #1890ff;
+  text-decoration: underline;
+}
+
+.example-grade {
+  font-size: 22rpx;
+  color: #999;
+  padding: 4rpx 10rpx;
+  background-color: #f0f0f0;
+  border-radius: 8rpx;
+}
+
+/* 底部操作按钮 */
+.action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.btn {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  margin-right: 15rpx;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #667eea;
+  border: 2rpx solid #667eea;
+}

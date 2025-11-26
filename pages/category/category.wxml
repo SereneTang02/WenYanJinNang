@@ -1,0 +1,19 @@
+<!--pages/category/category.wxml-->
+<view class="container">
+  <view class="header-card card">
+    <view class="header-title">选择学习分类</view>
+    <view class="header-subtitle">按照不同分类学习古文实词</view>
+  </view>
+
+  <view class="category-list">
+    <view class="category-card card" wx:for="{{categories}}" wx:key="id" bindtap="selectCategory" data-category="{{item.name}}">
+      <view class="category-icon">{{item.icon}}</view>
+      <view class="category-info">
+        <view class="category-name">{{item.name}}</view>
+        <view class="category-desc">{{item.description}}</view>
+        <view class="category-count">共 {{item.count}} 个实词</view>
+      </view>
+      <view class="category-arrow">›</view>
+    </view>
+  </view>
+</view>

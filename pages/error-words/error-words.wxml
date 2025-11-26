@@ -1,0 +1,89 @@
+<!--pages/error-words/error-words.wxml-->
+<view class="container">
+  <!-- 顶部统计区 -->
+  <view class="stats-header">
+    <view class="stats-item">
+      <text class="stats-number">{{errorWords.length}}</text>
+      <text class="stats-label">个错题词</text>
+    </view>
+    <view class="stats-divider"></view>
+    <view class="stats-item">
+      <text class="stats-number">{{totalErrorCount}}</text>
+      <text class="stats-label">累计错误</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-bar" wx:if="{{errorWords.length > 0}}">
+    <button class="action-btn btn-primary" bindtap="onPracticeAll">
+      全部纠错练习
+    </button>
+    <button class="action-btn btn-danger" bindtap="onPracticeFocus">
+      重点突破（差值≥3）
+    </button>
+  </view>
+
+  <!-- 错题列表 -->
+  <scroll-view class="word-list" scroll-y wx:if="{{errorWords.length > 0}}">
+    <view
+      class="word-card card-{{item.colorLevel}}"
+      wx:for="{{sortedErrorWords}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onWordTap"
+    >
+      <!-- 词和拼音 -->
+      <view class="word-header">
+        <text class="word-text">{{item.word}}</text>
+        <text class="pinyin-text" wx:if="{{item.pinyin}}">{{item.pinyin}}</text>
+      </view>
+
+      <!-- 标签区 -->
+      <view class="tags-row">
+        <text class="tag tag-grade" wx:if="{{item.grade}}">{{item.grade}}</text>
+        <text class="tag tag-difficulty" wx:if="{{item.difficulty}}">{{item.difficulty}}</text>
+        <text
+          class="tag tag-{{tag.key}}"
+          wx:for="{{item.displayTags}}"
+          wx:for-item="tag"
+          wx:key="key"
+          wx:if="{{item.displayTags && item.displayTags.length > 0}}"
+        >
+          {{tag.label}}
+        </text>
+      </view>
+
+      <!-- 错题统计 -->
+      <view class="error-stats">
+        <text class="stats-text">
+          答对 {{item.progress.correct}} 次 | 答错 {{item.progress.wrong}} 次 | 差值 {{item.diff}}
+        </text>
+      </view>
+
+      <!-- 错题徽章 -->
+      <view class="error-badge">
+        <text class="error-text">
+          {{item.colorLevel === 'yellow' ? '需巩固' : '需加强'}}
+        </text>
+        <text class="error-diff">差值: {{item.diff}}</text>
+      </view>
+
+      <!-- 操作按钮 -->
+      <view class="card-actions">
+        <view class="action-link" data-id="{{item.id}}" catchtap="onViewDetail">
+          查看详情
+        </view>
+        <view class="action-link primary">
+          立即练习 →
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{errorWords.length === 0}}">
+    <text class="empty-icon">🎉</text>
+    <text class="empty-text">太棒了！暂无错题</text>
+    <text class="empty-hint">继续保持，多多练习哦～</text>
+  </view>
+</view>

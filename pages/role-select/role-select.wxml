@@ -1,0 +1,48 @@
+<!--pages/role-select/role-select.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <view class="title">选择您的身份</view>
+    <view class="subtitle">请选择一个身份开始使用</view>
+  </view>
+
+  <!-- 角色选择卡片 -->
+  <view class="roles-container">
+    <!-- 学生卡片 -->
+    <view class="role-card student-card" bindtap="onSelectStudent">
+      <view class="role-icon">👨‍🎓</view>
+      <view class="role-name">我是学生</view>
+      <view class="role-desc">
+        <view class="desc-item">✓ 查看实词卡片</view>
+        <view class="desc-item">✓ 完成每日打卡</view>
+        <view class="desc-item">✓ 加入班级PK</view>
+        <view class="desc-item">✓ 查看学习报告</view>
+      </view>
+      <view class="select-btn">
+        <text>立即选择</text>
+        <text class="arrow">→</text>
+      </view>
+    </view>
+
+    <!-- 教师卡片 -->
+    <view class="role-card teacher-card" bindtap="onSelectTeacher">
+      <view class="role-icon">👨‍🏫</view>
+      <view class="role-name">我是教师</view>
+      <view class="role-desc">
+        <view class="desc-item">✓ 创建管理班级</view>
+        <view class="desc-item">✓ 组织PK竞赛</view>
+        <view class="desc-item">✓ 查看学生数据</view>
+        <view class="desc-item">✓ 导出错题分析</view>
+      </view>
+      <view class="select-btn">
+        <text>立即选择</text>
+        <text class="arrow">→</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提示 -->
+  <view class="hint">
+    <text>💡 提示：选择后可在个人中心修改</text>
+  </view>
+</view>

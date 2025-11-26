@@ -1,0 +1,91 @@
+<!--pages/word-detail/word-detail.wxml-->
+<view class="container">
+  <!-- 顶部词卡区 -->
+  <view class="word-header card-{{colorLevel}}">
+    <view class="word-title-row">
+      <text class="word-title">{{currentWord.word}}</text>
+      <text class="pinyin" wx:if="{{currentWord.pinyin}}">{{currentWord.pinyin}}</text>
+    </view>
+
+    <!-- 标签区 -->
+    <view class="tags-section">
+      <text class="tag tag-grade" wx:if="{{currentWord.grade}}">{{currentWord.grade}}</text>
+      <text class="tag tag-difficulty" wx:if="{{currentWord.difficulty}}">{{currentWord.difficulty}}</text>
+      <text class="tag tag-category" wx:if="{{currentWord.category}}">{{currentWord.category}}</text>
+      <text
+        class="tag tag-{{tag.key}}"
+        wx:for="{{currentWord.displayTags}}"
+        wx:for-item="tag"
+        wx:key="key"
+        wx:if="{{currentWord.displayTags && currentWord.displayTags.length > 0}}"
+      >
+        {{tag.label}}
+      </text>
+    </view>
+
+    <!-- 学习进度 -->
+    <view class="progress-section" wx:if="{{progress}}">
+      <text class="progress-text">
+        学习进度：正确 {{progress.correct}} 次 / 错误 {{progress.wrong}} 次
+      </text>
+    </view>
+  </view>
+
+  <!-- 义项列表 -->
+  <view class="meanings-section">
+    <view class="section-title">义项详解</view>
+
+    <view
+      class="meaning-item"
+      wx:for="{{currentWord.meanings}}"
+      wx:for-item="meaning"
+      wx:key="id"
+    >
+      <!-- 义项标题 -->
+      <view class="meaning-header">
+        <text class="meaning-number">{{index + 1}}.</text>
+        <text class="meaning-gloss">{{meaning.gloss}}</text>
+        <text class="core-badge" wx:if="{{meaning.isCore}}">核心</text>
+      </view>
+
+      <!-- 用法说明 -->
+      <view class="usage-note" wx:if="{{meaning.usageNote}}">
+        <text class="note-label">用法：</text>
+        <text class="note-text">{{meaning.usageNote}}</text>
+      </view>
+
+      <!-- 例句列表 -->
+      <view class="examples-list" wx:if="{{meaning.examples && meaning.examples.length > 0}}">
+        <view
+          class="example-item"
+          wx:for="{{meaning.examples}}"
+          wx:for-item="example"
+          wx:key="*this"
+        >
+          <text class="example-text">{{example.text}}</text>
+          <view class="example-meta">
+            <text
+              class="example-source"
+              wx:if="{{example.source}}"
+              data-source="{{example.source}}"
+              bindtap="onPreviewSource"
+            >
+              ——《{{example.source}}》
+            </text>
+            <text class="example-grade" wx:if="{{example.grade}}">{{example.grade}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作按钮 -->
+  <view class="action-buttons">
+    <button class="btn btn-primary" bindtap="onStartPractice">
+      📝 用这个词开始练习
+    </button>
+    <button class="btn btn-secondary" bindtap="onAddToDaily">
+      ⭐ 加入今日任务
+    </button>
+  </view>
+</view>

@@ -1,0 +1,175 @@
+/* pages/study/study.wxss */
+.progress-indicator {
+  text-align: center;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  font-weight: 500;
+}
+
+.word-card {
+  margin-top: 20rpx;
+  min-height: 600rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.word-header {
+  text-align: center;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.word-title {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.word-pinyin {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+}
+
+.word-category {
+  display: inline-block;
+  padding: 8rpx 20rpx;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+}
+
+.meanings-section {
+  flex: 1;
+  margin-top: 30rpx;
+}
+
+.meaning-item {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 30rpx;
+}
+
+.meaning-num {
+  font-size: 28rpx;
+  color: #4A90E2;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.meaning-content {
+  flex: 1;
+}
+
+.meaning-text {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+
+.meaning-example {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  padding: 12rpx;
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.hint-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.hint-text {
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+}
+
+.action-buttons {
+  margin-top: 40rpx;
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 20rpx;
+}
+
+.btn-error {
+  flex: 1;
+  background-color: #F5222D;
+  color: white;
+  border-radius: 8rpx;
+  padding: 24rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.btn-success {
+  flex: 1;
+  background-color: #52C41A;
+  color: white;
+  border-radius: 8rpx;
+  padding: 24rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.collect-btn {
+  margin-top: 20rpx;
+  padding: 16rpx;
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 8rpx;
+}
+
+.collect-btn.collected {
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.complete-card {
+  text-align: center;
+  padding: 60rpx 40rpx;
+}
+
+.complete-icon {
+  font-size: 120rpx;
+  color: #52C41A;
+  margin-bottom: 30rpx;
+}
+
+.complete-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.complete-stats {
+  background-color: #f8f8f8;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}

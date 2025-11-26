@@ -1,0 +1,183 @@
+/* pages/statistics/statistics.wxss */
+.stats-header {
+  text-align: center;
+  background: linear-gradient(135deg, #52C41A 0%, #389E0D 100%);
+  color: white;
+  padding: 40rpx 30rpx;
+}
+
+.header-icon {
+  font-size: 72rpx;
+  margin-bottom: 16rpx;
+}
+
+.header-title {
+  font-size: 42rpx;
+  font-weight: bold;
+}
+
+.progress-card {
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.progress-circle {
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;
+  background: conic-gradient(#4A90E2 0% var(--progress), #e8ecf1 var(--progress) 100%);
+  margin: 0 auto 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  width: 220rpx;
+  height: 220rpx;
+  background: white;
+  border-radius: 50%;
+}
+
+.progress-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-num {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #4A90E2;
+  margin-bottom: 8rpx;
+}
+
+.progress-label {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.progress-detail {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+  margin-top: 20rpx;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 40rpx 20rpx;
+}
+
+.stat-value {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.stat-label {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.recent-study {
+  margin-top: 20rpx;
+}
+
+.recent-days {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.day-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.day-date {
+  font-size: 20rpx;
+  color: #999;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.day-bar {
+  width: 30rpx;
+  height: 120rpx;
+  background-color: #f0f0f0;
+  border-radius: 15rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #4A90E2 0%, #357ABD 100%);
+  border-radius: 15rpx 15rpx 0 0;
+  transition: height 0.3s;
+}
+
+.day-count {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.recent-summary {
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.encourage-card {
+  margin-top: 20rpx;
+  text-align: center;
+  background: linear-gradient(135deg, #FFF7E6 0%, #FFE7BA 100%);
+  padding: 40rpx 30rpx;
+}
+
+.encourage-icon {
+  font-size: 64rpx;
+  margin-bottom: 16rpx;
+}
+
+.encourage-text {
+  font-size: 30rpx;
+  color: #D48806;
+  line-height: 1.6;
+}
+
+.danger-zone {
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.danger-btn {
+  color: #F5222D !important;
+  border-color: #F5222D !important;
+}

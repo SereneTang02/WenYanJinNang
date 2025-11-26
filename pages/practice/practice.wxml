@@ -1,0 +1,117 @@
+<!--pages/practice/practice.wxml-->
+<view class="container">
+  <!-- 顶部进度条 -->
+  <view class="progress-bar">
+    <view class="progress-info">
+      <text class="progress-text">{{currentQuestionIndex + 1}}/{{totalQuestions}}</text>
+      <text class="score-text">得分: {{score}}</text>
+    </view>
+    <view class="progress-line">
+      <view
+        class="progress-fill"
+        style="width: {{(currentQuestionIndex / totalQuestions) * 100}}%"
+      ></view>
+    </view>
+  </view>
+
+  <!-- 题目区域 -->
+  <view class="question-section" wx:if="{{!isFinished}}">
+    <!-- 题目标题 -->
+    <view class="question-header">
+      <text class="word-title">{{currentQuestion.word}}</text>
+      <text class="pinyin" wx:if="{{currentQuestion.pinyin}}">{{currentQuestion.pinyin}}</text>
+    </view>
+
+    <!-- 例句 -->
+    <view class="sentence-box">
+      <text class="sentence-text">{{currentQuestion.sentence}}</text>
+      <text class="sentence-source" wx:if="{{currentQuestion.source}}">
+        ——《{{currentQuestion.source}}》
+      </text>
+    </view>
+
+    <!-- 问题 -->
+    <view class="question-text">
+      <text>句中「{{currentQuestion.word}}」的意思是：</text>
+    </view>
+
+    <!-- 选项列表 -->
+    <view class="options-list">
+      <view
+        class="option-item {{selectedOption === index ? 'selected' : ''}} {{showResult && item.isCorrect ? 'correct' : ''}} {{showResult && selectedOption === index && !item.isCorrect ? 'wrong' : ''}}"
+        wx:for="{{currentQuestion.options}}"
+        wx:key="index"
+        data-index="{{index}}"
+        bindtap="onSelectOption"
+      >
+        <view class="option-label">{{['A', 'B', 'C', 'D'][index]}}</view>
+        <text class="option-text">{{item.label}}</text>
+        <view class="option-icon" wx:if="{{showResult && item.isCorrect}}">✓</view>
+        <view class="option-icon wrong-icon" wx:if="{{showResult && selectedOption === index && !item.isCorrect}}">✗</view>
+      </view>
+    </view>
+
+    <!-- 答题结果 -->
+    <view class="result-section" wx:if="{{showResult}}">
+      <view class="result-header {{isCorrect ? 'correct' : 'wrong'}}">
+        <text class="result-icon">{{isCorrect ? '✓' : '✗'}}</text>
+        <text class="result-text">{{isCorrect ? '回答正确！' : '回答错误'}}</text>
+      </view>
+
+      <view class="explanation">
+        <view class="explanation-title">正确答案：</view>
+        <view class="explanation-content">
+          <text class="correct-meaning">{{currentQuestion.correctMeaning}}</text>
+        </view>
+        <view class="usage-note" wx:if="{{currentQuestion.usageNote}}">
+          <text class="note-label">用法说明：</text>
+          <text class="note-text">{{currentQuestion.usageNote}}</text>
+        </view>
+      </view>
+
+      <view class="action-buttons">
+        <button class="btn btn-outline" bindtap="onViewDetail">查看详情</button>
+        <button class="btn btn-primary" bindtap="onNextQuestion">
+          {{currentQuestionIndex + 1 >= totalQuestions ? '查看结果' : '下一题'}}
+        </button>
+      </view>
+    </view>
+
+    <!-- 提交按钮 -->
+    <view class="submit-section" wx:if="{{!showResult}}">
+      <button class="btn btn-submit" bindtap="onSubmitAnswer">提交答案</button>
+    </view>
+  </view>
+
+  <!-- 完成页面 -->
+  <view class="finish-section" wx:if="{{isFinished}}">
+    <view class="finish-icon">🎉</view>
+    <view class="finish-title">练习完成！</view>
+
+    <view class="score-card">
+      <view class="score-big">{{score}}</view>
+      <view class="score-label">分</view>
+    </view>
+
+    <view class="stats-row">
+      <view class="stat-item">
+        <text class="stat-value">{{correctCount}}</text>
+        <text class="stat-label">答对</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-value">{{totalQuestions - correctCount}}</text>
+        <text class="stat-label">答错</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-value">{{totalQuestions}}</text>
+        <text class="stat-label">总题数</text>
+      </view>
+    </view>
+
+    <view class="finish-buttons">
+      <button class="btn btn-primary btn-block" bindtap="onFinishPractice">返回</button>
+    </view>
+  </view>
+</view>

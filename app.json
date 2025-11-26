@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/study/study",
+    "pages/category/category",
+    "pages/collection/collection",
+    "pages/statistics/statistics",
+    "pages/word-list/word-list",
+    "pages/word-detail/word-detail",
+    "pages/practice/practice",
+    "pages/error-words/error-words",
+    "pages/role-select/role-select",
+    "pages/student-info/student-info",
+    "pages/teacher-info/teacher-info",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "古文实词背诵",
+    "navigationBarBackgroundColor": "#4A90E2",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#4A90E2",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home-active.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "错题本",
+        "iconPath": "image/star.png",
+        "selectedIconPath": "image/star-active.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "image/chart.png",
+        "selectedIconPath": "image/chart-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

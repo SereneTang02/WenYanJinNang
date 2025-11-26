@@ -1,0 +1,54 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="user-card">
+    <view class="avatar-section">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
+    </view>
+    <view class="user-info">
+      <view class="nickname">{{userInfo.nickName || '未设置昵称'}}</view>
+      <view class="role-tag {{role}}">
+        {{role === 'teacher' ? '教师' : '学生'}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计卡片 -->
+  <view class="stats-card">
+    <view class="stats-title">学习统计</view>
+    <view class="stats-grid">
+      <view class="stat-item">
+        <view class="stat-value">{{stats.totalWords}}</view>
+        <view class="stat-label">已学词数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{stats.masteredWords}}</view>
+        <view class="stat-label">已掌握</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{stats.checkInStreak}}</view>
+        <view class="stat-label">连续打卡</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="menu-list">
+    <navigator class="menu-item" url="/pages/word-list/word-list">
+      <view class="menu-icon">📚</view>
+      <view class="menu-text">实词列表</view>
+      <view class="menu-arrow">›</view>
+    </navigator>
+
+    <navigator class="menu-item" url="/pages/error-words/error-words">
+      <view class="menu-icon">📖</view>
+      <view class="menu-text">错题本</view>
+      <view class="menu-arrow">›</view>
+    </navigator>
+  </view>
+
+  <!-- 退出登录按钮 -->
+  <view class="logout-section">
+    <button class="logout-button" bindtap="onLogout">退出登录</button>
+  </view>
+</view>

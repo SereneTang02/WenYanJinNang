@@ -1,0 +1,130 @@
+/* pages/role-select/role-select.wxss */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80rpx 40rpx 40rpx;
+}
+
+/* 顶部标题 */
+.header {
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+
+.title {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 角色容器 */
+.roles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+}
+
+/* 角色卡片 */
+.role-card {
+  background: #fff;
+  border-radius: 32rpx;
+  padding: 50rpx 40rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8rpx;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.role-card:active {
+  transform: translateY(-8rpx);
+  box-shadow: 0 12rpx 48rpx rgba(0, 0, 0, 0.12);
+}
+
+.student-card::before {
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.teacher-card::before {
+  background: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+}
+
+.role-icon {
+  font-size: 100rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.role-name {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+/* 描述列表 */
+.role-desc {
+  margin-bottom: 40rpx;
+}
+
+.desc-item {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 2;
+  padding-left: 10rpx;
+}
+
+/* 选择按钮 */
+.select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.student-card .select-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.teacher-card .select-btn {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.arrow {
+  margin-left: 10rpx;
+  font-size: 36rpx;
+  transition: transform 0.3s;
+}
+
+.role-card:active .arrow {
+  transform: translateX(10rpx);
+}
+
+/* 提示 */
+.hint {
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 24rpx;
+  color: #999;
+}

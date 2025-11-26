@@ -1,0 +1,72 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="container">
+  <!-- 总体统计 -->
+  <view class="stats-header card">
+    <view class="header-icon">📊</view>
+    <view class="header-title">学习统计</view>
+  </view>
+
+  <!-- 学习进度 -->
+  <view class="progress-card card">
+    <view class="section-title">学习进度</view>
+    <view class="progress-circle">
+      <view class="progress-text">
+        <text class="progress-num">{{stats.progress}}%</text>
+        <text class="progress-label">完成度</text>
+      </view>
+    </view>
+    <view class="progress-detail">
+      <text>已学习 {{stats.totalStudied}} / {{stats.totalWords}} 个实词</text>
+    </view>
+  </view>
+
+  <!-- 统计数据 -->
+  <view class="stats-grid">
+    <view class="stat-card card">
+      <view class="stat-value">{{stats.totalAttempts}}</view>
+      <view class="stat-label">学习次数</view>
+    </view>
+    <view class="stat-card card">
+      <view class="stat-value text-success">{{stats.correctCount}}</view>
+      <view class="stat-label">正确次数</view>
+    </view>
+    <view class="stat-card card">
+      <view class="stat-value text-primary">{{stats.accuracy}}%</view>
+      <view class="stat-label">正确率</view>
+    </view>
+    <view class="stat-card card">
+      <view class="stat-value text-error">{{collectedCount}}</view>
+      <view class="stat-label">错题数量</view>
+    </view>
+  </view>
+
+  <!-- 最近学习 -->
+  <view class="recent-study card">
+    <view class="section-title">最近7天学习</view>
+    <view class="recent-days">
+      <view class="day-item" wx:for="{{recentDays}}" wx:key="date">
+        <view class="day-date">{{item.date}}</view>
+        <view class="day-bar">
+          <view class="bar-fill" style="height: {{item.percent}}%"></view>
+        </view>
+        <view class="day-count">{{item.count}}</view>
+      </view>
+    </view>
+    <view class="recent-summary">
+      最近 {{stats.recentDays}} 天活跃
+    </view>
+  </view>
+
+  <!-- 鼓励语 -->
+  <view class="encourage-card card">
+    <view class="encourage-icon">{{encourageData.icon}}</view>
+    <view class="encourage-text">{{encourageData.text}}</view>
+  </view>
+
+  <!-- 清空数据按钮 -->
+  <view class="danger-zone">
+    <view class="btn-secondary danger-btn" bindtap="clearData">
+      清空学习数据
+    </view>
+  </view>
+</view>
