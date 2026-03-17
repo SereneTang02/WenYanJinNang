@@ -1,0 +1,90 @@
+/* pages/category-detail/category-detail.wxss */
+.container {
+  padding: 20rpx;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.card {
+  background: white;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.header-card {
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.back-button {
+  font-size: 40rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  cursor: pointer;
+}
+
+.header-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.header-subtitle {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.secondary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.secondary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  transition: all 0.3s;
+}
+
+.secondary-card:active {
+  transform: scale(0.98);
+  background: #f0f0f0;
+}
+
+.secondary-info {
+  flex: 1;
+}
+
+.secondary-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.secondary-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 8rpx;
+}
+
+.secondary-count {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.secondary-arrow {
+  font-size: 60rpx;
+  color: #ccc;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}

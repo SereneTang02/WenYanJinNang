@@ -1,7 +1,7 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <!-- 欢迎卡片 -->
-  <view class="welcome-card card">
+  <!-- 顶部统计卡片 -->
+  <view class="welcome-card">
     <view class="welcome-title">古文实词背诵</view>
     <view class="welcome-subtitle">学习古文实词，提升文言文阅读能力</view>
     <view class="stats-row">
@@ -20,36 +20,18 @@
     </view>
   </view>
 
-  <!-- 快速开始 -->
-  <view class="quick-start card">
-    <view class="section-title">快速开始</view>
-    <view class="btn-primary" bindtap="startRandomStudy">
-      随机背诵
-    </view>
-    <view class="btn-secondary" bindtap="goToCategory">
-      分类学习
-    </view>
+  <!-- 自主背诵 -->
+  <view class="section-card">
+    <view class="section-title">自主背诵</view>
+    <button class="btn-primary" bindtap="startRandomStudy">随机背诵</button>
+    <button class="btn-outline" bindtap="goToCategory">分类学习</button>
   </view>
 
-  <!-- 学习分类 -->
-  <view class="categories card">
-    <view class="section-title">学习分类</view>
-    <view class="category-grid">
-      <view class="category-item" wx:for="{{categories}}" wx:key="id" bindtap="studyCategory" data-category="{{item.name}}">
-        <view class="category-name">{{item.name}}</view>
-        <view class="category-count">{{item.count}}词</view>
-      </view>
-    </view>
-  </view>
-
-  <!-- 今日目标 -->
-  <view class="daily-goal card">
-    <view class="section-title">今日学习</view>
-    <view class="goal-progress">
-      <view class="progress-bar">
-        <view class="progress-fill" style="width: {{dailyProgress}}%"></view>
-      </view>
-      <text class="progress-text">{{todayStudied}} / {{dailyTarget}}</text>
-    </view>
+  <!-- 每日学习 -->
+  <view class="section-label">每日学习</view>
+  <view class="daily-card" bindtap="goPractice">
+    <view class="daily-icon">📝</view>
+    <view class="daily-title">练习测试</view>
+    <view class="daily-desc">通过测试巩固记忆</view>
   </view>
 </view>

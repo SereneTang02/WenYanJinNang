@@ -1,0 +1,33 @@
+<!--pages/records/records.wxml-->
+<view class="container">
+  <!-- 头部标题 -->
+  <view class="header-card card">
+    <view class="header-title">学习记录</view>
+    <view class="header-subtitle">查看错题和收藏的词汇</view>
+  </view>
+
+  <!-- 记录卡片列表 -->
+  <view class="records-list">
+    <!-- 错题本 -->
+    <view class="record-card card" bindtap="goToErrorWords">
+      <view class="card-icon-large">📕</view>
+      <view class="card-content">
+        <view class="card-title">错题本</view>
+        <view class="card-desc">复习测试中答错的词汇</view>
+        <view class="card-count">{{errorWordsCount}} 个实词</view>
+      </view>
+      <view class="card-arrow">›</view>
+    </view>
+
+    <!-- 收藏本 -->
+    <view class="record-card card" bindtap="goToFavorites">
+      <view class="card-icon-large">⭐</view>
+      <view class="card-content">
+        <view class="card-title">收藏本</view>
+        <view class="card-desc">查看自己收藏的重点词汇</view>
+        <view class="card-count">{{favoriteWordsCount}} 个实词</view>
+      </view>
+      <view class="card-arrow">›</view>
+    </view>
+  </view>
+</view>

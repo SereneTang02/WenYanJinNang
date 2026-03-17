@@ -1,0 +1,79 @@
+/* pages/records/records.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20rpx;
+}
+
+/* 头部卡片 */
+.header-card {
+  text-align: center;
+  padding: 40rpx 30rpx;
+  margin-bottom: 30rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.header-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.header-subtitle {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+/* 记录列表 */
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+/* 记录卡片 */
+.record-card {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 30rpx;
+  transition: all 0.3s;
+}
+
+.record-card:active {
+  transform: scale(0.98);
+  opacity: 0.8;
+}
+
+.card-icon-large {
+  font-size: 80rpx;
+  margin-right: 30rpx;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.card-desc {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.card-count {
+  font-size: 28rpx;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.card-arrow {
+  font-size: 60rpx;
+  color: #ccc;
+}

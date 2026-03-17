@@ -28,33 +28,11 @@
   margin-bottom: 30rpx;
 }
 
-.progress-circle {
-  width: 280rpx;
-  height: 280rpx;
-  border-radius: 50%;
-  background: conic-gradient(#4A90E2 0% var(--progress), #e8ecf1 var(--progress) 100%);
-  margin: 0 auto 30rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.progress-circle::before {
-  content: '';
-  position: absolute;
-  width: 220rpx;
-  height: 220rpx;
-  background: white;
-  border-radius: 50%;
-}
-
 .progress-text {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30rpx 0;
 }
 
 .progress-num {
@@ -106,7 +84,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 200rpx;
   margin-bottom: 20rpx;
 }
 
@@ -115,21 +92,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rpx;
+  gap: 10rpx;
 }
 
 .day-date {
-  font-size: 20rpx;
+  font-size: 22rpx;
   color: #999;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
 }
 
 .day-bar {
-  width: 30rpx;
+  width: 32rpx;
   height: 120rpx;
-  background-color: #f0f0f0;
-  border-radius: 15rpx;
+  background-color: #e8ecf1;
+  border-radius: 16rpx;
   overflow: hidden;
   display: flex;
   flex-direction: column;

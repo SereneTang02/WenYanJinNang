@@ -35,10 +35,10 @@ Page({
     const collectedWords = wx.getStorageSync('collectedWords') || [];
 
     // 处理最近7天数据
-    const recentDays = this.processRecentDays(stats.dailyStats);
+    const recentDays = this.processRecentDays(stats.dailyStats || {});
 
     // 根据进度生成鼓励语
-    const encourageData = this.getEncouragement(parseFloat(stats.progress));
+    const encourageData = this.getEncouragement(parseFloat(stats.progress) || 0);
 
     this.setData({
       stats,

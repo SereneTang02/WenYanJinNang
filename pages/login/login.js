@@ -52,7 +52,7 @@ Page({
       wx.showLoading({ title: '登录中...' });
 
       const cloudRes = await wx.cloud.callFunction({
-        name: 'login',
+        name: 'login2',
         data: {
           code: loginRes.code,
           userProfile: userProfile
@@ -65,7 +65,9 @@ Page({
         throw new Error('登录失败');
       }
 
-      const { openid, userInfo, role } = cloudRes.result;
+      const { openid, userInfo, studentInfo, teacherInfo } = cloudRes.result;
+      // login2 不直接返回 role，从 studentInfo/teacherInfo 推断
+      const role = studentInfo ? 'student' : teacherInfo ? 'teacher' : null;
 
       // 4. 保存 openid 到全局
       const app = getApp();
@@ -105,11 +107,12 @@ Page({
    * 根据角色跳转到首页
    */
   navigateToHome(role) {
-    const homePage = role === 'teacher'
-      ? '/pages/teacher-home/teacher-home'
-      : '/pages/index/index';
-
-    wx.redirectTo({ url: homePage });
+    if (role === 'teacher') {
+      wx.redirectTo({ url: '/pages/teacher-home/teacher-home' });
+    } else {
+      // index 是 Tab 页，必须用 switchTab
+      wx.switchTab({ url: '/pages/index/index' });
+    }
   },
 
   /**

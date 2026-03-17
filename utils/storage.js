@@ -472,6 +472,49 @@ function getCheckInStreak() {
 }
 
 /**
+ * 获取收藏词（收藏本，区别于错题本）
+ */
+function getFavoriteWords() {
+  try {
+    const favoriteIds = wx.getStorageSync('favoriteWords') || [];
+    return wordsData.filter(word => favoriteIds.includes(word.id));
+  } catch (e) {
+    console.error('读取收藏本失败:', e);
+    return [];
+  }
+}
+
+/**
+ * 获取分类统计数据（按年级/难度/词性分组统计词数）
+ */
+function getCategoryStats() {
+  const grade = {};
+  const difficulty = {};
+  const partOfSpeech = {};
+
+  wordsData.forEach(word => {
+    // 按年级统计
+    if (word.grade) {
+      grade[word.grade] = (grade[word.grade] || 0) + 1;
+    }
+    // 按难度统计
+    if (word.difficulty) {
+      difficulty[word.difficulty] = (difficulty[word.difficulty] || 0) + 1;
+    }
+    // 按词性统计（从 meanings 的 category 字段）
+    if (word.meanings) {
+      word.meanings.forEach(m => {
+        if (m.category) {
+          partOfSpeech[m.category] = (partOfSpeech[m.category] || 0) + 1;
+        }
+      });
+    }
+  });
+
+  return { grade, difficulty, partOfSpeech };
+}
+
+/**
  * 通用存储方法
  */
 function getStorage(key) {
@@ -498,6 +541,8 @@ module.exports = {
   getWordsByDifficulty,
   getStudyStats,
   getCollectedWords,
+  getFavoriteWords,
+  getCategoryStats,
   addToCollection,
   removeFromCollection,
   isCollected,

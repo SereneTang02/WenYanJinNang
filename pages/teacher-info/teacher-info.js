@@ -153,7 +153,7 @@ Page({
     try {
       // 调用云函数更新用户角色
       const res = await wx.cloud.callFunction({
-        name: 'updateUserRole',
+        name: 'updateUserRole2',
         data: {
           role: 'teacher',
           roleInfo: {

@@ -9,11 +9,9 @@
   <!-- 学习进度 -->
   <view class="progress-card card">
     <view class="section-title">学习进度</view>
-    <view class="progress-circle">
-      <view class="progress-text">
-        <text class="progress-num">{{stats.progress}}%</text>
-        <text class="progress-label">完成度</text>
-      </view>
+    <view class="progress-text">
+      <text class="progress-num">{{stats.progress}}%</text>
+      <text class="progress-label">完成度</text>
     </view>
     <view class="progress-detail">
       <text>已学习 {{stats.totalStudied}} / {{stats.totalWords}} 个实词</text>
@@ -45,11 +43,11 @@
     <view class="section-title">最近7天学习</view>
     <view class="recent-days">
       <view class="day-item" wx:for="{{recentDays}}" wx:key="date">
-        <view class="day-date">{{item.date}}</view>
+        <view class="day-count">{{item.count}}</view>
         <view class="day-bar">
           <view class="bar-fill" style="height: {{item.percent}}%"></view>
         </view>
-        <view class="day-count">{{item.count}}</view>
+        <view class="day-date">{{item.date}}</view>
       </view>
     </view>
     <view class="recent-summary">

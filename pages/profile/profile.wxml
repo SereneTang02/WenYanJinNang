@@ -3,15 +3,32 @@
   <!-- 用户信息卡片 -->
   <view class="user-card">
     <view class="avatar-section">
-      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
+      <!-- 微信原生头像选择按钮 -->
+      <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
+        <view class="avatar-edit-badge">换</view>
+      </button>
     </view>
     <view class="user-info">
-      <view class="nickname">{{userInfo.nickName || '未设置昵称'}}</view>
+      <!-- 微信原生昵称输入框 -->
+      <input
+        class="nickname-input"
+        type="nickname"
+        value="{{userInfo.nickName}}"
+        placeholder="点击设置昵称"
+        placeholder-class="nickname-placeholder"
+        bindinput="onNicknameInput"
+      />
       <view class="role-tag {{role}}">
         {{role === 'teacher' ? '教师' : '学生'}}
       </view>
     </view>
   </view>
+
+  <!-- 保存按钮，有改动才高亮 -->
+  <button class="save-btn {{hasChanged ? 'save-btn-active' : ''}}" bindtap="saveProfile">
+    {{hasChanged ? '保存资料 ●' : '资料已是最新'}}
+  </button>
 
   <!-- 统计卡片 -->
   <view class="stats-card">

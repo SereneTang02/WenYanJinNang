@@ -1,0 +1,241 @@
+<!--pages/practice-config/practice-config.wxml-->
+<!-- 加载中占位 -->
+<view class="page-loading" wx:if="{{!dataReady}}"></view>
+
+<!-- 主内容 - 只有数据就绪时才渲染 -->
+<view class="container" wx:if="{{dataReady}}">
+  <view class="header">
+    <text class="title">练习配置</text>
+    <text class="subtitle">自定义你的练习方式</text>
+  </view>
+
+  <scroll-view class="config-scroll" scroll-y>
+
+    <!-- 1. 题型选择 -->
+    <view class="config-section">
+      <view class="section-header">
+        <text class="section-icon">📝</text>
+        <text class="section-title">题型选择</text>
+        <text class="section-desc">可多选</text>
+      </view>
+
+      <view class="type-cards">
+        <view
+          class="type-card {{item.selected ? 'active' : ''}}"
+          wx:for="{{questionTypes}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="toggleQuestionType">
+          <view class="type-icon">{{item.icon}}</view>
+          <view class="type-label">{{item.label}}</view>
+          <view class="type-desc">{{item.desc}}</view>
+          <view class="type-check" wx:if="{{item.selected}}">✓</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 2. 题目数量 -->
+    <view class="config-section">
+      <view class="section-header">
+        <text class="section-icon">🔢</text>
+        <text class="section-title">题目数量</text>
+        <text class="section-desc">{{minCount}}-{{maxCount}}道</text>
+      </view>
+
+      <view class="count-control">
+        <view class="count-btn" bindtap="decreaseCount">-</view>
+        <input
+          class="count-input"
+          type="number"
+          value="{{questionCount}}"
+          bindinput="onCountInput" />
+        <view class="count-btn" bindtap="increaseCount">+</view>
+      </view>
+    </view>
+
+    <!-- 3. 实词选择方式 -->
+    <view class="config-section">
+      <view class="section-header">
+        <text class="section-icon">📚</text>
+        <text class="section-title">实词选择</text>
+      </view>
+
+      <view class="mode-tabs">
+        <view
+          class="mode-tab {{selectionMode === item.id ? 'active' : ''}}"
+          wx:for="{{selectionModes}}"
+          wx:key="id"
+          data-mode="{{item.id}}"
+          bindtap="changeSelectionMode">
+          <text class="mode-icon">{{item.icon}}</text>
+          <text class="mode-label">{{item.label}}</text>
+        </view>
+      </view>
+
+      <!-- 按分类选择 -->
+      <view class="mode-content" wx:if="{{selectionMode === 'category'}}">
+        <view class="category-selectors">
+          <view class="selector-item">
+            <text class="selector-label">分类类型</text>
+            <picker
+              range="{{primaryOptions}}"
+              range-key="label"
+              value="{{selectedPrimaryIndex}}"
+              bindchange="onPrimaryCategoryChange">
+              <view class="picker-display">
+                {{selectedPrimaryLabel}}
+                <text class="arrow">▼</text>
+              </view>
+            </picker>
+          </view>
+
+          <view class="selector-item" wx:if="{{secondaryOptions.length > 0}}">
+            <text class="selector-label">具体分类</text>
+            <picker
+              range="{{secondaryOptions}}"
+              range-key="label"
+              value="{{selectedSecondaryIndex}}"
+              bindchange="onSecondaryCategoryChange">
+              <view class="picker-display">
+                {{selectedSecondaryLabel}}
+                <text class="arrow">▼</text>
+              </view>
+            </picker>
+          </view>
+
+          <view class="word-count-tip" wx:if="{{categoryWordCount > 0}}">
+            该分类下有 <text class="highlight">{{categoryWordCount}}</text> 个实词
+          </view>
+        </view>
+      </view>
+
+      <!-- 随机选择 -->
+      <view class="mode-content" wx:if="{{selectionMode === 'random'}}">
+        <view class="random-selector">
+          <text class="random-label">随机选择实词数量：</text>
+          <view class="count-control">
+            <view class="count-btn" bindtap="decreaseRandomCount">-</view>
+            <input
+              class="count-input"
+              type="number"
+              value="{{randomCount}}"
+              bindinput="onRandomCountInput" />
+            <view class="count-btn" bindtap="increaseRandomCount">+</view>
+          </view>
+          <view class="random-tip">共有 {{wordsData.length}} 个实词可选</view>
+        </view>
+      </view>
+
+      <!-- 错题本选择 -->
+      <view class="mode-content" wx:if="{{selectionMode === 'errorBook'}}">
+        <view class="error-selector">
+          <view class="error-header">
+            <text class="error-count">错题本共有 {{errorWordCount}} 个实词</text>
+            <view class="select-all-btn" bindtap="toggleSelectAllError">
+              <text class="checkbox {{selectAllError ? 'checked' : ''}}">{{selectAllError ? '☑' : '☐'}}</text>
+              <text>全选</text>
+            </view>
+          </view>
+
+          <view class="word-list" wx:if="{{errorWords.length > 0}}">
+            <view
+              class="word-item {{item.selected ? 'selected' : ''}}"
+              wx:for="{{errorWords}}"
+              wx:key="id"
+              data-index="{{index}}"
+              bindtap="toggleErrorWord">
+              <text class="checkbox {{item.selected ? 'checked' : ''}}">{{item.selected ? '☑' : '☐'}}</text>
+              <view class="word-info">
+                <text class="word-text">{{item.word}}</text>
+                <text class="word-meaning" wx:if="{{item.meanings && item.meanings[0]}}">
+                  {{item.meanings[0].gloss}}
+                </text>
+              </view>
+            </view>
+          </view>
+
+          <view class="empty-tip" wx:else>
+            <text>错题本暂无内容</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 手动勾选 -->
+      <view class="mode-content" wx:if="{{selectionMode === 'manual'}}">
+        <view class="manual-selector">
+          <view class="manual-tip">
+            已选择 <text class="highlight">{{selectedWordIds.length}}</text> 个实词
+          </view>
+          <button class="select-btn" bindtap="showWordSelectorDialog">
+            {{selectedWordIds.length > 0 ? '修改选择' : '选择实词'}}
+          </button>
+        </view>
+      </view>
+
+    </view>
+
+  </scroll-view>
+
+  <!-- 底部开始按钮 -->
+  <view class="footer">
+    <button
+      class="btn-start {{canStartPractice ? '' : 'disabled'}}"
+      bindtap="startPractice"
+      disabled="{{!canStartPractice}}">
+      开始练习
+    </button>
+  </view>
+
+  <!-- 手动勾选弹窗 -->
+  <view class="word-selector-modal" wx:if="{{showWordSelector}}">
+    <view class="modal-mask" bindtap="hideWordSelector"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">选择实词</text>
+        <view class="modal-close" bindtap="hideWordSelector">✕</view>
+      </view>
+
+      <view class="search-bar">
+        <input
+          class="search-input"
+          placeholder="搜索实词、拼音或释义"
+          value="{{searchKey}}"
+          bindinput="onSearchInput"
+        />
+        <text class="search-icon">🔍</text>
+      </view>
+
+      <view class="select-all-row">
+        <view class="select-all-btn" bindtap="toggleSelectAllManual">
+          <text class="checkbox {{selectAllManual ? 'checked' : ''}}">{{selectAllManual ? '☑' : '☐'}}</text>
+          <text>全选</text>
+        </view>
+        <text class="selected-count">已选 {{selectedWordIds.length}} 个</text>
+      </view>
+
+      <scroll-view class="word-list-scroll" scroll-y>
+        <view
+          class="word-item {{item.selected ? 'selected' : ''}}"
+          wx:for="{{allWords}}"
+          wx:key="id"
+          data-index="{{index}}"
+          bindtap="toggleManualWord">
+          <text class="checkbox {{item.selected ? 'checked' : ''}}">{{item.selected ? '☑' : '☐'}}</text>
+          <view class="word-info">
+            <text class="word-text">{{item.word}}</text>
+            <text class="word-meaning" wx:if="{{item.meanings && item.meanings[0]}}">
+              {{item.meanings[0].gloss}}
+            </text>
+          </view>
+        </view>
+      </scroll-view>
+
+      <view class="modal-footer">
+        <button class="btn-confirm" bindtap="confirmWordSelection">
+          确定（已选{{selectedWordIds.length}}个）
+        </button>
+      </view>
+    </view>
+  </view>
+
+</view>

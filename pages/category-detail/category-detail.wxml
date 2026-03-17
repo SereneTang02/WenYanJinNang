@@ -1,0 +1,28 @@
+<!--pages/category-detail/category-detail.wxml-->
+<view class="container">
+  <view class="header-card card">
+    <view class="header-title">{{categoryName}}分类</view>
+    <view class="header-subtitle">选择具体分类开始学习</view>
+  </view>
+
+  <view class="secondary-list">
+    <view
+      class="secondary-card card"
+      wx:for="{{secondaryCategories}}"
+      wx:key="value"
+      bindtap="selectSecondaryCategory"
+      data-value="{{item.value}}"
+    >
+      <view class="secondary-info">
+        <view class="secondary-name">{{item.label}}</view>
+        <view class="secondary-desc" wx:if="{{item.description}}">{{item.description}}</view>
+        <view class="secondary-count">{{item.count}} 个实词</view>
+      </view>
+      <view class="secondary-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:if="{{secondaryCategories.length === 0}}">
+    <text class="empty-text">暂无分类数据</text>
+  </view>
+</view>

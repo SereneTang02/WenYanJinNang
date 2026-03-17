@@ -80,7 +80,7 @@ Page({
     try {
       // 调用云函数更新用户角色
       const res = await wx.cloud.callFunction({
-        name: 'updateUserRole',
+        name: 'updateUserRole2',
         data: {
           role: 'student',
           roleInfo: {
@@ -156,7 +156,7 @@ Page({
       const progress = storage.getUserProgress();
 
       await wx.cloud.callFunction({
-        name: 'syncProgress',
+        name: 'syncProgress2',
         data: {
           wordProgress: progress
         }

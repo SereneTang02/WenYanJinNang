@@ -1,5 +1,4 @@
 // pages/index/index.js
-const { wordsData, categories } = require('../../data/words.js');
 const { getStudyStats } = require('../../utils/storage.js');
 
 Page({
@@ -59,6 +58,13 @@ Page({
   goToCategory() {
     wx.navigateTo({
       url: '/pages/category/category'
+    });
+  },
+
+  // 前往练习测试
+  goPractice() {
+    wx.navigateTo({
+      url: '/pages/practice-config/practice-config'
     });
   },
 

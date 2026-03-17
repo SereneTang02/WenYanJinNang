@@ -13,7 +13,10 @@
     "pages/role-select/role-select",
     "pages/student-info/student-info",
     "pages/teacher-info/teacher-info",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/category-detail/category-detail",
+    "pages/records/records",
+    "pages/practice-config/practice-config"
   ],
   "window": {
     "navigationBarTitleText": "古文实词背诵",
@@ -34,16 +37,22 @@
         "selectedIconPath": "image/home-active.png"
       },
       {
-        "pagePath": "pages/collection/collection",
-        "text": "错题本",
-        "iconPath": "image/star.png",
-        "selectedIconPath": "image/star-active.png"
+        "pagePath": "pages/records/records",
+        "text": "记录",
+        "iconPath": "image/notebook.png",
+        "selectedIconPath": "image/notebook-active.png"
       },
       {
         "pagePath": "pages/statistics/statistics",
         "text": "统计",
         "iconPath": "image/chart.png",
         "selectedIconPath": "image/chart-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "image/profile.png",
+        "selectedIconPath": "image/profile-active.png"
       }
     ]
   },
