@@ -274,72 +274,111 @@ function getTodayDateString() {
 }
 
 /**
- * 生成每日任务
- * @param {number} oldCount - 旧词（需要复习的）数量，默认6
- * @param {number} newCount - 新词数量，默认4
- * @returns {Object} 每日任务对象
+ * 按年级优先级选词的辅助函数
+ * @param {string[]} grades - 目标年级列表（按优先级排序）
+ * @param {number} count - 需要的数量
+ * @param {Object} progress - 用户进度
+ * @param {Set} excludeIds - 已选中的词ID集合
+ * @param {string} taskType - 任务类型标记
+ * @returns {Array} [{wordId, taskType}]
  */
-function generateDailyTask(oldCount = 6, newCount = 4) {
+function pickWordsByGrades(grades, count, progress, excludeIds, taskType) {
+  if (count <= 0) return [];
+
+  const todayTime = new Date(getTodayDateString()).getTime();
+  const picked = [];
+
+  // 收集所有候选词并打分
+  const candidates = [];
+  for (const grade of grades) {
+    const gradeWords = wordsData.filter(w => w.grade === grade && !excludeIds.has(w.id));
+    for (const w of gradeWords) {
+      const p = progress[w.id];
+      let score = 0;
+
+      if (p) {
+        // 到期需复习 +100
+        if (new Date(p.nextReviewAt).getTime() <= todayTime) score += 100;
+        // 错误多 +50
+        if (p.wrong > p.correct) score += 50;
+      } else {
+        // 从未学过 +30
+        score += 30;
+      }
+
+      // 高频词 +10
+      score += (w.frequencyLevel || 0) * 2;
+      if (w.tags && w.tags.includes('zhong-kao-gao-pin')) score += 15;
+
+      // 同分随机
+      score += Math.random() * 5;
+
+      candidates.push({ wordId: w.id, score, taskType });
+    }
+  }
+
+  // 按分数降序
+  candidates.sort((a, b) => b.score - a.score);
+
+  for (const c of candidates) {
+    if (picked.length >= count) break;
+    picked.push({ wordId: c.wordId, taskType: c.taskType });
+    excludeIds.add(c.wordId);
+  }
+
+  return picked;
+}
+
+/**
+ * 生成每日任务（按年级优先级）
+ * 本年级8词 + 复习旧年级4词 + 预习新年级3词 = 15词
+ */
+function generateDailyTask(currentCount = 8, reviewCount = 4, previewCount = 3) {
   const today = getTodayDateString();
   const progress = getUserProgress();
   const userGrade = getUserGrade();
+  const gradeOrder = ['七上', '七下', '八上', '八下', '九上', '九下'];
+  const gradeIndex = gradeOrder.indexOf(userGrade);
 
-  // 1. 从进度中筛选需要复习的旧词（nextReviewAt <= today）
-  const oldWordIds = [];
-  const todayTime = new Date(today).getTime();
+  // 如果没有设置年级，默认七上
+  const effectiveIndex = gradeIndex >= 0 ? gradeIndex : 0;
+  const currentGrade = gradeOrder[effectiveIndex];
 
-  for (const wordId in progress) {
-    const wordProgress = progress[wordId];
-    const nextReviewTime = new Date(wordProgress.nextReviewAt).getTime();
+  // 前面的年级（最近的优先）
+  const prevGrades = gradeOrder.slice(0, effectiveIndex).reverse();
+  // 后面的年级（最近的优先）
+  const nextGrades = gradeOrder.slice(effectiveIndex + 1);
 
-    if (nextReviewTime <= todayTime) {
-      oldWordIds.push(parseInt(wordId));
-    }
+  const excludeIds = new Set();
+
+  // 1. 本年级选词
+  const currentWords = pickWordsByGrades([currentGrade], currentCount, progress, excludeIds, 'current');
+
+  // 2. 复习旧年级
+  const reviewWords = pickWordsByGrades(prevGrades, reviewCount, progress, excludeIds, 'review');
+
+  // 3. 预习新年级
+  const previewWords = pickWordsByGrades(nextGrades, previewCount, progress, excludeIds, 'preview');
+
+  // 如果某组不够数，从其他组补充
+  const allWords = [...currentWords, ...reviewWords, ...previewWords];
+  const totalTarget = currentCount + reviewCount + previewCount;
+
+  if (allWords.length < totalTarget) {
+    const remainGrades = gradeOrder.filter(g => g !== currentGrade);
+    const extra = pickWordsByGrades(remainGrades, totalTarget - allWords.length, progress, excludeIds, 'current');
+    allWords.push(...extra);
   }
 
-  // 按优先级排序（错误多的优先）
-  oldWordIds.sort((a, b) => {
-    const diffA = (progress[a].wrong || 0) - (progress[a].correct || 0);
-    const diffB = (progress[b].wrong || 0) - (progress[b].correct || 0);
-    return diffB - diffA;
-  });
-
-  // 取前X个
-  const selectedOldWords = oldWordIds.slice(0, oldCount);
-
-  // 2. 从词库中筛选新词（未练习过的，优先选择用户年级的词）
-  const practicedIds = Object.keys(progress).map(id => parseInt(id));
-  let availableNewWords = wordsData.filter(w => !practicedIds.includes(w.id));
-
-  // 优先选择本年级的词
-  if (userGrade) {
-    const gradeWords = availableNewWords.filter(w => w.grade === userGrade);
-    if (gradeWords.length >= newCount) {
-      availableNewWords = gradeWords;
-    }
-  }
-
-  // 优先选择高频词和核心词
-  availableNewWords.sort((a, b) => {
-    const scoreA = (a.frequencyLevel || 0) + (a.tags?.includes('zhong-kao-gao-pin') ? 10 : 0);
-    const scoreB = (b.frequencyLevel || 0) + (b.tags?.includes('zhong-kao-gao-pin') ? 10 : 0);
-    return scoreB - scoreA;
-  });
-
-  // 随机选择newCount个新词
-  const shuffled = availableNewWords.sort(() => Math.random() - 0.5);
-  const selectedNewWords = shuffled.slice(0, newCount).map(w => w.id);
-
-  // 3. 合并成今日任务
-  const dailyWordIds = [...selectedOldWords, ...selectedNewWords];
-
-  // 4. 保存到本地存储
+  // 保存到本地存储
   const dailyTask = {
     date: today,
-    wordIds: dailyWordIds,
-    oldWordCount: selectedOldWords.length,
-    newWordCount: selectedNewWords.length,
-    totalCount: dailyWordIds.length,
+    words: allWords,
+    wordIds: allWords.map(w => w.wordId),
+    currentCount: currentWords.length,
+    reviewCount: reviewWords.length,
+    previewCount: previewWords.length,
+    totalCount: allWords.length,
     finishedCount: 0,
     isCompleted: false,
     createdAt: new Date().toISOString()

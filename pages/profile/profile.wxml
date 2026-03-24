@@ -2,70 +2,83 @@
 <view class="container">
   <!-- 用户信息卡片 -->
   <view class="user-card">
-    <view class="avatar-section">
-      <!-- 微信原生头像选择按钮 -->
+    <view class="profile-row">
+      <!-- 头像：点击弹出微信原生头像选择 -->
       <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
-        <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
-        <view class="avatar-edit-badge">换</view>
+        <image class="avatar-img" src="{{userInfo.avatarUrl || defaultAvatar}}" mode="aspectFill"/>
       </button>
+
+      <view class="profile-info">
+        <!-- 昵称：点击弹出微信原生昵称填写 -->
+        <input
+          class="nickname-input"
+          type="nickname"
+          value="{{userInfo.nickName}}"
+          placeholder="点击设置昵称"
+          placeholder-class="nickname-placeholder"
+          bindinput="onNicknameInput"
+          bindblur="onNicknameBlur"
+        />
+        <view class="role-tag">
+          {{role === 'teacher' ? '教师' : role === 'student' ? '学生' : '未设置'}}
+        </view>
+      </view>
     </view>
-    <view class="user-info">
-      <!-- 微信原生昵称输入框 -->
-      <input
-        class="nickname-input"
-        type="nickname"
-        value="{{userInfo.nickName}}"
-        placeholder="点击设置昵称"
-        placeholder-class="nickname-placeholder"
-        bindinput="onNicknameInput"
-      />
-      <view class="role-tag {{role}}">
-        {{role === 'teacher' ? '教师' : '学生'}}
+
+    <view class="tip-text">点击头像或昵称可修改</view>
+
+    <!-- 有修改时显示保存 -->
+    <button class="save-wx-btn" wx:if="{{hasChanged}}" bindtap="saveProfile">保存</button>
+  </view>
+
+  <!-- 学习数据卡片 -->
+  <view class="data-card">
+    <view class="data-title">学习数据</view>
+    <view class="data-grid">
+      <view class="data-item">
+        <view class="data-value">{{stats.totalWords}}</view>
+        <view class="data-label">已学词数</view>
+      </view>
+      <view class="data-item">
+        <view class="data-value">{{stats.masteredWords}}</view>
+        <view class="data-label">已掌握</view>
+      </view>
+      <view class="data-item">
+        <view class="data-value">{{stats.checkInStreak}}</view>
+        <view class="data-label">连续打卡</view>
       </view>
     </view>
   </view>
 
-  <!-- 保存按钮，有改动才高亮 -->
-  <button class="save-btn {{hasChanged ? 'save-btn-active' : ''}}" bindtap="saveProfile">
-    {{hasChanged ? '保存资料 ●' : '资料已是最新'}}
-  </button>
-
-  <!-- 统计卡片 -->
-  <view class="stats-card">
-    <view class="stats-title">学习统计</view>
-    <view class="stats-grid">
-      <view class="stat-item">
-        <view class="stat-value">{{stats.totalWords}}</view>
-        <view class="stat-label">已学词数</view>
+  <!-- 功能菜单 -->
+  <view class="menu-card">
+    <navigator class="menu-row" url="/pages/word-list/word-list">
+      <view class="menu-icon-wrap icon-blue">
+        <text class="menu-icon-text">词</text>
       </view>
-      <view class="stat-item">
-        <view class="stat-value">{{stats.masteredWords}}</view>
-        <view class="stat-label">已掌握</view>
+      <view class="menu-info">
+        <view class="menu-name">实词列表</view>
+        <view class="menu-desc">查看全部实词</view>
       </view>
-      <view class="stat-item">
-        <view class="stat-value">{{stats.checkInStreak}}</view>
-        <view class="stat-label">连续打卡</view>
-      </view>
-    </view>
-  </view>
-
-  <!-- 功能列表 -->
-  <view class="menu-list">
-    <navigator class="menu-item" url="/pages/word-list/word-list">
-      <view class="menu-icon">📚</view>
-      <view class="menu-text">实词列表</view>
       <view class="menu-arrow">›</view>
     </navigator>
 
-    <navigator class="menu-item" url="/pages/error-words/error-words">
-      <view class="menu-icon">📖</view>
-      <view class="menu-text">错题本</view>
+    <view class="menu-divider"></view>
+
+    <navigator class="menu-row" url="/pages/error-words/error-words">
+      <view class="menu-icon-wrap icon-red">
+        <text class="menu-icon-text">错</text>
+      </view>
+      <view class="menu-info">
+        <view class="menu-name">错题本</view>
+        <view class="menu-desc">回顾错题加强记忆</view>
+      </view>
       <view class="menu-arrow">›</view>
     </navigator>
   </view>
 
-  <!-- 退出登录按钮 -->
-  <view class="logout-section">
-    <button class="logout-button" bindtap="onLogout">退出登录</button>
+  <!-- 退出登录 -->
+  <view class="logout-area">
+    <button class="logout-btn" bindtap="onLogout">退出登录</button>
   </view>
 </view>

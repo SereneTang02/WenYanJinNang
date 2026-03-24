@@ -185,7 +185,7 @@ Page({
         showCancel: false,
         success: () => {
           // 跳转到教师端首页（暂时跳转到普通首页）
-          wx.redirectTo({
+          wx.switchTab({
             url: '/pages/index/index'
           });
         }

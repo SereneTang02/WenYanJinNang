@@ -1,48 +1,49 @@
 <!--pages/role-select/role-select.wxml-->
 <view class="container">
-  <!-- 顶部标题 -->
-  <view class="header">
-    <view class="title">选择您的身份</view>
-    <view class="subtitle">请选择一个身份开始使用</view>
+  <!-- 顶部栏 -->
+  <view class="hero-card">
+    <view class="hero-title">选择您的身份</view>
+    <view class="hero-sub">请选择一个身份开始使用</view>
   </view>
 
   <!-- 角色选择卡片 -->
-  <view class="roles-container">
-    <!-- 学生卡片 -->
-    <view class="role-card student-card" bindtap="onSelectStudent">
-      <view class="role-icon">👨‍🎓</view>
-      <view class="role-name">我是学生</view>
-      <view class="role-desc">
-        <view class="desc-item">✓ 查看实词卡片</view>
-        <view class="desc-item">✓ 完成每日打卡</view>
-        <view class="desc-item">✓ 加入班级PK</view>
-        <view class="desc-item">✓ 查看学习报告</view>
-      </view>
-      <view class="select-btn">
-        <text>立即选择</text>
-        <text class="arrow">→</text>
-      </view>
-    </view>
+  <view class="section-label">请选择身份</view>
 
-    <!-- 教师卡片 -->
-    <view class="role-card teacher-card" bindtap="onSelectTeacher">
-      <view class="role-icon">👨‍🏫</view>
-      <view class="role-name">我是教师</view>
-      <view class="role-desc">
-        <view class="desc-item">✓ 创建管理班级</view>
-        <view class="desc-item">✓ 组织PK竞赛</view>
-        <view class="desc-item">✓ 查看学生数据</view>
-        <view class="desc-item">✓ 导出错题分析</view>
-      </view>
-      <view class="select-btn">
-        <text>立即选择</text>
-        <text class="arrow">→</text>
+  <view class="role-card" bindtap="onSelectStudent">
+    <view class="role-left">
+      <view class="role-icon-wrap icon-blue">
+        <text class="role-icon-text">学</text>
       </view>
     </view>
+    <view class="role-center">
+      <view class="role-name">我是学生</view>
+      <view class="role-desc-list">
+        <text class="role-desc-item">实词卡片 / 每日打卡 / 班级PK / 学习报告</text>
+      </view>
+    </view>
+    <view class="role-arrow">›</view>
+  </view>
+
+  <view class="role-card" bindtap="onSelectTeacher">
+    <view class="role-left">
+      <view class="role-icon-wrap icon-purple">
+        <text class="role-icon-text">师</text>
+      </view>
+    </view>
+    <view class="role-center">
+      <view class="role-name">我是教师</view>
+      <view class="role-desc-list">
+        <text class="role-desc-item">管理班级 / 组织竞赛 / 学生数据 / 错题分析</text>
+      </view>
+    </view>
+    <view class="role-arrow">›</view>
   </view>
 
   <!-- 提示 -->
-  <view class="hint">
-    <text>💡 提示：选择后可在个人中心修改</text>
+  <view class="hint-card">
+    <view class="hint-icon-wrap">
+      <text class="hint-icon-text">i</text>
+    </view>
+    <text class="hint-text">选择后可在个人中心修改</text>
   </view>
 </view>

@@ -1,80 +1,84 @@
 <!--pages/study/study.wxml-->
 <view class="container">
-  <!-- 进度指示器 -->
-  <view class="progress-indicator">
-    <text>{{currentIndex + 1}} / {{totalWords}}</text>
+  <!-- 顶部栏 -->
+  <view class="hero-card">
+    <view class="hero-title">{{mode === 'daily' ? '今日任务' : mode === 'random' ? '随机背诵' : mode === 'collection' ? '错题复习' : '分类学习'}}</view>
+    <view class="hero-sub" wx:if="{{!isComplete}}">{{currentIndex + 1}} / {{totalWords}}</view>
+    <view class="progress-bar-bg" wx:if="{{!isComplete}}">
+      <view class="progress-bar-fill" style="width: {{(currentIndex + 1) / totalWords * 100}}%"></view>
+    </view>
   </view>
 
   <!-- 实词卡片 -->
-  <view class="word-card card" wx:if="{{currentWord}}">
-    <!-- 实词标题 -->
+  <view class="word-card" wx:if="{{currentWord && !isComplete}}">
+    <!-- 任务类型标签（daily 模式） -->
+    <view class="task-tag tag-{{currentTaskType}}" wx:if="{{currentTaskType}}">
+      {{currentTaskType === 'current' ? '本年级' : currentTaskType === 'review' ? '复习' : '预习'}}
+    </view>
+
+    <!-- 词头 -->
     <view class="word-header">
       <view class="word-title">{{currentWord.word}}</view>
       <view class="word-pinyin">{{currentWord.pinyin}}</view>
-      <view class="word-category">{{currentWord.category}}</view>
+      <view class="word-category-tag">{{currentWord.category}}</view>
     </view>
 
-    <!-- 义项列表 -->
-    <view class="meanings-section" wx:if="{{showAnswer}}">
-      <view class="meaning-item" wx:for="{{currentWord.meanings}}" wx:key="index">
-        <view class="meaning-num">{{index + 1}}.</view>
-        <view class="meaning-content">
-          <view class="meaning-text">{{item.meaning}}</view>
-          <view class="meaning-example">例：{{item.example}}</view>
-        </view>
-      </view>
-    </view>
-
-    <!-- 提示信息 -->
+    <!-- 未翻转：提示 -->
     <view class="hint-section" wx:if="{{!showAnswer}}">
       <text class="hint-text">请回忆这个实词的含义和用法</text>
+      <view class="flip-btn" bindtap="showAnswerTap">查看答案</view>
     </view>
 
-    <!-- 操作按钮 -->
-    <view class="action-buttons">
-      <view class="btn-secondary" wx:if="{{!showAnswer}}" bindtap="showAnswerTap">
-        查看答案
+    <!-- 翻转后：义项列表 -->
+    <view class="meanings-section" wx:if="{{showAnswer}}">
+      <view class="meaning-item" wx:for="{{currentWord.meanings}}" wx:key="id">
+        <view class="meaning-num">{{index + 1}}.</view>
+        <view class="meaning-content">
+          <view class="meaning-gloss">{{item.gloss}}</view>
+          <view class="meaning-note" wx:if="{{item.usageNote}}">{{item.usageNote}}</view>
+          <view class="meaning-example" wx:for="{{item.examples}}" wx:for-item="ex" wx:key="text">
+            例：{{ex.text}}<text class="example-source" wx:if="{{ex.source}}"> ——《{{ex.source}}》</text>
+          </view>
+        </view>
       </view>
 
-      <view class="answer-buttons" wx:if="{{showAnswer}}">
-        <view class="btn-error" bindtap="answerWrong">
-          ✗ 不会
-        </view>
-        <view class="btn-success" bindtap="answerCorrect">
-          ✓ 掌握
-        </view>
+      <!-- 掌握/不会 按钮 -->
+      <view class="answer-buttons">
+        <view class="ans-btn btn-wrong" bindtap="answerWrong">不会</view>
+        <view class="ans-btn btn-right" bindtap="answerCorrect">掌握</view>
       </view>
     </view>
 
-    <!-- 收藏按钮 -->
-    <view class="collect-btn {{isCollected ? 'collected' : ''}}" bindtap="toggleCollect">
-      <text>{{isCollected ? '★' : '☆'}} {{isCollected ? '已收藏' : '收藏'}}</text>
+    <!-- 收藏 -->
+    <view class="collect-row" bindtap="toggleCollect">
+      <text class="collect-icon">{{isCollected ? '★' : '☆'}}</text>
+      <text class="collect-text">{{isCollected ? '已收藏' : '收藏'}}</text>
     </view>
   </view>
 
-  <!-- 完成提示 -->
-  <view class="complete-card card" wx:if="{{isComplete}}">
-    <view class="complete-icon">✓</view>
+  <!-- 完成卡片 -->
+  <view class="complete-card" wx:if="{{isComplete}}">
+    <view class="complete-icon-wrap">
+      <text class="complete-check">✓</text>
+    </view>
     <view class="complete-title">学习完成！</view>
     <view class="complete-stats">
       <view class="stat-row">
-        <text>正确：</text>
-        <text class="text-success">{{correctCount}}</text>
+        <text class="stat-key">正确</text>
+        <text class="stat-val color-green">{{correctCount}}</text>
       </view>
       <view class="stat-row">
-        <text>错误：</text>
-        <text class="text-error">{{wrongCount}}</text>
+        <text class="stat-key">错误</text>
+        <text class="stat-val color-red">{{wrongCount}}</text>
       </view>
       <view class="stat-row">
-        <text>正确率：</text>
-        <text class="text-primary">{{accuracy}}%</text>
+        <text class="stat-key">正确率</text>
+        <text class="stat-val color-blue">{{accuracy}}%</text>
       </view>
     </view>
-    <view class="btn-primary" bindtap="backToHome">
-      返回首页
-    </view>
-    <view class="btn-secondary" bindtap="studyAgain">
-      再来一轮
+    <view class="complete-actions">
+      <button class="action-btn btn-primary-action" bindtap="backToHome">返回首页</button>
+      <button class="action-btn btn-secondary-action" bindtap="studyAgain">再来一轮</button>
     </view>
   </view>
 </view>

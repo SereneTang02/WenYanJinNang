@@ -1,19 +1,22 @@
 <!--pages/category/category.wxml-->
 <view class="container">
-  <view class="header-card card">
-    <view class="header-title">选择学习分类</view>
-    <view class="header-subtitle">按照不同分类学习古文实词</view>
+  <!-- 顶部栏 -->
+  <view class="hero-card">
+    <view class="hero-title">分类学习</view>
+    <view class="hero-sub">按年级选择实词进行背诵</view>
   </view>
 
-  <view class="category-list">
-    <view class="category-card card" wx:for="{{categories}}" wx:key="id" bindtap="selectCategory" data-category="{{item.name}}">
-      <view class="category-icon">{{item.icon}}</view>
-      <view class="category-info">
-        <view class="category-name">{{item.name}}</view>
-        <view class="category-desc">{{item.description}}</view>
-        <view class="category-count">共 {{item.count}} 个实词</view>
-      </view>
-      <view class="category-arrow">›</view>
+  <!-- 年级列表 -->
+  <view class="section-label">选择年级</view>
+
+  <view class="grade-card" wx:for="{{categories}}" wx:key="grade" bindtap="selectCategory" data-grade="{{item.grade}}">
+    <view class="grade-icon-wrap" style="background: {{index % 2 === 0 ? 'linear-gradient(135deg, #4facfe, #00f2fe)' : 'linear-gradient(135deg, #667eea, #764ba2)'}}">
+      <text class="grade-icon-text">{{item.grade}}</text>
     </view>
+    <view class="grade-info">
+      <view class="grade-name">{{item.name}}</view>
+      <view class="grade-count">共 {{item.count}} 个实词</view>
+    </view>
+    <view class="grade-arrow">›</view>
   </view>
 </view>

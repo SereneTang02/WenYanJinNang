@@ -1,16 +1,19 @@
 // pages/profile/profile.js
 const storage = require('../../utils/storage.js');
 
+const DEFAULT_AVATAR = '/image/profile.png';
+
 Page({
   data: {
     userInfo: null,
     role: null,
+    defaultAvatar: DEFAULT_AVATAR,
     stats: {
       totalWords: 0,
       masteredWords: 0,
       checkInStreak: 0
     },
-    hasChanged: false  // 是否有未保存的修改
+    hasChanged: false
   },
 
   onLoad() {
@@ -19,24 +22,22 @@ Page({
   },
 
   onShow() {
+    this.loadUserInfo();
     this.loadStats();
   },
 
-  /**
-   * 加载用户信息
-   */
   loadUserInfo() {
     const app = getApp();
     const loginInfo = wx.getStorageSync('userLoginInfo');
     this.setData({
-      userInfo: loginInfo || app.globalData.userInfo,
+      userInfo: loginInfo || app.globalData.userInfo || {},
       role: loginInfo?.role || app.globalData.role,
       hasChanged: false
     });
   },
 
   /**
-   * 选择头像（微信原生头像选择）
+   * 微信原生头像选择（底部弹出授权弹窗）
    */
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail;
@@ -47,13 +48,22 @@ Page({
   },
 
   /**
-   * 昵称输入
+   * 微信原生昵称输入
    */
   onNicknameInput(e) {
     this.setData({
       'userInfo.nickName': e.detail.value,
       hasChanged: true
     });
+  },
+
+  onNicknameBlur(e) {
+    if (e.detail.value && e.detail.value !== this.data.userInfo?.nickName) {
+      this.setData({
+        'userInfo.nickName': e.detail.value,
+        hasChanged: true
+      });
+    }
   },
 
   /**
@@ -66,12 +76,12 @@ Page({
     try {
       let avatarUrl = userInfo.avatarUrl;
 
-      // 如果是临时文件路径，上传到云存储
+      // 临时文件上传到云存储
       if (avatarUrl && (avatarUrl.startsWith('wxfile://') || avatarUrl.startsWith('http://tmp'))) {
         const app = getApp();
         const openid = app.globalData.openid;
         const uploadRes = await wx.cloud.uploadFile({
-          cloudPath: `avatars/${openid}.jpg`,
+          cloudPath: `avatars/${openid}_${Date.now()}.jpg`,
           filePath: avatarUrl
         });
         avatarUrl = uploadRes.fileID;
@@ -96,17 +106,14 @@ Page({
       });
 
       wx.hideLoading();
-      wx.showToast({ title: '保存成功', icon: 'success' });
+      wx.showToast({ title: '已保存', icon: 'success' });
     } catch (err) {
       wx.hideLoading();
       console.error('保存失败:', err);
-      wx.showToast({ title: '保存失败，请重试', icon: 'none' });
+      wx.showToast({ title: '保存失败', icon: 'none' });
     }
   },
 
-  /**
-   * 加载统计数据
-   */
   loadStats() {
     const progress = storage.getUserProgress();
     const totalWords = Object.keys(progress).length;
@@ -122,9 +129,6 @@ Page({
     this.setData({ stats: { totalWords, masteredWords, checkInStreak } });
   },
 
-  /**
-   * 退出登录
-   */
   onLogout() {
     wx.showModal({
       title: '确认退出',

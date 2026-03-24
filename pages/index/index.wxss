@@ -7,128 +7,246 @@ page {
   padding: 0 0 40rpx;
 }
 
-/* 顶部渐变卡片 */
-.welcome-card {
-  background: linear-gradient(160deg, #4A90E2 0%, #5BA3F5 100%);
-  padding: 60rpx 40rpx 50rpx;
+/* ===== 顶部英雄卡片 ===== */
+.hero-card {
+  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  padding: 50rpx 36rpx 40rpx;
   color: #fff;
-  text-align: center;
-  border-radius: 0 0 40rpx 40rpx;
-  margin-bottom: 40rpx;
+  border-radius: 0 0 48rpx 48rpx;
+  margin-bottom: 36rpx;
+  position: relative;
+  overflow: hidden;
 }
 
-.welcome-title {
-  font-size: 52rpx;
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: -60rpx;
+  right: -60rpx;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-top {
+  margin-bottom: 36rpx;
+}
+
+.greeting-text {
+  font-size: 44rpx;
   font-weight: bold;
-  margin-bottom: 16rpx;
+  margin-bottom: 8rpx;
 }
 
-.welcome-subtitle {
-  font-size: 28rpx;
-  opacity: 0.85;
-  margin-bottom: 50rpx;
+.greeting-sub {
+  font-size: 26rpx;
+  opacity: 0.75;
 }
 
+/* 每日进度条 */
+.daily-progress {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16rpx;
+  padding: 20rpx 24rpx;
+  margin-bottom: 32rpx;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14rpx;
+}
+
+.progress-title {
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+.progress-num {
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.progress-bar-bg {
+  height: 12rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 6rpx;
+  transition: width 0.5s ease;
+  min-width: 0;
+}
+
+/* 统计行 */
 .stats-row {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 }
 
 .stat-num {
-  font-size: 52rpx;
+  font-size: 48rpx;
   font-weight: bold;
-  margin-bottom: 8rpx;
+  margin-bottom: 6rpx;
 }
 
 .stat-label {
-  font-size: 24rpx;
-  opacity: 0.85;
+  font-size: 22rpx;
+  opacity: 0.8;
 }
 
-/* 白色功能卡片 */
-.section-card {
-  background: #fff;
-  border-radius: 24rpx;
-  padding: 40rpx 30rpx;
-  margin: 0 24rpx 30rpx;
-  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.06);
+.stat-divider {
+  width: 1rpx;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.section-title {
-  font-size: 34rpx;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30rpx;
-}
-
-/* 实心按钮 */
-.btn-primary {
-  width: 100%;
-  height: 96rpx;
-  line-height: 96rpx;
-  background: #4A90E2;
-  color: #fff;
-  border-radius: 16rpx;
-  font-size: 32rpx;
-  text-align: center;
-  margin-bottom: 20rpx;
-  border: none;
-}
-
-/* 描边按钮 */
-.btn-outline {
-  width: 100%;
-  height: 96rpx;
-  line-height: 96rpx;
-  background: #fff;
-  color: #4A90E2;
-  border-radius: 16rpx;
-  font-size: 32rpx;
-  text-align: center;
-  border: 2rpx solid #4A90E2;
-  box-sizing: border-box;
-}
-
-/* 每日学习标签 */
+/* ===== 区域标题 ===== */
 .section-label {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: bold;
   color: #333;
-  padding: 0 24rpx;
+  padding: 0 36rpx;
   margin-bottom: 20rpx;
 }
 
-/* 每日学习卡片 */
-.daily-card {
+/* ===== 快捷功能网格 ===== */
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+  padding: 0 24rpx;
+  margin-bottom: 36rpx;
+}
+
+.action-card {
   background: #fff;
-  border-radius: 24rpx;
-  padding: 50rpx 30rpx;
-  margin: 0 24rpx;
-  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.06);
+  border-radius: 20rpx;
+  padding: 28rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+}
+
+.action-card:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.action-icon-wrap {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 18rpx;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
 }
 
-.daily-icon {
-  font-size: 80rpx;
-  margin-bottom: 20rpx;
+.action-icon-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
 }
 
-.daily-title {
-  font-size: 36rpx;
+.random-bg {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.category-bg {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.practice-bg {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.pk-bg {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.action-name {
+  font-size: 30rpx;
   font-weight: bold;
   color: #333;
-  margin-bottom: 12rpx;
+  margin-bottom: 6rpx;
 }
 
-.daily-desc {
-  font-size: 26rpx;
+.action-desc {
+  font-size: 22rpx;
   color: #999;
+}
+
+/* ===== 今日任务卡片 ===== */
+.task-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-card:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.task-left {
+  flex: 1;
+}
+
+.task-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.task-sub {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 8rpx;
+}
+
+.task-progress-info {
+  font-size: 24rpx;
+  color: #4A90E2;
+  font-weight: 500;
+}
+
+.task-right {
+  margin-left: 24rpx;
+}
+
+.task-circle {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4A90E2, #5BA3F5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-circle-text {
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: bold;
 }

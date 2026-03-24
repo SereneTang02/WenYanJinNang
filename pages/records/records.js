@@ -4,39 +4,39 @@ const storage = require('../../utils/storage.js');
 Page({
   data: {
     errorWordsCount: 0,
-    favoriteWordsCount: 0
+    favoriteWordsCount: 0,
+    totalStudied: 0
   },
 
   onLoad() {
-    this.loadCounts();
+    this.loadData();
   },
 
   onShow() {
-    this.loadCounts();
+    this.loadData();
   },
 
-  // 加载统计数据
-  loadCounts() {
+  loadData() {
     const errorWords = storage.getCollectedWords();
     const favoriteWords = storage.getFavoriteWords();
+    const stats = storage.getStudyStats();
 
     this.setData({
       errorWordsCount: errorWords.length,
-      favoriteWordsCount: favoriteWords.length
+      favoriteWordsCount: favoriteWords.length,
+      totalStudied: stats.totalStudied
     });
   },
 
-  // 前往错题本
   goToErrorWords() {
-    wx.navigateTo({
-      url: '/pages/error-words/error-words'
-    });
+    wx.navigateTo({ url: '/pages/error-words/error-words' });
   },
 
-  // 前往收藏本
   goToFavorites() {
-    wx.navigateTo({
-      url: '/pages/collection/collection'
-    });
+    wx.navigateTo({ url: '/pages/collection/collection' });
+  },
+
+  goToWordList() {
+    wx.navigateTo({ url: '/pages/word-list/word-list' });
   }
 });

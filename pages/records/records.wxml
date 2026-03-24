@@ -1,33 +1,68 @@
 <!--pages/records/records.wxml-->
 <view class="container">
-  <!-- 头部标题 -->
-  <view class="header-card card">
-    <view class="header-title">学习记录</view>
-    <view class="header-subtitle">查看错题和收藏的词汇</view>
+  <!-- 顶部栏 -->
+  <view class="hero-card">
+    <view class="hero-title">学习记录</view>
+    <view class="hero-sub">查看错题和收藏的词汇</view>
+    <view class="hero-stats">
+      <view class="hero-stat">
+        <text class="hero-stat-num">{{errorWordsCount}}</text>
+        <text class="hero-stat-label">错题</text>
+      </view>
+      <view class="hero-stat-divider"></view>
+      <view class="hero-stat">
+        <text class="hero-stat-num">{{favoriteWordsCount}}</text>
+        <text class="hero-stat-label">收藏</text>
+      </view>
+      <view class="hero-stat-divider"></view>
+      <view class="hero-stat">
+        <text class="hero-stat-num">{{totalStudied}}</text>
+        <text class="hero-stat-label">已学</text>
+      </view>
+    </view>
   </view>
 
-  <!-- 记录卡片列表 -->
-  <view class="records-list">
-    <!-- 错题本 -->
-    <view class="record-card card" bindtap="goToErrorWords">
-      <view class="card-icon-large">📕</view>
-      <view class="card-content">
-        <view class="card-title">错题本</view>
-        <view class="card-desc">复习测试中答错的词汇</view>
-        <view class="card-count">{{errorWordsCount}} 个实词</view>
-      </view>
-      <view class="card-arrow">›</view>
-    </view>
+  <!-- 记录入口 -->
+  <view class="section-label">我的记录</view>
 
-    <!-- 收藏本 -->
-    <view class="record-card card" bindtap="goToFavorites">
-      <view class="card-icon-large">⭐</view>
-      <view class="card-content">
-        <view class="card-title">收藏本</view>
-        <view class="card-desc">查看自己收藏的重点词汇</view>
-        <view class="card-count">{{favoriteWordsCount}} 个实词</view>
-      </view>
-      <view class="card-arrow">›</view>
+  <view class="record-card" bindtap="goToErrorWords">
+    <view class="record-icon-wrap icon-red">
+      <text class="record-icon-text">错</text>
+    </view>
+    <view class="record-info">
+      <view class="record-name">错题本</view>
+      <view class="record-desc">复习答错的词汇，针对性加强</view>
+    </view>
+    <view class="record-right">
+      <view class="record-badge" wx:if="{{errorWordsCount > 0}}">{{errorWordsCount}}</view>
+      <view class="record-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="record-card" bindtap="goToFavorites">
+    <view class="record-icon-wrap icon-yellow">
+      <text class="record-icon-text">藏</text>
+    </view>
+    <view class="record-info">
+      <view class="record-name">收藏本</view>
+      <view class="record-desc">查看收藏的重点词汇</view>
+    </view>
+    <view class="record-right">
+      <view class="record-badge badge-yellow" wx:if="{{favoriteWordsCount > 0}}">{{favoriteWordsCount}}</view>
+      <view class="record-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="record-card" bindtap="goToWordList">
+    <view class="record-icon-wrap icon-blue">
+      <text class="record-icon-text">词</text>
+    </view>
+    <view class="record-info">
+      <view class="record-name">实词列表</view>
+      <view class="record-desc">浏览全部实词</view>
+    </view>
+    <view class="record-right">
+      <view class="record-arrow">›</view>
     </view>
   </view>
 </view>

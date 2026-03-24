@@ -1,79 +1,236 @@
 /* pages/records/records.wxss */
+page {
+  background: #f0f2f5;
+}
+
 .container {
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  padding: 20rpx;
+  padding: 0 0 40rpx;
 }
 
-/* 头部卡片 */
-.header-card {
-  text-align: center;
-  padding: 40rpx 30rpx;
-  margin-bottom: 30rpx;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+/* ===== 顶部英雄卡片 ===== */
+.hero-card {
+  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  padding: 50rpx 36rpx 40rpx;
+  color: #fff;
+  border-radius: 0 0 48rpx 48rpx;
+  margin-bottom: 36rpx;
+  position: relative;
+  overflow: hidden;
 }
 
-.header-title {
-  font-size: 48rpx;
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: -60rpx;
+  right: -60rpx;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-title {
+  font-size: 44rpx;
   font-weight: bold;
-  margin-bottom: 15rpx;
+  margin-bottom: 8rpx;
 }
 
-.header-subtitle {
-  font-size: 28rpx;
-  opacity: 0.9;
+.hero-sub {
+  font-size: 26rpx;
+  opacity: 0.75;
+  margin-bottom: 36rpx;
 }
 
-/* 记录列表 */
-.records-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
-}
-
-/* 记录卡片 */
-.record-card {
+.hero-stats {
   display: flex;
   align-items: center;
-  padding: 40rpx 30rpx;
-  transition: all 0.3s;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16rpx;
+  padding: 24rpx 0;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.hero-stat-num {
+  font-size: 44rpx;
+  font-weight: bold;
+  margin-bottom: 4rpx;
+}
+
+.hero-stat-label {
+  font-size: 22rpx;
+  opacity: 0.8;
+}
+
+.hero-stat-divider {
+  width: 1rpx;
+  height: 48rpx;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== 区域标题 ===== */
+.section-label {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  padding: 0 36rpx;
+  margin-bottom: 20rpx;
+}
+
+/* ===== 记录卡片 ===== */
+.record-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin: 0 24rpx 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
 }
 
 .record-card:active {
   transform: scale(0.98);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-.card-icon-large {
-  font-size: 80rpx;
-  margin-right: 30rpx;
+.record-icon-wrap {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+  flex-shrink: 0;
 }
 
-.card-content {
+.icon-red {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.icon-yellow {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.icon-blue {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.record-icon-text {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.record-info {
   flex: 1;
+  min-width: 0;
 }
 
-.card-title {
-  font-size: 36rpx;
+.record-name {
+  font-size: 30rpx;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10rpx;
+  margin-bottom: 6rpx;
 }
 
-.card-desc {
-  font-size: 26rpx;
-  color: #666;
-  margin-bottom: 10rpx;
+.record-desc {
+  font-size: 24rpx;
+  color: #999;
 }
 
-.card-count {
-  font-size: 28rpx;
-  color: #667eea;
+.record-right {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  flex-shrink: 0;
+}
+
+.record-badge {
+  min-width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 12rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: #fff;
+  font-size: 22rpx;
   font-weight: bold;
+  text-align: center;
 }
 
-.card-arrow {
-  font-size: 60rpx;
-  color: #ccc;
+.badge-yellow {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.record-arrow {
+  font-size: 32rpx;
+  color: #d0d0d0;
+}
+
+/* ===== 学习趋势 ===== */
+.trend-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.trend-bar-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20rpx;
+  padding: 0 8rpx;
+}
+
+.trend-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 8rpx;
+}
+
+.trend-count {
+  font-size: 22rpx;
+  color: #666;
+  font-weight: 500;
+}
+
+.trend-bar-bg {
+  width: 36rpx;
+  height: 140rpx;
+  background: #f0f2f5;
+  border-radius: 18rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.trend-bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #4A90E2, #2E6BA6);
+  border-radius: 18rpx;
+  transition: height 0.4s ease;
+  min-height: 0;
+}
+
+.trend-date {
+  font-size: 20rpx;
+  color: #bbb;
+}
+
+.trend-summary {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
 }

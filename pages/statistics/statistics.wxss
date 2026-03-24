@@ -1,158 +1,288 @@
 /* pages/statistics/statistics.wxss */
-.stats-header {
-  text-align: center;
-  background: linear-gradient(135deg, #52C41A 0%, #389E0D 100%);
-  color: white;
-  padding: 40rpx 30rpx;
+page {
+  background: #f0f2f5;
 }
 
-.header-icon {
-  font-size: 72rpx;
-  margin-bottom: 16rpx;
+.container {
+  padding: 0 0 40rpx;
 }
 
-.header-title {
-  font-size: 42rpx;
+/* ===== 顶部英雄卡片 ===== */
+.hero-card {
+  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  padding: 50rpx 36rpx 44rpx;
+  color: #fff;
+  border-radius: 0 0 48rpx 48rpx;
+  margin-bottom: 36rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-title {
+  font-size: 44rpx;
   font-weight: bold;
-}
-
-.progress-card {
-  margin-top: 20rpx;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 32rpx;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30rpx;
-}
-
-.progress-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30rpx 0;
-}
-
-.progress-num {
-  font-size: 56rpx;
-  font-weight: bold;
-  color: #4A90E2;
   margin-bottom: 8rpx;
 }
 
-.progress-label {
-  font-size: 24rpx;
-  color: #666;
+.hero-sub {
+  font-size: 26rpx;
+  opacity: 0.75;
+  margin-bottom: 36rpx;
+}
+
+/* 进度环区域 */
+.progress-ring-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-ring {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  border: 6rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.progress-ring-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ring-num {
+  font-size: 44rpx;
+  font-weight: bold;
+}
+
+.ring-label {
+  font-size: 22rpx;
+  opacity: 0.8;
 }
 
 .progress-detail {
-  font-size: 28rpx;
-  color: #666;
+  font-size: 26rpx;
+  opacity: 0.85;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20rpx;
-  margin-top: 20rpx;
+.highlight {
+  font-weight: bold;
+  font-size: 30rpx;
 }
 
-.stat-card {
-  text-align: center;
-  padding: 40rpx 20rpx;
-}
-
-.stat-value {
-  font-size: 52rpx;
+/* ===== 区域标题 ===== */
+.section-label {
+  font-size: 32rpx;
   font-weight: bold;
   color: #333;
-  margin-bottom: 12rpx;
+  padding: 0 36rpx;
+  margin-bottom: 20rpx;
 }
 
-.stat-label {
+/* ===== 核心数据网格 ===== */
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+  padding: 0 24rpx;
+  margin-bottom: 36rpx;
+}
+
+.data-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-icon-wrap {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14rpx;
+}
+
+.data-icon-text {
   font-size: 26rpx;
-  color: #666;
+  font-weight: bold;
+  color: #fff;
 }
 
-.recent-study {
-  margin-top: 20rpx;
+.icon-purple {
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-.recent-days {
+.icon-green {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.icon-blue {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.icon-red {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.data-value {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6rpx;
+}
+
+.color-green {
+  color: #52c41a;
+}
+
+.color-blue {
+  color: #4A90E2;
+}
+
+.color-red {
+  color: #f5576c;
+}
+
+.data-label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* ===== 柱状图卡片 ===== */
+.chart-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx 24rpx;
+  margin: 0 24rpx 36rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.chart-bar-area {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 20rpx;
+  padding: 0 8rpx;
 }
 
-.day-item {
-  flex: 1;
+.chart-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10rpx;
+  flex: 1;
+  gap: 8rpx;
 }
 
-.day-date {
+.chart-count {
   font-size: 22rpx;
-  color: #999;
+  color: #666;
+  font-weight: 500;
 }
 
-.day-bar {
-  width: 32rpx;
-  height: 120rpx;
-  background-color: #e8ecf1;
-  border-radius: 16rpx;
+.chart-bar-bg {
+  width: 36rpx;
+  height: 140rpx;
+  background: #f0f2f5;
+  border-radius: 18rpx;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.bar-fill {
+.chart-bar-fill {
   width: 100%;
-  background: linear-gradient(180deg, #4A90E2 0%, #357ABD 100%);
-  border-radius: 15rpx 15rpx 0 0;
-  transition: height 0.3s;
+  background: #e0e0e0;
+  border-radius: 18rpx;
+  transition: height 0.4s ease;
+  min-height: 0;
 }
 
-.day-count {
-  font-size: 22rpx;
-  color: #666;
+.chart-bar-fill.active {
+  background: linear-gradient(180deg, #4A90E2, #2E6BA6);
 }
 
-.recent-summary {
+.chart-date {
+  font-size: 20rpx;
+  color: #bbb;
+}
+
+.chart-summary {
   text-align: center;
-  font-size: 26rpx;
-  color: #666;
+  font-size: 24rpx;
+  color: #999;
 }
 
+/* ===== 鼓励卡片 ===== */
 .encourage-card {
-  margin-top: 20rpx;
-  text-align: center;
-  background: linear-gradient(135deg, #FFF7E6 0%, #FFE7BA 100%);
-  padding: 40rpx 30rpx;
+  background: linear-gradient(135deg, #fff9e6, #fff1cc);
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin: 0 24rpx 36rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.encourage-left {
+  margin-right: 24rpx;
+  flex-shrink: 0;
 }
 
 .encourage-icon {
   font-size: 64rpx;
-  margin-bottom: 16rpx;
+}
+
+.encourage-right {
+  flex: 1;
 }
 
 .encourage-text {
-  font-size: 30rpx;
-  color: #D48806;
+  font-size: 28rpx;
+  color: #d48806;
   line-height: 1.6;
+  font-weight: 500;
 }
 
-.danger-zone {
-  margin-top: 40rpx;
-  padding-bottom: 40rpx;
+/* ===== 危险操作 ===== */
+.danger-area {
+  padding: 0 24rpx;
 }
 
 .danger-btn {
-  color: #F5222D !important;
-  border-color: #F5222D !important;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  color: #ff4d4f;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  border: none;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.danger-btn::after {
+  border: none;
 }

@@ -1,16 +1,18 @@
 <!--pages/student-info/student-info.wxml-->
 <view class="container">
-  <!-- 顶部标题 -->
-  <view class="header">
-    <view class="header-icon">📝</view>
-    <view class="title">完善学生信息</view>
-    <view class="subtitle">填写基本信息，开始学习之旅</view>
+  <!-- 顶部栏 -->
+  <view class="hero-card">
+    <view class="hero-icon-wrap">
+      <text class="hero-icon-text">学</text>
+    </view>
+    <view class="hero-title">完善学生信息</view>
+    <view class="hero-sub">填写基本信息，开始学习之旅</view>
   </view>
 
   <!-- 表单区域 -->
-  <view class="form-container">
+  <view class="form-card">
     <!-- 年级选择（必填） -->
-    <view class="form-item required">
+    <view class="form-item">
       <view class="form-label">
         <text class="label-text">年级</text>
         <text class="required-star">*</text>
@@ -23,73 +25,51 @@
         bindchange="onGradeChange"
       >
         <view class="picker-content">
-          <text class="picker-value">{{grade || '请选择年级'}}</text>
+          <text class="picker-value {{grade ? '' : 'placeholder'}}">{{grade || '请选择年级'}}</text>
           <text class="picker-arrow">▼</text>
         </view>
       </picker>
     </view>
 
-    <!-- 学校名称（可选） -->
+    <!-- 学校名称 -->
     <view class="form-item">
       <view class="form-label">
         <text class="label-text">学校</text>
         <text class="optional-tag">选填</text>
       </view>
-      <input
-        class="input"
-        placeholder="请输入学校名称"
-        value="{{school}}"
-        bindinput="onSchoolInput"
-        maxlength="30"
-      />
+      <input class="form-input" placeholder="请输入学校名称" value="{{school}}" bindinput="onSchoolInput" maxlength="30" />
     </view>
 
-    <!-- 真实姓名（可选） -->
+    <!-- 真实姓名 -->
     <view class="form-item">
       <view class="form-label">
         <text class="label-text">姓名</text>
         <text class="optional-tag">选填</text>
       </view>
-      <input
-        class="input"
-        placeholder="请输入真实姓名"
-        value="{{realName}}"
-        bindinput="onRealNameInput"
-        maxlength="20"
-      />
+      <input class="form-input" placeholder="请输入真实姓名" value="{{realName}}" bindinput="onRealNameInput" maxlength="20" />
     </view>
 
-    <!-- 学号（可选） -->
-    <view class="form-item">
+    <!-- 学号 -->
+    <view class="form-item last">
       <view class="form-label">
         <text class="label-text">学号</text>
         <text class="optional-tag">选填</text>
       </view>
-      <input
-        class="input"
-        placeholder="请输入学号"
-        value="{{studentId}}"
-        bindinput="onStudentIdInput"
-        maxlength="20"
-      />
+      <input class="form-input" placeholder="请输入学号" value="{{studentId}}" bindinput="onStudentIdInput" maxlength="20" />
     </view>
   </view>
 
-  <!-- 提示信息 -->
-  <view class="tips">
-    <view class="tips-icon">💡</view>
-    <view class="tips-text">
-      <text>选填信息将帮助我们为您提供更精准的学习建议</text>
+  <!-- 提示 -->
+  <view class="tip-card">
+    <view class="tip-icon-wrap">
+      <text class="tip-icon-text">i</text>
     </view>
+    <text class="tip-text">选填信息将帮助我们为您提供更精准的学习建议</text>
   </view>
 
   <!-- 提交按钮 -->
-  <view class="submit-section">
-    <button
-      class="submit-button {{loading ? 'loading' : ''}}"
-      bindtap="onSubmit"
-      disabled="{{loading}}"
-    >
+  <view class="submit-area">
+    <button class="submit-btn {{loading ? 'disabled' : ''}}" bindtap="onSubmit" disabled="{{loading}}">
       {{loading ? '提交中...' : '完成'}}
     </button>
   </view>

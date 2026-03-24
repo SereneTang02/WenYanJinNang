@@ -1,18 +1,37 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <!-- 顶部统计卡片 -->
-  <view class="welcome-card">
-    <view class="welcome-title">古文实词背诵</view>
-    <view class="welcome-subtitle">学习古文实词，提升文言文阅读能力</view>
+  <!-- 顶部欢迎卡片 -->
+  <view class="hero-card">
+    <view class="hero-top">
+      <view class="greeting">
+        <view class="greeting-text">{{greeting}}，同学</view>
+        <view class="greeting-sub">今天也要加油背诵哦</view>
+      </view>
+    </view>
+
+    <!-- 每日进度 -->
+    <view class="daily-progress">
+      <view class="progress-header">
+        <text class="progress-title">今日进度</text>
+        <text class="progress-num">{{todayStudied}}/{{dailyTarget}}</text>
+      </view>
+      <view class="progress-bar-bg">
+        <view class="progress-bar-fill" style="width: {{dailyProgress}}%"></view>
+      </view>
+    </view>
+
+    <!-- 统计数字 -->
     <view class="stats-row">
       <view class="stat-item">
         <text class="stat-num">{{stats.totalStudied}}</text>
         <text class="stat-label">已学习</text>
       </view>
+      <view class="stat-divider"></view>
       <view class="stat-item">
         <text class="stat-num">{{stats.totalWords}}</text>
         <text class="stat-label">总词汇</text>
       </view>
+      <view class="stat-divider"></view>
       <view class="stat-item">
         <text class="stat-num">{{stats.accuracy}}%</text>
         <text class="stat-label">正确率</text>
@@ -20,18 +39,56 @@
     </view>
   </view>
 
-  <!-- 自主背诵 -->
-  <view class="section-card">
-    <view class="section-title">自主背诵</view>
-    <button class="btn-primary" bindtap="startRandomStudy">随机背诵</button>
-    <button class="btn-outline" bindtap="goToCategory">分类学习</button>
+  <!-- 快捷功能区 -->
+  <view class="section-label">快捷学习</view>
+  <view class="action-grid">
+    <view class="action-card action-random" bindtap="startRandomStudy">
+      <view class="action-icon-wrap random-bg">
+        <text class="action-icon-text">随</text>
+      </view>
+      <view class="action-name">随机背诵</view>
+      <view class="action-desc">随机抽取实词练习</view>
+    </view>
+
+    <view class="action-card action-category" bindtap="goToCategory">
+      <view class="action-icon-wrap category-bg">
+        <text class="action-icon-text">分</text>
+      </view>
+      <view class="action-name">分类学习</view>
+      <view class="action-desc">按年级分类背诵</view>
+    </view>
+
+    <view class="action-card action-practice" bindtap="goPractice">
+      <view class="action-icon-wrap practice-bg">
+        <text class="action-icon-text">练</text>
+      </view>
+      <view class="action-name">练习测试</view>
+      <view class="action-desc">测试巩固记忆</view>
+    </view>
+
+    <view class="action-card action-pk" bindtap="goToPK">
+      <view class="action-icon-wrap pk-bg">
+        <text class="action-icon-text">PK</text>
+      </view>
+      <view class="action-name">房间PK</view>
+      <view class="action-desc">和同学一起比拼</view>
+    </view>
   </view>
 
-  <!-- 每日学习 -->
-  <view class="section-label">每日学习</view>
-  <view class="daily-card" bindtap="goPractice">
-    <view class="daily-icon">📝</view>
-    <view class="daily-title">练习测试</view>
-    <view class="daily-desc">通过测试巩固记忆</view>
+  <!-- 每日任务卡片 -->
+  <view class="section-label">今日任务</view>
+  <view class="task-card" bindtap="startDailyTask">
+    <view class="task-left">
+      <view class="task-title">{{dailyTaskInfo.hasTask ? '继续今日任务' : '开始今日任务'}}</view>
+      <view class="task-sub">{{dailyTaskInfo.hasTask ? '旧词复习+新词学习' : '点击生成今日专属任务'}}</view>
+      <view class="task-progress-info" wx:if="{{dailyTaskInfo.hasTask}}">
+        <text>已完成 {{dailyTaskInfo.finishedCount}}/{{dailyTaskInfo.totalCount}} 题</text>
+      </view>
+    </view>
+    <view class="task-right">
+      <view class="task-circle">
+        <view class="task-circle-text">{{dailyTaskInfo.hasTask ? dailyTaskInfo.progress + '%' : 'GO'}}</view>
+      </view>
+    </view>
   </view>
 </view>

@@ -104,6 +104,10 @@ Page({
       const app = getApp();
       app.onLoginSuccess(userInfo);
 
+      // 保存年级到本地存储
+      const storage = require('../../utils/storage.js');
+      storage.setUserGrade(this.data.grade);
+
       // 检测本地是否有学习进度数据
       const hasLocalProgress = this.checkLocalProgress();
 
@@ -177,7 +181,7 @@ Page({
    * 跳转到首页
    */
   navigateToHome() {
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/index/index'
     });
   }
