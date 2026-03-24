@@ -105,10 +105,10 @@ Page({
   },
 
   /**
-   * 重点纠错（只练习差值>=3的）
+   * 重点纠错（只练习错误次数>=3的）
    */
   onPracticeFocus() {
-    const focusWords = this.data.errorWords.filter(w => w.diff >= 3);
+    const focusWords = this.data.errorWords.filter(w => w.progress.wrong >= 3);
 
     if (focusWords.length === 0) {
       wx.showToast({

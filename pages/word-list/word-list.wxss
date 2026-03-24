@@ -109,45 +109,86 @@
 
 .word-card {
   background-color: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 30rpx;
   margin-bottom: 20rpx;
   box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
   position: relative;
   transition: all 0.3s;
+  border-left: 8rpx solid transparent;
 }
 
 /* 词卡颜色等级 */
 .card-white {
   background-color: #fff;
-}
-
-.card-yellow {
-  background-color: #fffbe6;
-  border-left: 6rpx solid #faad14;
+  border-left-color: transparent;
 }
 
 .card-orange {
-  background-color: #fff1f0;
-  border-left: 6rpx solid #ff4d4f;
+  background-color: #fff8f0;
+  border-left-color: #fa8c16;
 }
 
+.card-red {
+  background-color: #fff1f0;
+  border-left-color: #ff4d4f;
+}
+
+/* 第一行：词 + 词性 + 徽章 */
 .word-header {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 20rpx;
 }
 
-.word-text {
-  font-size: 42rpx;
-  font-weight: bold;
-  color: #333;
-  margin-right: 15rpx;
+.word-title {
+  display: flex;
+  align-items: center;
 }
 
-.pinyin-text {
-  font-size: 26rpx;
-  color: #999;
+.word-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 16rpx;
+}
+
+.category-tag {
+  font-size: 22rpx;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+/* 状态徽章 */
+.error-badge {
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+}
+
+.badge-orange {
+  background-color: rgba(250, 140, 22, 0.12);
+}
+
+.badge-orange .badge-text {
+  color: #fa8c16;
+  font-weight: bold;
+}
+
+.badge-red {
+  background-color: rgba(255, 77, 79, 0.12);
+}
+
+.badge-red .badge-text {
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.badge-text {
+  font-size: 24rpx;
 }
 
 /* 标签行 */
@@ -158,21 +199,21 @@
 }
 
 .tag {
-  padding: 6rpx 16rpx;
-  border-radius: 12rpx;
+  padding: 6rpx 18rpx;
+  border-radius: 20rpx;
   font-size: 22rpx;
   margin-right: 12rpx;
   margin-bottom: 8rpx;
 }
 
 .tag-grade {
-  background-color: #e6f7ff;
-  color: #1890ff;
+  background-color: #e6fffb;
+  color: #13c2c2;
 }
 
 .tag-difficulty {
-  background-color: #f0f0f0;
-  color: #666;
+  background-color: #f6f0ff;
+  color: #722ed1;
 }
 
 .tag-yi-ci-duo-yi {
@@ -194,30 +235,6 @@
 .meanings-count {
   font-size: 24rpx;
   color: #999;
-}
-
-/* 错题标识 */
-.error-badge {
-  position: absolute;
-  top: 20rpx;
-  right: 20rpx;
-  padding: 8rpx 16rpx;
-  border-radius: 20rpx;
-  background-color: rgba(255, 77, 79, 0.1);
-}
-
-.error-text {
-  font-size: 22rpx;
-  color: #ff4d4f;
-  font-weight: bold;
-}
-
-.card-yellow .error-badge {
-  background-color: rgba(250, 173, 20, 0.1);
-}
-
-.card-yellow .error-text {
-  color: #faad14;
 }
 
 /* 空状态 */

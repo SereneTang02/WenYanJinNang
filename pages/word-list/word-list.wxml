@@ -71,13 +71,18 @@
       data-id="{{item.id}}"
       bindtap="onWordTap"
     >
-      <!-- 词和拼音 -->
+      <!-- 第一行：词 + 词性 + 徽章 -->
       <view class="word-header">
-        <text class="word-text">{{item.word}}</text>
-        <text class="pinyin-text" wx:if="{{item.pinyin}}">{{item.pinyin}}</text>
+        <view class="word-title">
+          <text class="word-text">{{item.word}}</text>
+          <text class="category-tag" wx:if="{{item.category}}">{{item.category}}</text>
+        </view>
+        <view class="error-badge badge-{{item.colorLevel}}" wx:if="{{item.colorLevel !== 'white'}}">
+          <text class="badge-text">{{item.colorLevel === 'red' ? '需加强' : '需巩固'}}</text>
+        </view>
       </view>
 
-      <!-- 标签区 -->
+      <!-- 第二行：标签区 -->
       <view class="tags-row">
         <text class="tag tag-grade" wx:if="{{item.grade}}">{{item.grade}}</text>
         <text class="tag tag-difficulty" wx:if="{{item.difficulty}}">{{item.difficulty}}</text>
@@ -87,27 +92,18 @@
           wx:for-item="tag"
           wx:key="key"
           wx:if="{{item.displayTags && item.displayTags.length > 0}}"
-        >
-          {{tag.label}}
-        </text>
+        >{{tag.label}}</text>
       </view>
 
       <!-- 义项数量 -->
       <view class="meanings-count">
         <text>{{item.meanings.length}}个义项</text>
       </view>
-
-      <!-- 错题标识 -->
-      <view class="error-badge" wx:if="{{item.colorLevel !== 'white'}}">
-        <text class="error-text">
-          {{item.colorLevel === 'yellow' ? '需巩固' : '需加强'}}
-        </text>
-      </view>
     </view>
 
     <!-- 空状态 -->
     <view class="empty-state" wx:if="{{filteredWords.length === 0}}">
-      <text class="empty-text">😔 没有找到相关实词</text>
+      <text class="empty-text">没有找到相关实词</text>
       <text class="empty-hint">试试调整筛选条件</text>
     </view>
   </scroll-view>

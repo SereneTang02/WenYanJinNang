@@ -202,17 +202,15 @@ function getWordColorLevel(wordId) {
   const wordProgress = progress[wordId];
 
   if (!wordProgress || wordProgress.wrong === 0) {
-    return 'white'; // 未做错或未练习
+    return 'white';
   }
 
-  const diff = wordProgress.wrong - wordProgress.correct;
-
-  if (diff <= 0) {
-    return 'white';
-  } else if (diff <= 2) {
-    return 'yellow'; // 浅黄
+  if (wordProgress.wrong >= 5) {
+    return 'red';    // 错5次以上 - 红色
+  } else if (wordProgress.wrong >= 3) {
+    return 'orange'; // 错3次 - 橙色
   } else {
-    return 'orange'; // 橙/红
+    return 'white';  // 错1-2次 - 白色
   }
 }
 
