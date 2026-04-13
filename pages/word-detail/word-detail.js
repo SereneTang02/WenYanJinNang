@@ -46,6 +46,10 @@ Page({
       wrong: 0
     };
 
+    // 计算正确率
+    const total = progress.correct + progress.wrong;
+    progress.rate = total > 0 ? Math.round((progress.correct / total) * 100) : 0;
+
     // 获取颜色等级
     const colorLevel = storage.getWordColorLevel(wordId);
 

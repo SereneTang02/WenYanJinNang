@@ -1,44 +1,85 @@
 <!--pages/collection/collection.wxml-->
 <view class="container">
-  <!-- 头部统计 -->
-  <view class="header-card card">
-    <view class="header-icon">📖</view>
-    <view class="header-title">错题本</view>
-    <view class="header-count">共收藏 {{collectedWords.length}} 个实词</view>
+  <!-- Hero 头部区 -->
+  <view class="hero-card">
+    <view class="hero-top">
+      <view class="hero-icon-wrap">
+        <text class="hero-icon-text">收</text>
+      </view>
+      <view class="hero-info">
+        <view class="hero-title">收藏本</view>
+        <view class="hero-sub">收藏重点词汇，随时复习</view>
+      </view>
+    </view>
+
+    <view class="stats-row">
+      <view class="stat-item">
+        <text class="stat-num">{{collectedWords.length}}</text>
+        <text class="stat-label">已收藏</text>
+      </view>
+    </view>
   </view>
 
-  <!-- 操作栏 -->
+  <!-- 操作按钮 -->
   <view class="action-bar" wx:if="{{collectedWords.length > 0}}">
-    <view class="btn-primary" bindtap="studyCollection">
-      开始复习
+    <view class="action-card" bindtap="studyCollection">
+      <view class="action-left">
+        <view class="action-icon-wrap review-bg">
+          <text class="action-icon-text">习</text>
+        </view>
+        <view class="action-text">
+          <view class="action-name">开始复习</view>
+          <view class="action-desc">复习全部收藏词汇</view>
+        </view>
+      </view>
+      <view class="action-right">
+        <view class="action-circle">
+          <text class="action-circle-text">GO</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 段落标题 -->
+  <view class="section-label" wx:if="{{collectedWords.length > 0}}">收藏列表</view>
+
+  <!-- 实词列表 -->
+  <view class="words-list" wx:if="{{collectedWords.length > 0}}">
+    <view class="word-card" wx:for="{{collectedWords}}" wx:key="id">
+      <view class="word-main" bindtap="showDetail" data-word="{{item}}">
+        <!-- 第一行：词 + 词性 -->
+        <view class="word-header">
+          <view class="word-title">
+            <text class="word-text">{{item.word}}</text>
+            <text class="category-tag" wx:if="{{item.category}}">{{item.category}}</text>
+          </view>
+        </view>
+
+        <!-- 第二行：拼音 -->
+        <view class="word-pinyin" wx:if="{{item.pinyin}}">{{item.pinyin}}</view>
+
+        <!-- 第三行：义项数 -->
+        <view class="meanings-count">{{item.meanings.length}} 个义项</view>
+      </view>
+
+      <!-- 操作行 -->
+      <view class="card-actions">
+        <view class="action-link" bindtap="showDetail" data-word="{{item}}">
+          查看详情
+        </view>
+        <view class="action-link danger" bindtap="removeWord" data-id="{{item.id}}">
+          移除收藏
+        </view>
+      </view>
     </view>
   </view>
 
   <!-- 空状态 -->
   <view class="empty-state" wx:if="{{collectedWords.length === 0}}">
-    <view class="empty-icon">📚</view>
-    <view class="empty-text">暂无收藏的实词</view>
-    <view class="empty-hint">学习时遇到不会的实词会自动添加到这里</view>
-  </view>
-
-  <!-- 实词列表 -->
-  <view class="words-list" wx:if="{{collectedWords.length > 0}}">
-    <view class="word-item card" wx:for="{{collectedWords}}" wx:key="id">
-      <view class="word-main" bindtap="showDetail" data-word="{{item}}">
-        <view class="word-left">
-          <view class="word-text">{{item.word}}</view>
-          <view class="word-pinyin">{{item.pinyin}}</view>
-        </view>
-        <view class="word-right">
-          <view class="word-category">{{item.category}}</view>
-          <view class="meanings-count">{{item.meanings.length}} 个义项</view>
-        </view>
-      </view>
-      <view class="word-actions">
-        <view class="action-btn" bindtap="removeWord" data-id="{{item.id}}">
-          移除
-        </view>
-      </view>
+    <view class="empty-icon-wrap">
+      <text class="empty-icon-text">藏</text>
     </view>
+    <text class="empty-text">暂无收藏的实词</text>
+    <text class="empty-hint">学习时遇到重要的实词，点击收藏按钮即可添加</text>
   </view>
 </view>

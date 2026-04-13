@@ -28,13 +28,11 @@ Page({
       userGrade: userGrade,
       originalWords: wordsData,
       filteredWords: wordsData,
-      selectedGrade: userGrade || '全部'
+      selectedGrade: '全部',
+      selectedDifficulty: '全部'
     });
 
-    // 如果有用户年级，默认筛选本年级词
-    if (userGrade) {
-      this.filterWords();
-    }
+    this.filterWords();
   },
 
   onShow() {
@@ -52,10 +50,8 @@ Page({
         const grade = ['七上', '七下', '八上', '八下', '九上', '九下'][res.tapIndex];
         storage.setUserGrade(grade);
         this.setData({
-          userGrade: grade,
-          selectedGrade: grade
+          userGrade: grade
         });
-        this.filterWords();
       }
     });
   },
@@ -114,23 +110,32 @@ Page({
     // 搜索关键字过滤
     if (this.data.searchKey) {
       const key = this.data.searchKey.toLowerCase();
-      words = words.filter(word => {
+      words = words.map(word => {
+        let matchType = '';
+
         // 搜索词本身
         if (word.word.toLowerCase().includes(key)) {
-          return true;
+          matchType = '实词';
         }
         // 搜索拼音
-        if (word.pinyin && word.pinyin.toLowerCase().includes(key)) {
-          return true;
+        else if (word.pinyin && word.pinyin.toLowerCase().includes(key)) {
+          matchType = '拼音';
         }
         // 搜索义项
-        if (word.meanings && word.meanings.some(m =>
+        else if (word.meanings && word.meanings.some(m =>
           m.gloss && m.gloss.includes(key)
         )) {
-          return true;
+          matchType = '义项';
         }
-        return false;
-      });
+        // 搜索例句
+        else if (word.meanings && word.meanings.some(m =>
+          m.examples && m.examples.some(ex => ex.text && ex.text.includes(key))
+        )) {
+          matchType = '例句';
+        }
+
+        return { ...word, matchType };
+      }).filter(word => word.matchType);
     }
 
     // 年级过滤
@@ -185,7 +190,7 @@ Page({
   onResetFilter() {
     this.setData({
       searchKey: '',
-      selectedGrade: this.data.userGrade || '全部',
+      selectedGrade: '全部',
       selectedDifficulty: '全部'
     });
     this.filterWords();

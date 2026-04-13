@@ -7,6 +7,7 @@
  * @property {string} [source] - 文章名
  * @property {string} [grade] - 课文所在年级
  * @property {number} [difficultyLevel] - 句子难度 (1-5)
+ * @property {boolean} [isNonExam] - 是否为非考文章
  */
 
 /**
@@ -65,7 +66,8 @@ const wordsData = [
             text: "比至陈，车六七百乘",
             source: "陈涉世家",
             grade: "九上",
-            difficultyLevel: 4
+            difficultyLevel: 4,
+            isNonExam: true
           }
         ]
       },
@@ -77,7 +79,9 @@ const wordsData = [
           {
             text: "心却比，男儿烈",
             source: "满江红·小住京华",
-            difficultyLevel: 3
+            grade: "九下",
+            difficultyLevel: 3,
+            isNonExam: true
           }
         ]
       }
@@ -140,6 +144,12 @@ const wordsData = [
             source: "得道多助，失道寡助",
             grade: "九下",
             difficultyLevel: 3
+          },
+          {
+            text: "今南方已定，兵甲已足",
+            source: "出师表",
+            grade: "九下",
+            difficultyLevel: 2
           }
         ]
       },
@@ -150,9 +160,9 @@ const wordsData = [
         isCore: true,
         examples: [
           {
-            text: "今南方已定，兵甲已足",
-            source: "出师表",
-            grade: "九下",
+            text: "可汗大点兵",
+            source: "木兰诗",
+            grade: "七上",
             difficultyLevel: 2
           }
         ]
@@ -163,8 +173,8 @@ const wordsData = [
         isCore: true,
         examples: [
           {
-            text: "可汗大点兵",
-            source: "木兰诗",
+            text: "一老河兵闻之",
+            source: "河中石兽",
             grade: "七下",
             difficultyLevel: 2
           }
@@ -176,8 +186,9 @@ const wordsData = [
         isCore: false,
         examples: [
           {
-            text: "一老河兵闻之",
-            source: "河中石兽",
+            text: "况乃未休兵",
+            source: "月夜忆舍弟",
+            grade: "九上",
             difficultyLevel: 3
           }
         ]
@@ -204,7 +215,7 @@ const wordsData = [
           {
             text: "未果，寻病终",
             source: "桃花源记",
-            grade: "八上",
+            grade: "八下",
             difficultyLevel: 2
           }
         ]
@@ -217,6 +228,7 @@ const wordsData = [
           {
             text: "病树前头万木春",
             source: "酬乐天扬州初逢席上见赠",
+            grade: "九上",
             difficultyLevel: 3
           }
         ]
@@ -224,7 +236,7 @@ const wordsData = [
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["桃花源记", "酬乐天扬州初逢席上见赠"]
@@ -256,6 +268,7 @@ const wordsData = [
           {
             text: "从今若许闲乘月",
             source: "游山西村",
+            grade: "七下",
             difficultyLevel: 3
           }
         ]
@@ -270,7 +283,8 @@ const wordsData = [
             text: "车六七百乘",
             source: "陈涉世家",
             grade: "九上",
-            difficultyLevel: 3
+            difficultyLevel: 3,
+            isNonExam: true
           }
         ]
       }
@@ -296,7 +310,9 @@ const wordsData = [
           {
             text: "锐兵刃，彀弓弩，持满",
             source: "周亚夫军细柳",
-            difficultyLevel: 4
+            grade: "八上",
+            difficultyLevel: 4,
+            isNonExam: true
           }
         ]
       },
@@ -337,6 +353,36 @@ const wordsData = [
             source: "《论语》十二章",
             grade: "七上",
             difficultyLevel: 2
+          },
+          {
+            text: "择其善者而从之",
+            source: "《论语》十二章",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "一狼得骨止，一狼仍从",
+            source: "狼",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "隶而从者，崔氏二小生",
+            source: "小石潭记",
+            grade: "八下",
+            difficultyLevel: 3
+          },
+          {
+            text: "太守归而宾客从也",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 2
+          },
+          {
+            text: "战则请从",
+            source: "曹刿论战",
+            grade: "九下",
+            difficultyLevel: 2
           }
         ]
       },
@@ -346,10 +392,10 @@ const wordsData = [
         isCore: true,
         examples: [
           {
-            text: "择其善者而从之",
-            source: "《论语》十二章",
-            grade: "七上",
-            difficultyLevel: 2
+            text: "小惠未徧，民弗从也",
+            source: "曹刿论战",
+            grade: "九下",
+            difficultyLevel: 3
           }
         ]
       },
@@ -377,6 +423,12 @@ const wordsData = [
             source: "小石潭记",
             grade: "八下",
             difficultyLevel: 2
+          },
+          {
+            text: "乃大惊，问所从来",
+            source: "桃花源记",
+            grade: "八下",
+            difficultyLevel: 2
           }
         ]
       },
@@ -388,6 +440,7 @@ const wordsData = [
           {
             text: "鲦鱼出游从容",
             source: "庄子与惠子游于濠梁之上",
+            grade: "八下",
             difficultyLevel: 4
           }
         ]
@@ -483,6 +536,12 @@ const wordsData = [
             source: "卖油翁",
             grade: "七下",
             difficultyLevel: 2
+          },
+          {
+            text: "咨臣以当世之事",
+            source: "出师表",
+            grade: "九下",
+            difficultyLevel: 3
           }
         ]
       },
@@ -493,9 +552,27 @@ const wordsData = [
         isCore: true,
         examples: [
           {
+            text: "耕当问奴，织当问婢",
+            source: "书戴嵩画牛",
+            grade: "六上",
+            difficultyLevel: 2
+          },
+          {
+            text: "日月星宿，不当坠耶",
+            source: "杞人忧天",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
             text: "但当涉猎，见往事耳",
             source: "孙权劝学",
             grade: "七下",
+            difficultyLevel: 2
+          },
+          {
+            text: "当奖率三军",
+            source: "出师表",
+            grade: "九下",
             difficultyLevel: 2
           }
         ]
@@ -521,7 +598,7 @@ const wordsData = [
           {
             text: "木兰当户织",
             source: "木兰诗",
-            grade: "七下",
+            grade: "七上",
             difficultyLevel: 2
           }
         ]
@@ -563,6 +640,18 @@ const wordsData = [
             source: "小石潭记",
             grade: "八下",
             difficultyLevel: 2
+          },
+          {
+            text: "先帝创业未半，而中道崩殂",
+            source: "出师表",
+            grade: "九下",
+            difficultyLevel: 3
+          },
+          {
+            text: "行道之人弗受",
+            source: "鱼我所欲也",
+            grade: "九下",
+            difficultyLevel: 3
           }
         ]
       },
@@ -572,10 +661,22 @@ const wordsData = [
         isCore: true,
         examples: [
           {
-            text: "先帝创业未半，而中道崩殂",
+            text: "虽有至道，弗学，不知其善也",
+            source: "虽有嘉肴",
+            grade: "八下",
+            difficultyLevel: 3
+          },
+          {
+            text: "以咨诹善道，察纳雅言",
             source: "出师表",
             grade: "九下",
             difficultyLevel: 3
+          },
+          {
+            text: "大道之行也",
+            source: "大道之行也",
+            grade: "八下",
+            difficultyLevel: 2
           }
         ]
       },
@@ -601,7 +702,7 @@ const wordsData = [
           {
             text: "不足为外人道也",
             source: "桃花源记",
-            grade: "八上",
+            grade: "八下",
             difficultyLevel: 2
           }
         ]
@@ -620,9 +721,127 @@ const wordsData = [
     pinyin: "dé/de",
     category: "动词/助词",
     meanings: [
-      { id: 1, gloss: "得到，获得", isCore: true, examples: [{ text: "一狼得骨止", source: "狼", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "能够、可以", usageNote: "用于否定句表示不能", isCore: true, examples: [{ text: "天子先驱至，不得入", source: "周亚夫军细柳", difficultyLevel: 3 }] },
-      { id: 3, gloss: "同'德'，感恩", isCore: false, examples: [{ text: "所识穷乏者得我与", source: "鱼我所欲也", grade: "九下", difficultyLevel: 4 }] }
+      {
+        id: 1,
+        gloss: "得到，获得（取得）",
+        isCore: true,
+        examples: [
+          {
+            text: "穿井得一人",
+            source: "穿井得一人",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "一狼得骨止",
+            source: "狼",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "得道者多助，失道者寡助",
+            source: "得道多助，失道寡助",
+            grade: "八上",
+            difficultyLevel: 3
+          },
+          {
+            text: "夫环而攻之，必有得天时者矣",
+            source: "得道多助，失道寡助",
+            grade: "八上",
+            difficultyLevel: 3
+          },
+          {
+            text: "故不为苟得也",
+            source: "鱼我所欲也",
+            grade: "九下",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 2,
+        gloss: "得到，获得（看到，看见）",
+        isCore: true,
+        examples: [
+          {
+            text: "林尽水源，便得一山",
+            source: "桃花源记",
+            grade: "八下",
+            difficultyLevel: 2
+          }
+        ]
+      },
+      {
+        id: 3,
+        gloss: "得到，获得（领会）",
+        isCore: true,
+        examples: [
+          {
+            text: "得之心而寓之酒也",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 4,
+        gloss: "得到，获得（找到）",
+        isCore: true,
+        examples: [
+          {
+            text: "求二石兽于水中，竟不可得",
+            source: "河中石兽",
+            grade: "七下",
+            difficultyLevel: 3
+          },
+          {
+            text: "如其言，果得于数里外",
+            source: "河中石兽",
+            grade: "七下",
+            difficultyLevel: 3
+          },
+          {
+            text: "既出，得其船",
+            source: "桃花源记",
+            grade: "八下",
+            difficultyLevel: 2
+          },
+          {
+            text: "遂迷，不复得路",
+            source: "桃花源记",
+            grade: "八下",
+            difficultyLevel: 2
+          }
+        ]
+      },
+      {
+        id: 5,
+        gloss: "能够、可以",
+        usageNote: "用于否定句表示不能",
+        isCore: true,
+        examples: [
+          {
+            text: "天子先驱至，不得入",
+            source: "周亚夫军细柳",
+            grade: "八上",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 6,
+        gloss: "同'德'，感恩",
+        isCore: false,
+        examples: [
+          {
+            text: "所识穷乏者得我与",
+            source: "鱼我所欲也",
+            grade: "九下",
+            difficultyLevel: 4
+          }
+        ]
+      }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -640,7 +859,10 @@ const wordsData = [
       { id: 1, gloss: "与'耳'连用，相当于'而已''罢了'", usageNote: "表示限制语气", isCore: true, examples: [{ text: "无他，但手熟尔", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] },
       { id: 2, gloss: "附在形容词、动词后", isCore: false, examples: [{ text: "呼尔而与之", source: "鱼我所欲也", grade: "九下", difficultyLevel: 3 }] },
       { id: 3, gloss: "词尾，相当于'地''然'", isCore: false, examples: [{ text: "俶尔远逝", source: "小石潭记", grade: "八下", difficultyLevel: 3 }] },
-      { id: 4, gloss: "代词，你", isCore: true, examples: [{ text: "尔安敢轻吾射", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] },
+      { id: 4, gloss: "代词，你", isCore: true, examples: [
+        { text: "尔安敢轻吾射", source: "卖油翁", grade: "七下", difficultyLevel: 2 },
+        { text: "尔辈不能究物理", source: "河中石兽", grade: "七下", difficultyLevel: 3 }
+      ] },
       { id: 5, gloss: "指示代词，这，那", isCore: false, examples: [{ text: "尔来二十有一年矣", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
@@ -672,7 +894,7 @@ const wordsData = [
     pinyin: "fàn",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "侵害，危害", isCore: false, examples: [{ text: "至于亚夫，可得而犯邪", source: "周亚夫军细柳", difficultyLevel: 3 }] },
+      { id: 1, gloss: "侵害，危害", isCore: false, examples: [{ text: "至于亚夫，可得而犯邪", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3, isNonExam: true }] },
       { id: 2, gloss: "触犯，违犯", isCore: true, examples: [{ text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
@@ -688,10 +910,70 @@ const wordsData = [
     pinyin: "fāng",
     category: "名词/副词",
     meanings: [
-      { id: 1, gloss: "方圆，周围", isCore: true, examples: [{ text: "太行、王屋二山，方七百里", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "区域，地方", isCore: true, examples: [{ text: "今齐地方千里", source: "邹忌讽齐王纳谏", difficultyLevel: 3 }] },
-      { id: 3, gloss: "将，将要", isCore: false, examples: [{ text: "今南方已定", source: "出师表", grade: "九下", difficultyLevel: 2 }] },
-      { id: 4, gloss: "表示时间、相当于'始''才'", isCore: true, examples: [{ text: "方欲行，转视积薪后", source: "狼", grade: "七上", difficultyLevel: 3 }] }
+      {
+        id: 1,
+        gloss: "方圆，周围",
+        isCore: true,
+        examples: [
+          {
+            text: "太行、王屋二山，方七百里",
+            source: "愚公移山",
+            grade: "八上",
+            difficultyLevel: 2
+          },
+          {
+            text: "今齐地方千里，百二十城",
+            source: "邹忌讽齐王纳谏",
+            grade: "九下",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 2,
+        gloss: "区域，地方",
+        isCore: true,
+        examples: [
+          {
+            text: "有朋自远方来，不亦乐乎",
+            source: "《论语》十二章",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "今南方已定，兵甲已足",
+            source: "出师表",
+            grade: "九下",
+            difficultyLevel: 2
+          }
+        ]
+      },
+      {
+        id: 3,
+        gloss: "将，将要",
+        isCore: false,
+        examples: [
+          {
+            text: "方欲行，转视积薪后",
+            source: "狼",
+            grade: "七上",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 4,
+        gloss: "表示时间、相当于'始''才'",
+        isCore: true,
+        examples: [
+          {
+            text: "方鼓琴志在太山",
+            source: "伯牙鼓琴",
+            grade: "六上",
+            difficultyLevel: 3
+          }
+        ]
+      }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -706,7 +988,25 @@ const wordsData = [
     pinyin: "fù",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "背，以背载物", isCore: true, examples: [{ text: "帝感其诚，命夸娥氏二子负二山", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
+      {
+        id: 1,
+        gloss: "背，以背载物",
+        isCore: true,
+        examples: [
+          {
+            text: "帝感其诚，命夸娥氏二子负二山",
+            source: "愚公移山",
+            grade: "八上",
+            difficultyLevel: 2
+          },
+          {
+            text: "至于负者歌于途，行者休于树",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 3
+          }
+        ]
+      },
       { id: 2, gloss: "凭借，依仗，倚靠", isCore: true, examples: [{ text: "皆生寒树，负势竞上", source: "与朱元思书", grade: "八上", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
@@ -723,7 +1023,7 @@ const wordsData = [
     category: "名词/动词",
     meanings: [
       { id: 1, gloss: "一种文体", isCore: true, examples: [{ text: "刻唐贤今人诗赋于其上", source: "岳阳楼记", grade: "九下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "写作", isCore: false, examples: [{ text: "为陈同赋壮词以寄之", source: "破阵子", difficultyLevel: 3 }] }
+      { id: 2, gloss: "写作", isCore: false, examples: [{ text: "为陈同赋壮词以寄之", source: "破阵子·为陈同甫赋壮词以寄之", grade: "九上", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: [],
@@ -739,9 +1039,11 @@ const wordsData = [
     category: "副词/名词",
     meanings: [
       { id: 1, gloss: "另，另外", isCore: true, examples: [{ text: "士别三日，即更刮目相待", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "再", isCore: true, examples: [{ text: "室中更无人", source: "石壕吏", difficultyLevel: 2 }] },
-      { id: 3, gloss: "又，还", isCore: false, examples: [{ text: "湖中焉得更有此人", source: "湖心亭看雪", difficultyLevel: 3 }] },
-      { id: 4, gloss: "夜间计时的单位", isCore: false, examples: [{ text: "是日更定矣", source: "湖心亭看雪", difficultyLevel: 4 }] }
+      { id: 2, gloss: "再", isCore: true, examples: [
+        { text: "室中更无人，惟有乳下孙", source: "石壕吏", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "又，还", isCore: false, examples: [{ text: "湖中焉得更有此人", source: "湖心亭看雪", grade: "九上", difficultyLevel: 3 }] },
+      { id: 4, gloss: "夜间计时的单位", isCore: false, examples: [{ text: "是日更定矣", source: "湖心亭看雪", grade: "九上", difficultyLevel: 4 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -772,10 +1074,119 @@ const wordsData = [
     pinyin: "gù",
     category: "名词/副词/形容词",
     meanings: [
-      { id: 1, gloss: "过去，原来，照旧", isCore: true, examples: [{ text: "温故而知新", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "原因，缘故", isCore: true, examples: [{ text: "既克，公问其故", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "所以，因此", usageNote: "连词用法", isCore: true, examples: [{ text: "故天将降大任于是人也", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 4, gloss: "特意", isCore: false, examples: [{ text: "故遣将守关者", source: "鸿门宴", difficultyLevel: 4 }] }
+      {
+        id: 1,
+        gloss: "过去，原来，照旧",
+        isCore: true,
+        examples: [
+          {
+            text: "温故而知新，可以为师矣",
+            source: "《论语》十二章",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "骨已尽矣，而两狼之并驱如故",
+            source: "狼",
+            grade: "七上",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 2,
+        gloss: "原因，缘故",
+        isCore: true,
+        examples: [
+          {
+            text: "见两小儿辩斗，问其故",
+            source: "两小儿辩日",
+            grade: "六下",
+            difficultyLevel: 2
+          },
+          {
+            text: "既克，公问其故",
+            source: "曹刿论战",
+            grade: "九下",
+            difficultyLevel: 2
+          }
+        ]
+      },
+      {
+        id: 3,
+        gloss: "所以，因此",
+        usageNote: "连词用法",
+        isCore: true,
+        examples: [
+          {
+            text: "故君子有不战，战必胜矣",
+            source: "得道多助，失道寡助",
+            grade: "八上",
+            difficultyLevel: 3
+          },
+          {
+            text: "故天将降大任于是人也",
+            source: "生于忧患，死于安乐",
+            grade: "八上",
+            difficultyLevel: 3
+          },
+          {
+            text: "是故学然后知不足",
+            source: "虽有嘉肴",
+            grade: "八下",
+            difficultyLevel: 3
+          },
+          {
+            text: "故日：教学相长也",
+            source: "虽有嘉肴",
+            grade: "八下",
+            difficultyLevel: 3
+          },
+          {
+            text: "故虽有名马，祗辱于奴隶人之手",
+            source: "马说",
+            grade: "八下",
+            difficultyLevel: 3
+          },
+          {
+            text: "故自号曰醉翁也",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 2
+          },
+          {
+            text: "故临崩寄臣以大事也",
+            source: "出师表",
+            grade: "九下",
+            difficultyLevel: 3
+          },
+          {
+            text: "故五月渡泸，深入不毛",
+            source: "出师表",
+            grade: "九下",
+            difficultyLevel: 3
+          },
+          {
+            text: "故克之",
+            source: "曹刿论战",
+            grade: "九下",
+            difficultyLevel: 2
+          }
+        ]
+      },
+      {
+        id: 4,
+        gloss: "特意",
+        isCore: false,
+        examples: [
+          {
+            text: "余故道为学之难以告之",
+            source: "送东阳马生序",
+            grade: "九下",
+            difficultyLevel: 4
+          }
+        ]
+      }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -790,7 +1201,25 @@ const wordsData = [
     pinyin: "gù",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "回头看，看，看见", isCore: true, examples: [{ text: "元方入门不顾", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 }] },
+      {
+        id: 1,
+        gloss: "回头看，看，看见",
+        isCore: true,
+        examples: [
+          {
+            text: "元方入门不顾",
+            source: "陈太丘与友期行",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "顾野有麦场",
+            source: "狼",
+            grade: "七上",
+            difficultyLevel: 2
+          }
+        ]
+      },
       { id: 2, gloss: "拜访", usageNote: "常用于拜访贤人", isCore: true, examples: [{ text: "三顾臣于草庐之中", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
@@ -806,8 +1235,44 @@ const wordsData = [
     pinyin: "guān",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "看，仔细看", isCore: true, examples: [{ text: "启窗而观", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "景象", isCore: true, examples: [{ text: "予观夫巴陵胜状", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] }
+      {
+        id: 1,
+        gloss: "看，仔细看（观赏）",
+        isCore: true,
+        examples: [
+          {
+            text: "启窗而观",
+            source: "核舟记",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "可远观而不可亵玩焉",
+            source: "爱莲说",
+            grade: "七下",
+            difficultyLevel: 3
+          },
+          {
+            text: "予观夫巴陵胜状",
+            source: "岳阳楼记",
+            grade: "九上",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 2,
+        gloss: "景象",
+        isCore: true,
+        examples: [
+          {
+            text: "此则岳阳楼之大观也",
+            source: "岳阳楼记",
+            grade: "九上",
+            difficultyLevel: 3
+          }
+        ]
+      }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -822,9 +1287,70 @@ const wordsData = [
     pinyin: "guī",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "归来，返回", isCore: true, examples: [{ text: "一屠晚归", source: "狼", grade: "七上", difficultyLevel: 1 }] },
-      { id: 2, gloss: "归属，归依", isCore: true, examples: [{ text: "微斯人，吾谁与归", source: "岳阳楼记", grade: "九下", difficultyLevel: 4 }] },
-      { id: 3, gloss: "女子出嫁", usageNote: "古代女性专用", isCore: false, examples: [{ text: "男有分，女有归", source: "大道之行也", difficultyLevel: 3 }] }
+      {
+        id: 1,
+        gloss: "归来，返回",
+        isCore: true,
+        examples: [
+          {
+            text: "一屠晚归",
+            source: "狼",
+            grade: "七上",
+            difficultyLevel: 1
+          },
+          {
+            text: "壮士十年归",
+            source: "木兰诗",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "朝而往，暮而归",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 2
+          },
+          {
+            text: "太守归而宾客从也",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 2
+          }
+        ]
+      },
+      {
+        id: 2,
+        gloss: "归属，归依（聚拢）",
+        isCore: true,
+        examples: [
+          {
+            text: "微斯人，吾谁与归",
+            source: "岳阳楼记",
+            grade: "九上",
+            difficultyLevel: 4
+          },
+          {
+            text: "云归而岩穴暝",
+            source: "醉翁亭记",
+            grade: "九上",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 3,
+        gloss: "女子出嫁",
+        usageNote: "古代女性专用",
+        isCore: false,
+        examples: [
+          {
+            text: "男有分，女有归",
+            source: "大道之行也",
+            grade: "八下",
+            difficultyLevel: 3
+          }
+        ]
+      }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -839,10 +1365,52 @@ const wordsData = [
     pinyin: "guò",
     category: "动词/形容词",
     meanings: [
-      { id: 1, gloss: "犯错", isCore: true, examples: [{ text: "人恒过，然后能改", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
+      {
+        id: 1,
+        gloss: "犯错",
+        isCore: true,
+        examples: [
+          {
+            text: "人恒过，然后能改",
+            source: "生于忧患，死于安乐",
+            grade: "八上",
+            difficultyLevel: 3
+          }
+        ]
+      },
       { id: 2, gloss: "过分，过于", isCore: true, examples: [{ text: "以其境过清", source: "小石潭记", grade: "八下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "过了，超过", isCore: true, examples: [{ text: "过中不至，太丘舍去", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 }] },
-      { id: 4, gloss: "经过", isCore: true, examples: [{ text: "及鲁肃过寻阳", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] }
+      {
+        id: 3,
+        gloss: "过了，超过",
+        isCore: true,
+        examples: [
+          {
+            text: "过中不至，太丘舍去",
+            source: "陈太丘与友期行",
+            grade: "七上",
+            difficultyLevel: 2
+          },
+          {
+            text: "况才之过于余者乎",
+            source: "送东阳马生序",
+            grade: "九下",
+            difficultyLevel: 3
+          }
+        ]
+      },
+      {
+        id: 4,
+        gloss: "经过",
+        isCore: true,
+        examples: [
+          {
+            text: "及鲁肃过寻阳",
+            source: "孙权劝学",
+            grade: "七下",
+            difficultyLevel: 2
+          }
+        ]
+      }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -858,8 +1426,11 @@ const wordsData = [
     category: "形容词/动词",
     meanings: [
       { id: 1, gloss: "美丽的", isCore: true, examples: [{ text: "好鸟相鸣", source: "与朱元思书", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "使人满意，与'坏'相对", isCore: true, examples: [{ text: "窈窕淑女，君子好逑", source: "关雎", difficultyLevel: 3 }] },
-      { id: 3, gloss: "爱好", isCore: true, examples: [{ text: "蜀中有杜处士，好书画", source: "书戴嵩画牛", difficultyLevel: 2 }] }
+      { id: 2, gloss: "使人满意，与'坏'相对", isCore: true, examples: [{ text: "窈窕淑女，君子好逑", source: "关雎", grade: "八下", difficultyLevel: 3 }] },
+      { id: 3, gloss: "爱好", isCore: true, examples: [
+        { text: "蜀中有杜处士，好书画", source: "书戴嵩画牛", grade: "六上", difficultyLevel: 2 },
+        { text: "知之者不如好之者", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "duo-yin-zi"],
@@ -874,7 +1445,7 @@ const wordsData = [
     pinyin: "hào/háo",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "大叫，呼啸", isCore: true, examples: [{ text: "阴风怒号", source: "岳阳楼记", grade: "九下", difficultyLevel: 2 }] },
+      { id: 1, gloss: "大叫，呼啸", isCore: true, examples: [{ text: "阴风怒号，浊浪排空", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 }] },
       { id: 2, gloss: "取名号", isCore: true, examples: [{ text: "故自号曰醉翁也", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
@@ -890,8 +1461,12 @@ const wordsData = [
     pinyin: "huán/hái",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "返回，回到", isCore: true, examples: [{ text: "愿驰千里足，送儿还故乡", source: "木兰诗", grade: "七下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "交还，归还", isCore: true, examples: [{ text: "便要还家，设酒杀鸡作食", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "返回，回到", isCore: true, examples: [
+        { text: "愿驰千里足，送儿还故乡", source: "木兰诗", grade: "七上", difficultyLevel: 2 },
+        { text: "便要还家，设酒杀鸡作食", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "兴复汉室，还于旧都", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "交还，归还", isCore: true, examples: [{ text: "计日以还", source: "送东阳马生序", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["duo-yin-zi"],
@@ -906,9 +1481,13 @@ const wordsData = [
     pinyin: "huì",
     category: "动词/副词",
     meanings: [
-      { id: 1, gloss: "会合，聚会，集会", isCore: true, examples: [{ text: "迁客骚人，多会于此", source: "岳阳楼记", grade: "九下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "适逢，恰巧遇到", isCore: true, examples: [{ text: "会天大雨", source: "陈涉世家", grade: "九上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "终将", isCore: false, examples: [{ text: "会当凌绝顶", source: "望岳", difficultyLevel: 3 }] }
+      { id: 1, gloss: "会合，聚会，集会", isCore: true, examples: [{ text: "迁客骚人，多会于此", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 }] },
+      { id: 2, gloss: "适逢，恰巧遇到", isCore: true, examples: [{ text: "会天大雨", source: "陈涉世家", grade: "九下", difficultyLevel: 2 }] },
+      { id: 3, gloss: "终将", isCore: false, examples: [
+        { text: "会当凌绝顶", source: "望岳", grade: "七上", difficultyLevel: 3 },
+        { text: "长风破浪会有时", source: "行路难（其一）", grade: "七上", difficultyLevel: 3 },
+        { text: "会挽雕弓如满月", source: "江城子·密州出猎", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -939,8 +1518,13 @@ const wordsData = [
     pinyin: "jí",
     category: "动词/连词/介词",
     meanings: [
-      { id: 1, gloss: "到，到了，待，等到", isCore: true, examples: [{ text: "及日中则如盘盂", source: "两小儿辩日", difficultyLevel: 2 }] },
-      { id: 2, gloss: "比得上，来得及", isCore: true, examples: [{ text: "悲守穷庐，将复何及", source: "诫子书", grade: "八上", difficultyLevel: 3 }] },
+      { id: 1, gloss: "到，到了，待，等到", isCore: true, examples: [
+        { text: "及日中则如盘盂", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 },
+        { text: "及其家穿井", source: "穿井得一人", grade: "七上", difficultyLevel: 2 },
+        { text: "及鲁肃过寻阳", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "及郡下，诣太守", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "比得上，来得及", isCore: true, examples: [{ text: "悲守穷庐，将复何及", source: "诫子书", grade: "七上", difficultyLevel: 3 }] },
       { id: 3, gloss: "以及，和，与", usageNote: "连词用法", isCore: true, examples: [{ text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
@@ -956,9 +1540,15 @@ const wordsData = [
     pinyin: "jí",
     category: "名词/形容词/副词",
     meanings: [
-      { id: 1, gloss: "尽头，穷尽", isCore: true, examples: [{ text: "其远而无所至极耶", source: "北冥有鱼", difficultyLevel: 4 }] },
-      { id: 2, gloss: "到极点，达到极限", isCore: true, examples: [{ text: "感极而悲者矣", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "很，非常", isCore: false, examples: [{ text: "初极狭，才通人", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "尽头，穷尽", isCore: true, examples: [
+        { text: "其远而无所至极耶", source: "北冥有鱼", grade: "八下", difficultyLevel: 4 },
+        { text: "渔歌互答，此乐何极", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "到极点，达到极限", isCore: true, examples: [
+        { text: "感极而悲者矣", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "然则北通巫峡，南极潇湘", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "很，非常", isCore: false, examples: [{ text: "初极狭，才通人", source: "桃花源记", grade: "八下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -973,8 +1563,11 @@ const wordsData = [
     pinyin: "jì",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "计算，计量，总计", isCore: true, examples: [{ text: "通计一舟，为人五", source: "核舟记", grade: "八下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "计划，策划", isCore: true, examples: [{ text: "而计其长曾不盈寸", source: "核舟记", grade: "八下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "计算，计量，总计", isCore: true, examples: [
+        { text: "通计一舟，为人五", source: "核舟记", grade: "八下", difficultyLevel: 3 },
+        { text: "而计其长曾不盈寸", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "则汉室之隆，可计日而待也", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -989,8 +1582,10 @@ const wordsData = [
     pinyin: "jì",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "渡，渡过", isCore: true, examples: [{ text: "欲济无舟楫", source: "望洞庭湖赠张丞相", difficultyLevel: 3 }] },
-      { id: 2, gloss: "帮助，救济", isCore: false, examples: [{ text: "直挂云帆济沧海", source: "行路难", difficultyLevel: 3 }] }
+      { id: 1, gloss: "渡，渡过", isCore: true, examples: [
+        { text: "欲济无舟楫", source: "望洞庭湖赠张丞相", grade: "八下", difficultyLevel: 3 },
+        { text: "直挂云帆济沧海", source: "行路难（其一）", grade: "九上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1005,7 +1600,7 @@ const wordsData = [
     pinyin: "jiǎ",
     category: "形容词/动词",
     meanings: [
-      { id: 1, gloss: "不真实的，假装", isCore: true, examples: [{ text: "乃悟前狼假寐", source: "狼", grade: "七上", difficultyLevel: 2 }] },
+      { id: 1, gloss: "不真实的，假装", isCore: true, examples: [{ text: "乃悟前狼假寐", source: "狼", grade: "八下", difficultyLevel: 2 }] },
       { id: 2, gloss: "借，借用", isCore: true, examples: [{ text: "以是人多以书假余", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
@@ -1021,10 +1616,18 @@ const wordsData = [
     pinyin: "jiān",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "中间，其间", isCore: true, examples: [{ text: "傅说举于版筑之间", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "期间，时间", isCore: true, examples: [{ text: "少选之间而志在流水", source: "伯牙鼓琴", difficultyLevel: 3 }] },
-      { id: 3, gloss: "参与，涉及", isCore: false, examples: [{ text: "肉食者谋之，又何间焉", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] },
-      { id: 4, gloss: "隔开，分开", isCore: false, examples: [{ text: "遂与外人间隔", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "中间，其间", isCore: true, examples: [
+        { text: "尺捶入两股之间", source: "书戴嵩画牛", grade: "六上", difficultyLevel: 2 },
+        { text: "傅说举于版筑之间", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "山间之朝暮也", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "颓然平间者", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "期间，时间", isCore: true, examples: [
+        { text: "少选之间而志在流水", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 3 },
+        { text: "奉命于危难之间", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "参与", isCore: false, examples: [{ text: "肉食者谋之，又何间焉", source: "曹刿论战", grade: "七下", difficultyLevel: 3 }] },
+      { id: 4, gloss: "隔开，不连接", isCore: false, examples: [{ text: "遂与外人间隔", source: "桃花源记", grade: "八下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1217,8 +1820,8 @@ const wordsData = [
     pinyin: "jué",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "分辨，判断，解决", isCore: true, examples: [{ text: "孔子不能决也", source: "两小儿辩日", difficultyLevel: 2 }] },
-      { id: 2, gloss: "裂开，决口", isCore: false, examples: [{ text: "决眦入归鸟", source: "望岳", difficultyLevel: 3 }] }
+      { id: 1, gloss: "分辨，判断，解决", isCore: true, examples: [{ text: "孔子不能决也", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 }] },
+      { id: 2, gloss: "裂开，决口", isCore: false, examples: [{ text: "决眦入归鸟", source: "望岳", grade: "七下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1233,11 +1836,14 @@ const wordsData = [
     pinyin: "jué",
     category: "动词/形容词/副词",
     meanings: [
-      { id: 1, gloss: "断，割断", isCore: true, examples: [{ text: "伯牙破琴绝弦", source: "伯牙鼓琴", difficultyLevel: 3 }] },
-      { id: 2, gloss: "与世隔绝的，孤立的", isCore: true, examples: [{ text: "率妻子邑人来此绝境", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
+      { id: 1, gloss: "断，割断", isCore: true, examples: [
+        { text: "伯牙破琴绝弦", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 3 },
+        { text: "往来而不绝者，滁人游也", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "与世隔绝的，孤立的", isCore: true, examples: [{ text: "率妻子邑人来此绝境", source: "桃花源记", grade: "八下", difficultyLevel: 2 }] },
       { id: 3, gloss: "独一无二的，独特的", isCore: false, examples: [{ text: "奇山异水，天下独绝", source: "与朱元思书", grade: "八上", difficultyLevel: 3 }] },
       { id: 4, gloss: "极，非常", isCore: false, examples: [{ text: "佛印绝类弥勒", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 5, gloss: "停止，消失", isCore: false, examples: [{ text: "空谷传响，哀转久绝", source: "三峡", difficultyLevel: 4 }] }
+      { id: 5, gloss: "停止，消失", isCore: false, examples: [{ text: "空谷传响，哀转久绝", source: "三峡", grade: "八上", difficultyLevel: 4 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -1267,10 +1873,16 @@ const wordsData = [
     pinyin: "lín",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "靠近，面对", isCore: true, examples: [{ text: "有亭翼然临于泉上者", source: "醉翁亭记", grade: "九上", difficultyLevel: 3 }] },
+      { id: 1, gloss: "靠近，面对", isCore: true, examples: [
+        { text: "沧州南一寺临河干", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "有亭翼然临于泉上者，醉翁亭也", source: "醉翁亭记", grade: "九上", difficultyLevel: 3 }
+      ] },
       { id: 2, gloss: "来到，到达", isCore: true, examples: [{ text: "临溪而渔", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "对着，面对", isCore: false, examples: [{ text: "把酒临风", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 4, gloss: "正当，将要", isCore: false, examples: [{ text: "今当远离，临表涕零", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 3, gloss: "对着，面对", isCore: false, examples: [
+        { text: "把酒临风，其喜洋洋者矣", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "今当远离，临表涕零", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 4, gloss: "正当，将要", isCore: false, examples: [{ text: "故临崩寄臣以大事也", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1285,8 +1897,10 @@ const wordsData = [
     pinyin: "lǜ",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "思虑，思绪，心思", isCore: true, examples: [{ text: "困于心，衡于虑，而后作", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "思想品质，心志", isCore: false, examples: [{ text: "此皆良实，志虑忠纯", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "思虑，思绪，心思", isCore: true, examples: [
+        { text: "因于心，衡于虑，而后作", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "此皆良实，志虑忠纯", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
@@ -1301,9 +1915,15 @@ const wordsData = [
     pinyin: "lùn",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "议论，谈论，讨论", isCore: true, examples: [{ text: "及鲁肃过寻阳，与蒙论议", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] },
+      { id: 1, gloss: "议论，谈论，讨论", isCore: true, examples: [
+        { text: "与儿女讲论文义", source: "咏雪", grade: "七上", difficultyLevel: 2 },
+        { text: "及鲁肃过寻阳，与蒙论议", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "乃不知有汉，无论魏晋", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "曹刿论战", source: "曹刿论战", grade: "九下", difficultyLevel: 2 },
+        { text: "先帝在时，每与臣论此事", source: "出师表", grade: "九下", difficultyLevel: 2 }
+      ] },
       { id: 2, gloss: "评定，判定，按照", isCore: false, examples: [{ text: "宜付有司论其刑赏", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "言论，论文", isCore: false, examples: [{ text: "众服为确论", source: "河中石兽", difficultyLevel: 4 }] }
+      { id: 3, gloss: "言论，论文", isCore: false, examples: [{ text: "众服为确论", source: "河中石兽", grade: "七下", difficultyLevel: 4 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1318,8 +1938,8 @@ const wordsData = [
     pinyin: "màn",
     category: "形容词",
     meanings: [
-      { id: 1, gloss: "遍，到处都是", isCore: true, examples: [{ text: "惟解漫天作雪飞", source: "晚春", difficultyLevel: 3 }] },
-      { id: 2, gloss: "长，延伸很远", isCore: false, examples: [{ text: "故园东望路漫漫", source: "逢入京使", difficultyLevel: 3 }] }
+      { id: 1, gloss: "遍，到处都是", isCore: true, examples: [{ text: "惟解漫天作雪飞", source: "晚春", grade: "七下", difficultyLevel: 3 }] },
+      { id: 2, gloss: "长，延伸很远", isCore: false, examples: [{ text: "故园东望路漫漫", source: "逢入京使", grade: "七下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: [],
@@ -1334,10 +1954,18 @@ const wordsData = [
     pinyin: "míng",
     category: "形容词/名词",
     meanings: [
-      { id: 1, gloss: "明亮，光明", isCore: true, examples: [{ text: "斗折蛇行，明灭可见", source: "小石潭记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "英明，聪慧", isCore: true, examples: [{ text: "以昭陛下平明之理", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "第二天，次年", isCore: false, examples: [{ text: "越明年，政通人和", source: "岳阳楼记", grade: "九下", difficultyLevel: 2 }] },
-      { id: 4, gloss: "聪慧，明智的", isCore: false, examples: [{ text: "非淡泊无以明志", source: "诫子书", grade: "八上", difficultyLevel: 3 }] }
+      { id: 1, gloss: "明亮，光明", isCore: true, examples: [
+        { text: "斗折蛇行，明灭可见", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "晦明变化者，山间之朝暮也", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "庭下如积水空明", source: "记承天夜游", grade: "八上", difficultyLevel: 2 },
+        { text: "春和景明", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "英明", isCore: true, examples: [
+        { text: "以昭陛下平明之理", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "恐托付不效，以伤先帝之明", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "次，下一个", isCore: true, examples: [{ text: "越明年，政通人和", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 }] },
+      { id: 4, gloss: "明确，坚定", isCore: false, examples: [{ text: "非淡泊无以明志", source: "诫子书", grade: "七上", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1352,9 +1980,13 @@ const wordsData = [
     pinyin: "míng",
     category: "名词/动词/形容词",
     meanings: [
-      { id: 1, gloss: "名字，名称", isCore: true, examples: [{ text: "卷卷有爷名", source: "木兰诗", grade: "七下", difficultyLevel: 2 }] },
+      { id: 1, gloss: "名字，名称", isCore: true, examples: [
+        { text: "卷卷有爷名", source: "木兰诗", grade: "七上", difficultyLevel: 2 },
+        { text: "北冥有鱼，其名为鲲", source: "北冥有鱼", grade: "八下", difficultyLevel: 2 },
+        { text: "其船背稍夷，则题名其上", source: "核舟记", grade: "八下", difficultyLevel: 2 }
+      ] },
       { id: 2, gloss: "命名，给…取名", isCore: true, examples: [{ text: "名之者谁", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "有名，出名，著名", isCore: false, examples: [{ text: "山不在高，有仙则名", source: "陋室铭", difficultyLevel: 2 }] }
+      { id: 3, gloss: "有名，出名，著名", isCore: false, examples: [{ text: "山不在高，有仙则名", source: "陋室铭", grade: "七下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1369,10 +2001,13 @@ const wordsData = [
     pinyin: "mìng",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "命令，号令", isCore: true, examples: [{ text: "命夸娥氏二子负二山", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
+      { id: 1, gloss: "命令，号令", isCore: true, examples: [
+        { text: "五十而知天命", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "命夸娥氏二子负二山", source: "愚公移山", grade: "八上", difficultyLevel: 2 }
+      ] },
       { id: 2, gloss: "任命，委派", isCore: true, examples: [{ text: "受命以来，夙夜忧叹", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
       { id: 3, gloss: "生命，性命", isCore: false, examples: [{ text: "苟全性命于乱世", source: "出师表", grade: "九下", difficultyLevel: 2 }] },
-      { id: 4, gloss: "古代一种文体", isCore: false, examples: [{ text: "兑命曰学学半", source: "虽有佳肴", difficultyLevel: 3 }] }
+      { id: 4, gloss: "古代一种文体", isCore: false, examples: [{ text: "兑命曰学学半", source: "虽有佳肴", grade: "八下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1387,8 +2022,8 @@ const wordsData = [
     pinyin: "nán",
     category: "形容词/名词",
     meanings: [
-      { id: 1, gloss: "不容易，困难", isCore: true, examples: [{ text: "夫大国，难测也", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "灾难，危险", isCore: false, examples: [{ text: "奉命于危难之间", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "不容易，困难", isCore: true, examples: [{ text: "夫大国，难测也，惧有伏焉", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] },
+      { id: 2, gloss: "灾难", isCore: false, examples: [{ text: "奉命于危难之间", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1420,7 +2055,7 @@ const wordsData = [
     pinyin: "qī",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "亲属，亲戚", isCore: true, examples: [{ text: "寡助之至，亲戚畔之", source: "得道多助，失道寡助", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "亲属，（指族外）", isCore: true, examples: [{ text: "寡助之至，亲戚畔之", source: "得道多助，失道寡助", grade: "八上", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: [],
@@ -1435,9 +2070,9 @@ const wordsData = [
     pinyin: "qiáng",
     category: "形容词/副词",
     meanings: [
-      { id: 1, gloss: "强悍，强大，坚强", isCore: true, examples: [{ text: "知困，然后能自强也", source: "虽有佳肴", difficultyLevel: 3 }] },
-      { id: 2, gloss: "竭力，尽力，勉强", isCore: false, examples: [{ text: "余强饮三大白而别", source: "湖心亭看雪", difficultyLevel: 2 }] },
-      { id: 3, gloss: "有余，超过", isCore: false, examples: [{ text: "赏赐百千强", source: "木兰诗", grade: "七下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "强悍，强大", isCore: true, examples: [{ text: "知困，然后能自强也", source: "虽有佳肴", grade: "八下", difficultyLevel: 3 }] },
+      { id: 2, gloss: "竭力，尽力，勉强", isCore: false, examples: [{ text: "余强饮三大白而别", source: "湖心亭看雪", grade: "九上", difficultyLevel: 2 }] },
+      { id: 3, gloss: "有余，超过", isCore: false, examples: [{ text: "赏赐百千强", source: "木兰诗", grade: "七上", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1452,7 +2087,7 @@ const wordsData = [
     pinyin: "qiè",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "偷取，盗取", isCore: true, examples: [{ text: "盗窃乱贼而不作", source: "大道之行也", difficultyLevel: 3 }] }
+      { id: 1, gloss: "偷取", isCore: true, examples: [{ text: "盗窃乱贼而不作", source: "大道之行也", grade: "八下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: [],
@@ -1468,8 +2103,8 @@ const wordsData = [
     category: "动词",
     meanings: [
       { id: 1, gloss: "请求，恳求", isCore: true, examples: [{ text: "曹刿请见", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "请允许我", isCore: false, examples: [{ text: "战则请从", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "请你，邀请", isCore: false, examples: [{ text: "请循其本", source: "庄子与惠子游于濠梁之上", difficultyLevel: 3 }] }
+      { id: 2, gloss: "请允许我（做某事）", isCore: false, examples: [{ text: "战则请从", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }] },
+      { id: 3, gloss: "请你（做某事）", isCore: false, examples: [{ text: "请循其本", source: "庄子与惠子游于濠梁之上", grade: "八下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1484,9 +2119,16 @@ const wordsData = [
     pinyin: "qióng",
     category: "形容词/动词",
     meanings: [
-      { id: 1, gloss: "穷困，贫困", isCore: true, examples: [{ text: "所识穷乏者得我与", source: "鱼我所欲也", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "穷尽，完结，无尽", isCore: true, examples: [{ text: "子子孙孙无穷匮也", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "极，最", isCore: false, examples: [{ text: "穷冬烈风", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "穷困（生活困难）", isCore: true, examples: [
+        { text: "悲守穷庐，将复何及", source: "诫子书", grade: "七上", difficultyLevel: 2 },
+        { text: "所识穷乏者得我与", source: "鱼我所欲也", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "穷尽，完结", isCore: true, examples: [
+        { text: "子子孙孙无穷匮也", source: "愚公移山", grade: "八上", difficultyLevel: 2 },
+        { text: "四时之景不同，而乐亦无穷也", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "复前行，欲穷其林", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "极", isCore: false, examples: [{ text: "穷冬烈风", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1501,9 +2143,15 @@ const wordsData = [
     pinyin: "qiú",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "寻找，寻求，寻觅", isCore: true, examples: [{ text: "求二石兽于水中", source: "河中石兽", difficultyLevel: 3 }] },
-      { id: 2, gloss: "探求，追求，想得到", isCore: true, examples: [{ text: "予尝求古仁人之心", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "索取，要求，请求", isCore: false, examples: [{ text: "安求其能千里也", source: "马说", difficultyLevel: 2 }] }
+      { id: 1, gloss: "寻找，寻求", isCore: true, examples: [
+        { text: "求二石兽于水中", source: "河中石兽", grade: "七下", difficultyLevel: 3 },
+        { text: "沿河求之，不亦颠乎", source: "河中石兽", grade: "七下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "探求，追求，谋求，奢求", isCore: true, examples: [
+        { text: "予尝求古仁人之心", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "不求闻达于诸侯", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "索取，要求，需求", isCore: false, examples: [{ text: "安求其能千里也", source: "马说", grade: "八下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
@@ -1518,8 +2166,8 @@ const wordsData = [
     pinyin: "qǔ",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "拿，取得", isCore: true, examples: [{ text: "乃取一葫芦置于地", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "获得，讨取，开辟", isCore: true, examples: [{ text: "伐竹取道", source: "小石潭记", grade: "八下", difficultyLevel: 2 }] },
+      { id: 1, gloss: "拿", isCore: true, examples: [{ text: "乃取一葫芦置于地", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] },
+      { id: 2, gloss: "获得，讨取（招致）", isCore: true, examples: [{ text: "伐竹取道，下见小潭，水尤清冽", source: "小石潭记", grade: "八下", difficultyLevel: 2 }] },
       { id: 3, gloss: "选取，采用，选择", isCore: false, examples: [{ text: "舍鱼而取熊掌者也", source: "鱼我所欲也", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
@@ -1535,8 +2183,20 @@ const wordsData = [
     pinyin: "qù",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "离开，离去", isCore: true, examples: [{ text: "一狼径去", source: "狼", grade: "七上", difficultyLevel: 1 }] },
-      { id: 2, gloss: "距，距离", isCore: false, examples: [{ text: "我以日始出时去人近", source: "两小儿辩日", difficultyLevel: 2 }] }
+      { id: 1, gloss: "离开", isCore: true, examples: [
+        { text: "一狼径去", source: "狼", grade: "七上", difficultyLevel: 1 },
+        { text: "睨之久而不去", source: "卖油翁", grade: "七下", difficultyLevel: 2 },
+        { text: "旦辞爷娘去，暮宿黄河边", source: "木兰诗", grade: "七上", difficultyLevel: 2 },
+        { text: "是非木柿，岂能为暴涨携之去", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "委而去之", source: "得道多助，失道寡助", grade: "八上", difficultyLevel: 2 },
+        { text: "去以六月息者也", source: "北冥有鱼", grade: "八下", difficultyLevel: 2 },
+        { text: "乃记之而去", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "停数日，辞去", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "则有去国怀乡", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 },
+        { text: "游人去而禽鸟乐", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "意与日去，遂成枯落", source: "诫子书", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "距，距离", isCore: false, examples: [{ text: "我以日始出时去人近", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1551,9 +2211,9 @@ const wordsData = [
     pinyin: "quán",
     category: "形容词/动词",
     meanings: [
-      { id: 1, gloss: "完整，整个，全部", isCore: true, examples: [{ text: "全石以为底", source: "小石潭记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "完全，完备，齐全", isCore: false, examples: [{ text: "子之不知鱼之乐，全矣", source: "庄子与惠子游于濠梁之上", difficultyLevel: 3 }] },
-      { id: 3, gloss: "保全，保护", isCore: true, examples: [{ text: "苟全性命于乱世", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "完整，整个", isCore: true, examples: [{ text: "全石以为底", source: "小石潭记", grade: "八下", difficultyLevel: 2 }] },
+      { id: 2, gloss: "完全，完备", isCore: false, examples: [{ text: "子之不知鱼之乐，全矣", source: "庄子与惠子游于濠梁之上", grade: "八下", difficultyLevel: 3 }] },
+      { id: 3, gloss: "保全", isCore: true, examples: [{ text: "苟全性命于乱世", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1568,9 +2228,12 @@ const wordsData = [
     pinyin: "rèn",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "责任，职责，使命", isCore: true, examples: [{ text: "故天将降大任于是人也", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "委任，任用，委派", isCore: true, examples: [{ text: "受任于败军之际", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "听凭，任凭，放纵", isCore: false, examples: [{ text: "从流飘荡，任意东西", source: "与朱元思书", grade: "八上", difficultyLevel: 3 }] }
+      { id: 1, gloss: "责任，职责", isCore: true, examples: [
+        { text: "故天将降大任于是人也", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "进尽忠言，则攸之、祎、允之任也", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "委任，任用", isCore: true, examples: [{ text: "受任于败军之际", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
+      { id: 3, gloss: "听凭，任凭", isCore: false, examples: [{ text: "从流飘荡，任意东西", source: "与朱元思书", grade: "八上", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1585,16 +2248,34 @@ const wordsData = [
     pinyin: "rù",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "进入，进去", isCore: true, examples: [{ text: "元方入门不顾", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "注入，流入", isCore: false, examples: [{ text: "自钱孔入，而钱不湿", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "进入朝廷，在国内任职", isCore: false, examples: [{ text: "入则无法家拂士", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "进入，与'出'相对", isCore: true, examples: [
+        { text: "元方入门不顾", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 },
+        { text: "意将隧入以攻其后也", source: "狼", grade: "七上", difficultyLevel: 2 },
+        { text: "身已半入", source: "狼", grade: "七上", difficultyLevel: 2 },
+        { text: "草色入帘青", source: "陋室铭", grade: "七下", difficultyLevel: 2 },
+        { text: "月色入户", source: "记承天夜游", grade: "八上", difficultyLevel: 2 },
+        { text: "惩山北之塞，出入之迁也", source: "愚公移山", grade: "八上", difficultyLevel: 3 },
+        { text: "便舍船，从口入", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "于是入朝见威王", source: "邹忌讽齐王纳谏", grade: "九下", difficultyLevel: 2 },
+        { text: "故五月渡泸，深入不毛", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "注入", isCore: false, examples: [
+        { text: "自钱孔入，而钱不湿", source: "卖油翁", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "插入", isCore: false, examples: [
+        { text: "高峰入云，清流见底。", source: "答谢中书书", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 4, gloss: "进入朝廷，在国内", isCore: false, examples: [
+        { text: "入则无法家拂士", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "乃入见", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["陈太丘与友期行", "卖油翁", "生于忧患，死于安乐"]
+    sourceLessons: ["陈太丘与友期行", "狼", "陋室铭", "记承天夜游", "愚公移山", "桃花源记", "邹忌讽齐王纳谏", "出师表", "卖油翁", "答谢中书书", "生于忧患，死于安乐", "曹刿论战"]
   },
   {
     id: 70,
@@ -1602,16 +2283,34 @@ const wordsData = [
     pinyin: "ruò",
     category: "动词/连词/代词",
     meanings: [
-      { id: 1, gloss: "如，似，像", isCore: true, examples: [{ text: "巍巍乎若泰山", source: "伯牙鼓琴", difficultyLevel: 3 }] },
-      { id: 2, gloss: "假如，如果", isCore: true, examples: [{ text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "你，你的", isCore: false, examples: [{ text: "若屈伸呼吸，终日在天中行止", source: "杞人忧天", difficultyLevel: 3 }] }
+      { id: 1, gloss: "如，似，像", isCore: true, examples: [
+        { text: "巍巍乎若泰山", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 3 },
+        { text: "弗若之矣", source: "学弈", grade: "六下", difficultyLevel: 2 },
+        { text: "未若柳絮因风起", source: "咏雪", grade: "七上", difficultyLevel: 2 },
+        { text: "求闻之若此，不若无闻也", source: "穿井得一人", grade: "七上", difficultyLevel: 2 },
+        { text: "孰若孤", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "万里赴戎机，关山度若飞", source: "木兰诗", grade: "七上", difficultyLevel: 2 },
+        { text: "固不可彻，曾不若孀妻弱子", source: "愚公移山", grade: "八上", difficultyLevel: 3 },
+        { text: "怒而飞，其翼若垂天之云", source: "北冥有鱼", grade: "八下", difficultyLevel: 3 },
+        { text: "其视下也，亦若是则已矣", source: "北冥有鱼", grade: "八下", difficultyLevel: 3 },
+        { text: "仿佛若有光", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "细若蚊足", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "皆若空游无所依", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "至若春和景明", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "若夫日出而林霏开", source: "醉翁亭记", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "假如，如果", isCore: true, examples: [
+        { text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 2 },
+        { text: "若无兴德之言", source: "出师表", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "你", isCore: false, examples: [{ text: "若屈伸呼吸，终日在天中行止", source: "杞人忧天", grade: "七上", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
     grade: "九下",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["伯牙鼓琴", "出师表", "杞人忧天"]
+    sourceLessons: ["伯牙鼓琴", "学弈", "咏雪", "穿井得一人", "孙权劝学", "木兰诗", "愚公移山", "北冥有鱼", "桃花源记", "核舟记", "小石潭记", "岳阳楼记", "醉翁亭记", "出师表", "杞人忧天"]
   },
   {
     id: 71,
@@ -1619,15 +2318,24 @@ const wordsData = [
     pinyin: "shàn",
     category: "形容词/动词",
     meanings: [
-      { id: 1, gloss: "好，好的，善良的", isCore: true, examples: [{ text: "择其善者而从之", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "善于，擅长，熟悉", isCore: true, examples: [{ text: "陈康肃尧咨善射", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "好，好的，善良的", isCore: true, examples: [
+        { text: "善哉乎鼓琴", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 2 },
+        { text: "择其善者而从之", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "弗学，不知其善也", source: "虽有嘉肴", grade: "八下", difficultyLevel: 2 },
+        { text: "咨诹善道", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "善于，擅长", isCore: true, examples: [
+        { text: "通国之善弈者也", source: "学弈", grade: "六下", difficultyLevel: 2 },
+        { text: "陈康肃公尧咨善射，当世无双", source: "卖油翁", grade: "七上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["《论语》十二章", "卖油翁"]
+    sourceLessons: ["伯牙鼓琴", "《论语》十二章", "虽有嘉肴", "出师表", "学弈", "卖油翁"]
   },
   {
     id: 72,
@@ -1635,16 +2343,20 @@ const wordsData = [
     pinyin: "shǎo",
     category: "形容词/副词",
     meanings: [
-      { id: 1, gloss: "不多，数量小，稀少", isCore: true, examples: [{ text: "饮少辄醉", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "缺少，缺乏", isCore: false, examples: [{ text: "但少闲人如吾两人者耳", source: "记承天夜游", difficultyLevel: 2 }] },
-      { id: 3, gloss: "年轻，少年", isCore: true, examples: [{ text: "陈涉少时，尝与人佣耕", source: "陈涉世家", grade: "九上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "不多，数量小（时间短）", isCore: true, examples: [
+        { text: "饮少辄醉，而年又最高", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "少选之间而志在流水", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 2 },
+        { text: "少时，一狼径去", source: "狼", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "缺少", isCore: false, examples: [{ text: "但少闲人如吾两人者耳", source: "记承天夜游", grade: "八上", difficultyLevel: 2 }] },
+      { id: 3, gloss: "年轻，少年，年纪小", isCore: true, examples: [{ text: "陈涉少时，尝与人佣耕", source: "陈涉世家", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "九上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["醉翁亭记", "记承天夜游", "陈涉世家"]
+    sourceLessons: ["醉翁亭记", "伯牙鼓琴", "狼", "记承天夜游", "陈涉世家"]
   },
   {
     id: 73,
@@ -1652,16 +2364,21 @@ const wordsData = [
     pinyin: "shě",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "房屋，房舍，住所", isCore: true, examples: [{ text: "土地平旷，屋舍俨然", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "舍弃，丢弃，放弃", isCore: true, examples: [{ text: "舍鱼而取熊掌者也", source: "鱼我所欲也", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "同'���'，解除，消除", isCore: false, examples: [{ text: "其人舍然大喜", source: "杞人忧天", difficultyLevel: 2 }] }
+      { id: 1, gloss: "房屋，房舍", isCore: true, examples: [{ text: "土地平旷，屋舍俨然", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
+      { id: 2, gloss: "舍弃，丢弃", isCore: true, examples: [
+        { text: "过中不至，太丘舍去", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 },
+        { text: "逝者如斯夫，不舍昼夜", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "便舍船，从口入", source: "桃花源记", grade: "八上", difficultyLevel: 2 },
+        { text: "舍鱼而取熊掌者也", source: "鱼我所欲也", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "同'释'，解除，消除", isCore: false, examples: [{ text: "其人舍然大喜", source: "杞人忧天", grade: "七上", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["桃花源记", "鱼我所欲也", "杞人忧天"]
+    sourceLessons: ["桃花源记", "陈太丘与友期行", "《论语》十二章", "鱼我所欲也", "杞人忧天"]
   },
   {
     id: 74,
@@ -1669,7 +2386,7 @@ const wordsData = [
     pinyin: "shè",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "浏览，阅览，翻阅", isCore: true, examples: [{ text: "但当涉猎，见往事耳", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "浏览，阅览", isCore: true, examples: [{ text: "但当涉猎，见往事耳", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: [],
@@ -1684,17 +2401,23 @@ const wordsData = [
     pinyin: "shēng",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "生长，出生，产生", isCore: true, examples: [{ text: "夹岸高山，皆生寒树", source: "与朱元思书", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "生存，活着", isCore: true, examples: [{ text: "然后知生于忧患而死于安乐也", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "生命，生者", isCore: false, examples: [{ text: "生，亦我所欲也", source: "鱼我所欲也", grade: "九下", difficultyLevel: 2 }] },
-      { id: 4, gloss: "后生，晚辈，年轻人", isCore: false, examples: [{ text: "隶而从者，崔氏二小生", source: "小石潭记", grade: "八下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "（草木）生长，出生，诞生", isCore: true, examples: [
+        { text: "多生怪柏", source: "三峡", grade: "八上", difficultyLevel: 2 },
+        { text: "夹岸高山，皆生寒树", source: "与朱元思书", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "生存，活着", isCore: true, examples: [
+        { text: "然后知生于忧患而死于安乐也", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "生物之以息相吹也", source: "北冥有鱼", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "生命", isCore: false, examples: [{ text: "生，亦我所欲也", source: "鱼我所欲也", grade: "九下", difficultyLevel: 2 }] },
+      { id: 4, gloss: "后生，晚辈", isCore: false, examples: [{ text: "隶而从者，崔氏二小生", source: "小石潭记", grade: "八下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["与朱元思书", "生于忧患，死于安乐", "鱼我所欲也", "小石潭记"]
+    sourceLessons: ["三峡", "与朱元思书", "生于忧患，死于安乐", "北冥有鱼", "鱼我所欲也", "小石潭记"]
   },
   {
     id: 76,
@@ -1702,16 +2425,19 @@ const wordsData = [
     pinyin: "shèng",
     category: "动词/形容词",
     meanings: [
-      { id: 1, gloss: "胜利，获胜，战胜", isCore: true, examples: [{ text: "然而不胜者，是天时不如地利也", source: "得道多助，失道寡助", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "尽，完，承受", isCore: false, examples: [{ text: "臣不胜受恩感激", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "优美的，胜景", isCore: false, examples: [{ text: "予观夫巴陵胜状", source: "岳阳楼记", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "胜利", isCore: true, examples: [
+        { text: "然而不胜者，是天时不如地利也", source: "得道多助，失道寡助", grade: "八上", difficultyLevel: 3 },
+        { text: "射者中，弈者胜，觥筹交错", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "尽，完", isCore: false, examples: [{ text: "臣不胜受恩感激", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
+      { id: 3, gloss: "优美的", isCore: false, examples: [{ text: "予观夫巴陵胜状，在洞庭一湖", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "九下",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["得道多助，失道寡助", "出师表", "岳阳楼记"]
+    sourceLessons: ["得道多助，失道寡助", "醉翁亭记", "出师表", "岳阳楼记"]
   },
   {
     id: 77,
@@ -1721,7 +2447,7 @@ const wordsData = [
     meanings: [
       { id: 1, gloss: "军队，兵力", isCore: true, examples: [{ text: "十年春，齐师伐我", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }] },
       { id: 2, gloss: "老师，师傅", isCore: true, examples: [{ text: "温故而知新，可以为师矣", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "首都，京城", isCore: false, examples: [{ text: "余朝京师", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
+      { id: 3, gloss: "首都，京城", isCore: false, examples: [{ text: "余朝京师，生以乡人子谒余", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1736,7 +2462,7 @@ const wordsData = [
     pinyin: "shī",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "实施，实行，施行", isCore: true, examples: [{ text: "悉以咨之，然后施行", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "实施，实行", isCore: true, examples: [{ text: "悉以咨之，然后施行", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: [],
@@ -1751,8 +2477,8 @@ const wordsData = [
     pinyin: "shí",
     category: "名词/形容词",
     meanings: [
-      { id: 1, gloss: "实际，事实，真实", isCore: true, examples: [{ text: "实是欲界之仙都", source: "答谢中书书", difficultyLevel: 2 }] },
-      { id: 2, gloss: "诚实，真实，忠实", isCore: true, examples: [{ text: "此皆良实", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "实际，事实（实在）", isCore: true, examples: [{ text: "实是欲界之仙都", source: "答谢中书书", grade: "八上", difficultyLevel: 2 }] },
+      { id: 2, gloss: "诚实，真实", isCore: true, examples: [{ text: "此皆良实", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -1767,16 +2493,26 @@ const wordsData = [
     pinyin: "shí",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "吃，吃饭，饮食", isCore: true, examples: [{ text: "弗食，不知其旨也", source: "虽有佳肴", difficultyLevel: 2 }] },
-      { id: 2, gloss: "粮食，食物，东西", isCore: true, examples: [{ text: "一箪食，一瓢饮", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "供养，给…吃，饲养", isCore: false, examples: [{ text: "食之不能尽其材", source: "马说", difficultyLevel: 2 }] }
+      { id: 1, gloss: "吃，吃饭", isCore: true, examples: [
+        { text: "身无所寄，废寝食者", source: "杞人忧天", grade: "七上", difficultyLevel: 2 },
+        { text: "弗食，不知其旨也", source: "虽有嘉肴", grade: "八下", difficultyLevel: 2 },
+        { text: "肉食者谋之，又何间焉？", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "粮食，食物", isCore: true, examples: [
+        { text: "一箪食，一瓢饮，在陋巷", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "饭疏食，饮水，曲肱而枕之", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "便要还家，设酒杀鸡作食", source: "桃花源记", grade: "八上", difficultyLevel: 2 },
+        { text: "一箪食，一豆羹", source: "鱼我所欲也", grade: "九下", difficultyLevel: 2 },
+        { text: "衣食所安，弗敢专也，必以分人", source: "曹刿论战", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "供养，给……吃", isCore: false, examples: [{ text: "食之不能尽其材", source: "马说", grade: "八下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["虽有佳肴", "《论语》十二章", "马说"]
+    sourceLessons: ["杞人忧天", "虽有嘉肴", "曹刿论战", "《论语》十二章", "桃花源记", "鱼我所欲也", "马说"]
   },
   {
     id: 81,
@@ -1784,17 +2520,28 @@ const wordsData = [
     pinyin: "shǐ",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "使唤，派遣，驱使", isCore: true, examples: [{ text: "于是上乃使使持节诏将军", source: "周亚夫军细柳", difficultyLevel: 3 }] },
-      { id: 2, gloss: "让，叫，令", isCore: true, examples: [{ text: "必能使行阵和睦", source: "出师表", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "出使，派遣使节", isCore: false, examples: [{ text: "安陵君因使唐雎使于秦", source: "唐雎不辱使命", difficultyLevel: 3 }] },
-      { id: 4, gloss: "假使，即使", isCore: false, examples: [{ text: "使人之所恶莫甚于死者", source: "鱼我所欲也", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "使唤，派遣", isCore: true, examples: [
+        { text: "得一人之使，非得一人于井中也", source: "穿井得一人", grade: "七上", difficultyLevel: 2 },
+        { text: "于是上乃使使持节诏将军", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "让，叫，令；使得，致使", isCore: true, examples: [
+        { text: "使弈秋诲二人弈", source: "学弈", grade: "六下", difficultyLevel: 2 },
+        { text: "必能使行阵和睦，优劣得所", source: "出师表", grade: "九下", difficultyLevel: 2 },
+        { text: "不宜偏私，使内外异法也", source: "出师表", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "出使", isCore: false, examples: [{ text: "安陵君因使唐雎使于秦", source: "唐雎不辱使命", grade: "九下", difficultyLevel: 3 }] },
+      { id: 4, gloss: "使节", isCore: false, examples: [{ text: "于是上乃使使持节诏将军", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3 }] },
+      { id: 5, gloss: "假使，纵使，即使", isCore: false, examples: [
+        { text: "只使坠，亦不能有所中伤", source: "杞人忧天", grade: "七上", difficultyLevel: 2 },
+        { text: "使人之所恶莫甚于死者", source: "鱼我所欲也", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "九下",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["周亚夫军细柳", "出师表", "唐雎不辱使命", "鱼我所欲也"]
+    sourceLessons: ["穿井得一人", "周亚夫军细柳", "学弈", "出师表", "唐雎不辱使命", "杞人忧天", "鱼我所欲也"]
   },
   {
     id: 82,
@@ -1817,15 +2564,18 @@ const wordsData = [
     pinyin: "shì",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "市场，集市，街市", isCore: true, examples: [{ text: "东市买骏马", source: "木兰诗", grade: "七下", difficultyLevel: 1 }] },
-      { id: 2, gloss: "买，购买", isCore: true, examples: [{ text: "愿为市鞍马", source: "木兰诗", grade: "七下", difficultyLevel: 1 }] }
+      { id: 1, gloss: "市场，集市，街市", isCore: true, examples: [
+        { text: "东市买骏马，西市买鞍辔", source: "木兰诗", grade: "七上", difficultyLevel: 1 },
+        { text: "百里奚举于市", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "买，购买", isCore: true, examples: [{ text: "愿为市鞍马，从此替爷征", source: "木兰诗", grade: "七上", difficultyLevel: 1 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["木兰诗"]
+    sourceLessons: ["木兰诗", "生于忧患，死于安乐"]
   },
   {
     id: 84,
@@ -1837,7 +2587,7 @@ const wordsData = [
     ],
     difficulty: "基础",
     tags: [],
-    grade: "九下",
+    grade: "六上",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["为学"]
@@ -1848,15 +2598,23 @@ const wordsData = [
     pinyin: "shuò",
     category: "数词/动词",
     meanings: [
-      { id: 1, gloss: "几，几个", isCore: true, examples: [{ text: "以刀劈狼首，又数刀毙之", source: "狼", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "计算，点数，数数", isCore: true, examples: [{ text: "珠可历历数也", source: "核舟记", grade: "八下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "几，几个", isCore: true, examples: [
+        { text: "以刀劈狼首，又数刀毙之", source: "狼", grade: "七上", difficultyLevel: 2 },
+        { text: "棹数小舟，曳铁钯", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "如其言，果得于数里外", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "夹岸数百步，中无杂树", source: "桃花源记", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "计算，点数，数数", isCore: true, examples: [
+        { text: "所宝以百数", source: "书戴嵩画牛", grade: "六上", difficultyLevel: 2 },
+        { text: "珠可历历数也", source: "核舟记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["狼", "核舟记"]
+    sourceLessons: ["狼", "河中石兽", "桃花源记", "书戴嵩画牛", "核舟记"]
   },
   {
     id: 86,
@@ -1864,17 +2622,21 @@ const wordsData = [
     pinyin: "zhǔ",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "同'嘱'，嘱托，委托", isCore: true, examples: [{ text: "属予作文以记之", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "部属，隶属，附属", isCore: false, examples: [{ text: "壁门士吏谓从属车骑曰", source: "周亚夫军细柳", difficultyLevel: 3 }] },
-      { id: 3, gloss: "类，一类，等等", isCore: true, examples: [{ text: "有良田、美池、桑竹之属", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 4, gloss: "连接，联系", isCore: false, examples: [{ text: "属引凄异", source: "三峡", difficultyLevel: 4 }] }
+      { id: 1, gloss: "同'嘱'，嘱托，委托", isCore: true, examples: [{ text: "属予作文以记之", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }] },
+      { id: 2, gloss: "部属，隶属，归属", isCore: false, examples: [{ text: "壁门士吏谓从属车骑曰", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3 }] },
+      { id: 3, gloss: "类，一类，等等", isCore: true, examples: [
+        { text: "有良田、美池、桑竹之属", source: "桃花源记", grade: "八上", difficultyLevel: 2 },
+        { text: "忠之属也", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 4, gloss: "像，类似", isCore: false, examples: [{ text: "神情与苏、黄不属", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
+      { id: 5, gloss: "连接，联系", isCore: false, examples: [{ text: "属引凄异，空谷传响", source: "三峡", grade: "八上", difficultyLevel: 4 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["岳阳楼记", "周亚夫军细柳", "桃花源记", "三峡"]
+    sourceLessons: ["岳阳楼记", "周亚夫军细柳", "桃花源记", "曹刿论战", "核舟记", "三峡"]
   },
   {
     id: 87,
@@ -1882,16 +2644,22 @@ const wordsData = [
     pinyin: "shuō",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "陈述，解说，讲述", isCore: true, examples: [{ text: "及郡下，诣太守，说如此", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "古代的一种文体", isCore: false, examples: [{ text: "爱莲说", source: "爱莲说", difficultyLevel: 2 }] },
-      { id: 3, gloss: "同'悦'，愉快，高兴", isCore: false, examples: [{ text: "学而时习之，不亦说乎", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "陈述，解说，讲述", isCore: true, examples: [
+        { text: "及郡下，诣太守，说如此", source: "桃花源记", grade: "八上", difficultyLevel: 2 },
+        { text: "莫说相公痴，更有痴似相公者", source: "湖心亭看雪", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "古代的一种文体", isCore: false, examples: [{ text: "爱莲说", source: "爱莲说", grade: "七下", difficultyLevel: 2 }] },
+      { id: 3, gloss: "同'悦'，愉快，高兴", isCore: false, examples: [
+        { text: "学而时习之，不亦说乎", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "秦王不说", source: "唐雎不辱使命", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["桃花源记", "爱莲说", "《论语》十二章"]
+    sourceLessons: ["桃花源记", "湖心亭看雪", "爱莲说", "《论语》十二章", "唐雎不辱使命"]
   },
   {
     id: 88,
@@ -1899,12 +2667,12 @@ const wordsData = [
     pinyin: "sù",
     category: "形容词",
     meanings: [
-      { id: 1, gloss: "白的，白色的，素色", isCore: true, examples: [{ text: "春冬之时，则素湍绿谭", source: "三峡", difficultyLevel: 3 }] },
-      { id: 2, gloss: "朴素，不加装饰的，素雅", isCore: false, examples: [{ text: "可以调素琴，阅金经", source: "陋室铭", difficultyLevel: 2 }] }
+      { id: 1, gloss: "白的，白色的，素色", isCore: true, examples: [{ text: "春冬之时，则素湍绿潭", source: "三峡", grade: "八上", difficultyLevel: 3 }] },
+      { id: 2, gloss: "朴素，不加装饰的，素雅", isCore: false, examples: [{ text: "可以调素琴，阅金经", source: "陋室铭", grade: "七下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "九下",
+    grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["三峡", "陋室铭"]
@@ -1915,15 +2683,21 @@ const wordsData = [
     pinyin: "tāng",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "热水，开水，沸水", isCore: true, examples: [{ text: "日初出沧沧凉凉，及日中如探汤", source: "两小儿辩日", difficultyLevel: 2 }] },
-      { id: 2, gloss: "水流大而急的样子", isCore: false, examples: [{ text: "浩浩汤汤，横无际涯", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "热水，开水，沸水", isCore: true, examples: [
+        { text: "日初出沧沧凉凉，及日中如探汤", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 },
+        { text: "媵人持汤沃灌", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "(shāng)水流大而急的样子", isCore: false, examples: [
+        { text: "汤汤乎若流水", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 2 },
+        { text: "浩浩汤汤，横无际涯", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "九下",
+    grade: "六下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["两小儿辩日", "岳阳楼记"]
+    sourceLessons: ["两小儿辩日", "送东阳马生序", "伯牙鼓琴", "岳阳楼记"]
   },
   {
     id: 90,
@@ -1946,15 +2720,22 @@ const wordsData = [
     pinyin: "wáng",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "灭亡，死亡，消亡", isCore: true, examples: [{ text: "出则无敌国外患者，国恒亡", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "通'无'，没有", isCore: false, examples: [{ text: "天，积气耳，亡处亡气", source: "杞人忧天", difficultyLevel: 3 }] }
+      { id: 1, gloss: "灭亡，死亡，消亡", isCore: true, examples: [
+        { text: "出则无敌国外患者，国恒亡", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "此诚危急存亡之秋也", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "通'无'，没有", isCore: false, examples: [
+        { text: "身亡所寄，废寝食者", source: "杞人忧天", grade: "七上", difficultyLevel: 2 },
+        { text: "天，积气耳，亡处亡气", source: "杞人忧天", grade: "七上", difficultyLevel: 3 },
+        { text: "河曲智叟亡以应", source: "愚公移山", grade: "八上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "九下",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["生于忧患，死于安乐", "杞人忧天"]
+    sourceLessons: ["生于忧患，死于安乐", "出师表", "杞人忧天", "愚公移山"]
   },
   {
     id: 92,
@@ -1962,19 +2743,57 @@ const wordsData = [
     pinyin: "wéi",
     category: "动词/介词",
     meanings: [
-      { id: 1, gloss: "做，干，制造", isCore: true, examples: [{ text: "行拂乱其所为", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "作为，当作", isCore: true, examples: [{ text: "全石以为底", source: "小石潭记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "是", isCore: false, examples: [{ text: "中峨冠而多髯者为东坡", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 4, gloss: "变成，成为", isCore: false, examples: [{ text: "化而为鸟", source: "北冥有鱼", difficultyLevel: 4 }] },
-      { id: 5, gloss: "为了，给，替", isCore: true, examples: [{ text: "为人谋而不忠乎", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 6, gloss: "被", isCore: false, examples: [{ text: "岂能为暴涨携之去", source: "河中石兽", difficultyLevel: 3 }] }
+      { id: 1, gloss: "做，干", isCore: true, examples: [
+        { text: "行拂乱其所为", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "则凡可以辟患者何不为也", source: "鱼我所欲也", grade: "九下", difficultyLevel: 3 },
+        { text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "能以径寸之木，为宫室、器皿、人物", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "通计一舟，为人五", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "盖简桃核修狭者为之", source: "核舟记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "作为，当作", isCore: true, examples: [
+        { text: "全石以为底", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "武陵人捕鱼为业", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "温故而知新，可以为师矣", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "孤岂欲卿治经为博士邪", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "是以众议举宠为督", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "是", isCore: false, examples: [
+        { text: "此不为远小而近者大乎", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 },
+        { text: "自以为大有所益", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "以为顺流下矣", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "中峨冠而多髯者为东坡", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "中轩敞者为舱", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "宫中府中，俱为一体", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "北冥有鱼，其名为鲲", source: "北冥有鱼", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 4, gloss: "变成，成为", isCore: false, examples: [
+        { text: "必于石下迎水处啮沙为坎穴", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "化而为鸟", source: "北冥有鱼", grade: "八下", difficultyLevel: 2 },
+        { text: "酿泉为酒", source: "醉翁亭记", grade: "九上", difficultyLevel: 3 },
+        { text: "为坻，为屿，为嵁，为岩", source: "小石潭记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 5, gloss: "为了，给，替", isCore: true, examples: [
+        { text: "以为世无足复为鼓琴者", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 2 },
+        { text: "为人谋而不忠乎", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 6, gloss: "被", isCore: false, examples: [
+        { text: "岂能为暴涨携之去", source: "河中石兽", grade: "七下", difficultyLevel: 3 },
+        { text: "天子为动，改容式车", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3 }
+      ] },
+      { id: 7, gloss: "同'谓'，说", isCore: false, examples: [
+        { text: "孰为汝多知乎", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 }
+      ] },
+      { id: 8, gloss: "认为", isCore: false, examples: [
+        { text: "众服为确论", source: "河中石兽", grade: "七下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["生于忧患，死于安乐", "小石潭记", "核舟记", "北冥有鱼", "《论语》十二章", "河中石兽"]
+    sourceLessons: ["生于忧患，死于安乐", "鱼我所欲也", "出师表", "核舟记", "小石潭记", "桃花源记", "《论语》十二章", "孙权劝学", "两小儿辩日", "北冥有鱼", "河中石兽", "醉翁亭记", "伯牙鼓琴", "周亚夫军细柳"]
   },
   {
     id: 93,
@@ -1982,14 +2801,17 @@ const wordsData = [
     pinyin: "wěi",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "抛弃，舍弃，放弃", isCore: true, examples: [{ text: "委而去之", source: "得道多助，失道寡助", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "抛弃，舍弃", isCore: true, examples: [
+        { text: "与人期行，相委而去", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 },
+        { text: "委而去之，是地利不如人和也", source: "得道多助，失道寡助", grade: "八上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "九下",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 2,
-    sourceLessons: ["得道多助，失道寡助"]
+    sourceLessons: ["陈太丘与友期行", "得道多助，失道寡助"]
   },
   {
     id: 94,
@@ -1997,14 +2819,17 @@ const wordsData = [
     pinyin: "wù",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "事务，事情，业务", isCore: true, examples: [{ text: "蒙辞以军中多务", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "事务，事情", isCore: true, examples: [
+        { text: "蒙辞以军中多务", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "经纶世务者，窥谷忘反", source: "与朱元思书", grade: "八上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
     grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["孙权劝学"]
+    sourceLessons: ["孙权劝学", "与朱元思书"]
   },
   {
     id: 95,
@@ -2012,9 +2837,9 @@ const wordsData = [
     pinyin: "xiān",
     category: "形容词",
     meanings: [
-      { id: 1, gloss: "鲜艳，鲜明，艳丽", isCore: true, examples: [{ text: "芳草鲜美，落英缤纷", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "滋味鲜美，新鲜", isCore: false, examples: [{ text: "无鲜肥滋味之享", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "少，很少", isCore: false, examples: [{ text: "菊之爱，陶后鲜有闻", source: "爱莲说", difficultyLevel: 2 }] }
+      { id: 1, gloss: "鲜艳，鲜明", isCore: true, examples: [{ text: "芳草鲜美，落英缤纷", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
+      { id: 2, gloss: "滋味鲜美", isCore: false, examples: [{ text: "无鲜肥滋味之享", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] },
+      { id: 3, gloss: "(xiǎn)少", isCore: false, examples: [{ text: "菊之爱，陶后鲜有闻", source: "爱莲说", grade: "七下", difficultyLevel: 2 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2029,15 +2854,21 @@ const wordsData = [
     pinyin: "xiàng",
     category: "介词/副词",
     meanings: [
-      { id: 1, gloss: "对着，朝着，面向", isCore: true, examples: [{ text: "狼不敢前，眈眈相向", source: "狼", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "过去，从前，原来", isCore: false, examples: [{ text: "便扶向路，处处志之", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "对着，朝着", isCore: true, examples: [
+        { text: "狼不敢前，眈眈相向", source: "狼", grade: "七上", difficultyLevel: 2 },
+        { text: "磨刀霍霍向猪羊", source: "木兰诗", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "过去，从前，原来", isCore: false, examples: [
+        { text: "便扶向路，处处志之", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "寻向所志", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["狼", "桃花源记"]
+    sourceLessons: ["狼", "木兰诗", "桃花源记"]
   },
   {
     id: 97,
@@ -2045,8 +2876,11 @@ const wordsData = [
     pinyin: "xiào",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "任务，重任，建功", isCore: true, examples: [{ text: "愿陛下托臣以讨贼兴复之效", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "效果，见效，奏效", isCore: false, examples: [{ text: "夙夜忧叹，恐托付不效", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "任务，重任", isCore: true, examples: [{ text: "愿陛下托臣以讨贼兴复之效", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
+      { id: 2, gloss: "效果，见效，奏效", isCore: false, examples: [
+        { text: "夙夜忧叹，恐托付不效", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "不效，则治臣之罪", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2061,8 +2895,8 @@ const wordsData = [
     pinyin: "xiè",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "道谢，感谢，谢谢", isCore: true, examples: [{ text: "使人称谢", source: "周亚夫军细柳", difficultyLevel: 3 }] },
-      { id: 2, gloss: "道歉，认错", isCore: false, examples: [{ text: "秦王色绕，长跪而谢之曰", source: "唐雎不辱使命", difficultyLevel: 3 }] }
+      { id: 1, gloss: "道谢", isCore: true, examples: [{ text: "使人称谢", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3 }] },
+      { id: 2, gloss: "道歉", isCore: false, examples: [{ text: "秦王色绕，长跪而谢之曰", source: "唐雎不辱使命", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2077,15 +2911,20 @@ const wordsData = [
     pinyin: "xìn",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "信用，诚信，守信", isCore: true, examples: [{ text: "日中不至，则是无信", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "相信，信任，信赖", isCore: true, examples: [{ text: "愿陛下亲之信之", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "信用，诚信", isCore: true, examples: [
+        { text: "日中不至，则是无信", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 },
+        { text: "与朋友交而不信乎", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "牺牲玉帛，弗敢加也，必以信", source: "曹刿论战", grade: "九下", difficultyLevel: 3 },
+        { text: "小信未孚，神弗福也", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "相信，信任", isCore: true, examples: [{ text: "愿陛下亲之信之", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["陈太丘与友期行", "出师表"]
+    sourceLessons: ["陈太丘与友期行", "《论语》十二章", "曹刿论战", "出师表"]
   },
   {
     id: 100,
@@ -2093,17 +2932,38 @@ const wordsData = [
     pinyin: "xíng",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "行走，走路", isCore: true, examples: [{ text: "三人行，必有我师焉", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "做，实行，实施，进行", isCore: true, examples: [{ text: "悉以咨之，然后施行", source: "出师表", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "品德，品行，操行", isCore: false, examples: [{ text: "夫君子之行，静以修身", source: "诫子书", grade: "八上", difficultyLevel: 3 }] },
-      { id: 4, gloss: "行列，阵列，队伍", isCore: false, examples: [{ text: "必能使行阵和睦", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "行走", isCore: true, examples: [
+        { text: "陈太丘与友期行", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 },
+        { text: "三人行，必有我师焉", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "逾中两狼，缀行甚远", source: "狼", grade: "七上", difficultyLevel: 2 },
+        { text: "方欲行，转视积薪后", source: "狼", grade: "七上", difficultyLevel: 2 },
+        { text: "月色入户，欣然起行", source: "记承天寺夜游", grade: "八上", difficultyLevel: 2 },
+        { text: "从小丘西行百二十步", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "复行数十步", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "行者休于树", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "终日在天中行止，奈何桃坠平", source: "纪人忧天", grade: "九下", difficultyLevel: 2 },
+        { text: "斗折蛇行", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "商旅不行", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 },
+        { text: "缘溪行", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "做，实行，实施（做事）", isCore: true, examples: [
+        { text: "行拂乱其所为", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "悉以咨之，然后施行", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "品德，品行", isCore: false, examples: [
+        { text: "夫君子之行，静以修身", source: "诫子书", grade: "七上", difficultyLevel: 3 },
+        { text: "将军向宠，性行淑均", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 4, gloss: "(háng)行列，指队伍，军队", isCore: false, examples: [
+        { text: "必能使行阵和睦，优劣得所", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi", "zhong-kao-gao-pin"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["《论语》十二章", "出师表", "诫子书"]
+    sourceLessons: ["陈太丘与友期行", "《论语》十二章", "狼", "记承天寺夜游", "小石潭记", "桃花源记", "醉翁亭记", "岳阳楼记", "生于忧患，死于安乐", "出师表", "诫子书"]
   },
   {
     id: 101,
@@ -2111,15 +2971,18 @@ const wordsData = [
     pinyin: "xíng",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "身体，形体，躯体", isCore: true, examples: [{ text: "无案牍之劳形", source: "陋室铭", difficultyLevel: 2 }] },
-      { id: 2, gloss: "形状，样子，形态", isCore: true, examples: [{ text: "罔不因势象形", source: "核舟记", grade: "八下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "身体，形体", isCore: true, examples: [{ text: "无案牍之劳形", source: "陋室铭", grade: "七下", difficultyLevel: 2 }] },
+      { id: 2, gloss: "形状，样子", isCore: true, examples: [
+        { text: "罔不因势象形", source: "核舟记", grade: "八下", difficultyLevel: 3 },
+        { text: "日星隐曜，山岳潜形", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八下",
+    grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["陋室铭", "核舟记"]
+    sourceLessons: ["陋室铭", "核舟记", "岳阳楼记"]
   },
   {
     id: 102,
@@ -2127,16 +2990,24 @@ const wordsData = [
     pinyin: "xīng",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "起，兴起，产生", isCore: true, examples: [{ text: "清风徐来，水波不兴", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "兴办，创办，建立", isCore: true, examples: [{ text: "越明年，政通人和，百废具兴", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "兴盛，振兴，复兴", isCore: false, examples: [{ text: "此先汉所以兴隆也", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "起，兴起", isCore: true, examples: [
+        { text: "清风徐来，水波不兴", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "是故谋闭而不兴", source: "大道之行也", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "兴办，创办", isCore: true, examples: [
+        { text: "越明年，政通人和，百废具兴", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "兴盛，振兴，复兴", isCore: false, examples: [
+        { text: "攘除奸凶，兴复汉室", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "此先汉所以兴隆也", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["核舟记", "岳阳楼记", "出师表"]
+    sourceLessons: ["核舟记", "大道之行也", "岳阳楼记", "出师表"]
   },
   {
     id: 103,
@@ -2144,16 +3015,23 @@ const wordsData = [
     pinyin: "xiū",
     category: "动词/形容词",
     meanings: [
-      { id: 1, gloss: "修建，建造，修缮", isCore: true, examples: [{ text: "乃重修岳阳楼", source: "岳阳楼记", grade: "九下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "长，高，修长", isCore: false, examples: [{ text: "盖简桃核修狭者为之", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "培养，修养，修为", isCore: true, examples: [{ text: "静以修身", source: "诫子书", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "修建，建造", isCore: true, examples: [
+        { text: "属十余岁，僧募金重修", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "乃重修岳阳楼", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "长，高", isCore: false, examples: [
+        { text: "盖简桃核修狭者为之", source: "核舟记", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "培养", isCore: true, examples: [
+        { text: "静以修身，俭以养德", source: "诫子书", grade: "七上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八上",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["岳阳楼记", "核舟记", "诫子书"]
+    sourceLessons: ["河中石兽", "岳阳楼记", "核舟记", "诫子书"]
   },
   {
     id: 104,
@@ -2161,14 +3039,17 @@ const wordsData = [
     pinyin: "xú",
     category: "副词",
     meanings: [
-      { id: 1, gloss: "缓慢，缓缓地，徐徐地", isCore: true, examples: [{ text: "徐以杓酌油沥之", source: "卖油翁", grade: "七下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "缓慢，缓缓地，慢慢地", isCore: true, examples: [
+        { text: "徐以杓酌油沥之", source: "卖油翁", grade: "七上", difficultyLevel: 2 },
+        { text: "清风徐来，水波不兴", source: "核舟记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "七下",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["卖油翁"]
+    sourceLessons: ["卖油翁", "核舟记"]
   },
   {
     id: 105,
@@ -2176,15 +3057,21 @@ const wordsData = [
     pinyin: "xǔ",
     category: "副词/动词",
     meanings: [
-      { id: 1, gloss: "表约数，上下，光景，左右", isCore: true, examples: [{ text: "高可二黍许", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "赞同，答应，应允，同意", isCore: true, examples: [{ text: "遂许先帝以驱驰", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "表约数，上下，光景", isCore: true, examples: [
+        { text: "高可二黍许", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "潭中鱼可百许头", source: "小石潭记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "赞同，答应，应允", isCore: true, examples: [
+        { text: "杂然相许", source: "愚公移山", grade: "八上", difficultyLevel: 2 },
+        { text: "遂许先帝以驱驰", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["核舟记", "出师表"]
+    sourceLessons: ["核舟记", "小石潭记", "愚公移山", "出师表"]
   },
   {
     id: 106,
@@ -2192,15 +3079,21 @@ const wordsData = [
     pinyin: "xún",
     category: "动词/副词",
     meanings: [
-      { id: 1, gloss: "找寻，寻求，探求，查找", isCore: true, examples: [{ text: "寻向所志，遂迷", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "不久，随即，旋即", isCore: false, examples: [{ text: "未果，寻病终", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "找寻，寻求，探求", isCore: true, examples: [
+        { text: "寻十余里无迹", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "寻张怀民", source: "记承天寺夜游", grade: "八上", difficultyLevel: 2 },
+        { text: "寻向所志，遂迷", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "不久，随即", isCore: false, examples: [
+        { text: "未果，寻病终", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八上",
+    grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["桃花源记"]
+    sourceLessons: ["河中石兽", "记承天寺夜游", "桃花源记"]
   },
   {
     id: 107,
@@ -2208,15 +3101,20 @@ const wordsData = [
     pinyin: "yè",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "事业，功业，事迹", isCore: true, examples: [{ text: "先帝创业未半", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "职业，行业", isCore: true, examples: [{ text: "晋太元中，武陵人捕鱼为业", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "事业，功业", isCore: true, examples: [
+        { text: "先帝创业未半，而中道崩殂", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "职业", isCore: true, examples: [
+        { text: "晋太元中，武陵人捕鱼为业", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "其业有不精，德有不成者", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["出师表", "桃花源记"]
+    sourceLessons: ["出师表", "桃花源记", "送东阳马生序"]
   },
   {
     id: 108,
@@ -2224,15 +3122,22 @@ const wordsData = [
     pinyin: "yí",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "遗留，留下，保留", isCore: true, examples: [{ text: "以光先帝遗德", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "留给，送给，馈赠", isCore: true, examples: [{ text: "是以先帝简拔以遗陛下", source: "出师表", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "遗留，留下", isCore: true, examples: [
+        { text: "邻人京城氏之孀妻有遗男", source: "愚公移山", grade: "八上", difficultyLevel: 2 },
+        { text: "以光先帝遗德", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "深追先帝遗诏", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "(wèi)留给，送给，馈赠", isCore: true, examples: [
+        { text: "是以先帝简拔以遗陛下", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "父母岁有裘葛之遗", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "九下",
+    grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["出师表"]
+    sourceLessons: ["愚公移山", "出师表", "送东阳马生序"]
   },
   {
     id: 109,
@@ -2255,12 +3160,16 @@ const wordsData = [
     pinyin: "yí",
     category: "形容词",
     meanings: [
-      { id: 1, gloss: "平坦，平行", isCore: true, examples: [{ text: "其船背稍夷", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "平易，坦白，温和", isCore: false, examples: [{ text: "言和而色夷", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "平坦", isCore: true, examples: [
+        { text: "其船背稍夷", source: "核舟记", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "平易", isCore: false, examples: [
+        { text: "言和而色夷", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八下",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["核舟记", "送东阳马生序"]
@@ -2271,15 +3180,23 @@ const wordsData = [
     pinyin: "yì",
     category: "形容词/动词",
     meanings: [
-      { id: 1, gloss: "不同，不同的，差异", isCore: true, examples: [{ text: "览物之情，得无异乎", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "惊异，惊奇，奇怪", isCore: true, examples: [{ text: "渔人甚异之", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "不同，不同的", isCore: true, examples: [
+        { text: "览物之情，得无异乎", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "或异二者之为", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "陟罚臧否，不宜异同", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "不宜偏私，使内外异法也", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "属引凄异", source: "三峡", grade: "八上", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "惊异，惊奇，奇怪", isCore: true, examples: [
+        { text: "渔人甚异之", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["岳阳楼记", "桃花源记"]
+    sourceLessons: ["岳阳楼记", "出师表", "三峡", "桃花源记"]
   },
   {
     id: 112,
@@ -2287,8 +3204,12 @@ const wordsData = [
     pinyin: "yì",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "更换，改变，交替", isCore: true, examples: [{ text: "寒暑易节，始一反焉", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "交换，互换", isCore: true, examples: [{ text: "寡人欲以五百里之地易安陵", source: "唐雎不辱使命", difficultyLevel: 3 }] }
+      { id: 1, gloss: "更换", isCore: true, examples: [
+        { text: "寒暑易节，始一反焉", source: "愚公移山", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "交换", isCore: true, examples: [
+        { text: "寡人欲以五百里之地易安陵", source: "唐雎不辱使命", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2303,11 +3224,13 @@ const wordsData = [
     pinyin: "yì",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "到，到达，到…去，拜访", isCore: true, examples: [{ text: "及郡下，诣太守，说如此", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "到，到达，到……去", isCore: true, examples: [
+        { text: "及郡下，诣太守，说如此", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["桃花源记"]
@@ -2318,16 +3241,25 @@ const wordsData = [
     pinyin: "yì",
     category: "动词/名词/副词",
     meanings: [
-      { id: 1, gloss: "增长，增加，增多", isCore: true, examples: [{ text: "所以动心忍性，曾益其所不能", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "好处，利益，益处", isCore: true, examples: [{ text: "孤常读书，自以为大有所益", source: "孙权劝学", grade: "七下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "更，更加，益发", isCore: false, examples: [{ text: "香远益清", source: "爱莲说", difficultyLevel: 2 }] }
+      { id: 1, gloss: "增长，增加", isCore: true, examples: [
+        { text: "所以动心忍性，曾益其所不能", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "至于斟酌损益，进尽忠言", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "好处，利益", isCore: true, examples: [
+        { text: "孤常读书，自以为大有所益", source: "孙权劝学", grade: "七下", difficultyLevel: 2 },
+        { text: "必能裨补阙漏，有所广益", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "更，更加", isCore: false, examples: [
+        { text: "香远益清", source: "爱莲说", grade: "七下", difficultyLevel: 2 },
+        { text: "盖益圣贤之道", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["生于忧患，死于安乐", "孙权劝学", "爱莲说"]
+    sourceLessons: ["生于忧患，死于安乐", "出师表", "孙权劝学", "爱莲说", "送东阳马生序"]
   },
   {
     id: 115,
@@ -2335,9 +3267,17 @@ const wordsData = [
     pinyin: "yīn",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "山之北，水之南", isCore: false, examples: [{ text: "达于汉阴", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "阴沉，阴冷，昏暗", isCore: true, examples: [{ text: "朝晖夕阴，气象万千", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "树阴，阴影，阴翳", isCore: false, examples: [{ text: "树林阴翳", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "山之北，水之南", isCore: false, examples: [
+        { text: "达于汉阴，可平", source: "愚公移山", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "阴沉，阴冷", isCore: true, examples: [
+        { text: "朝晖夕阴，气象万千", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 },
+        { text: "阴风怒号", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "树阴，阴影", isCore: false, examples: [
+        { text: "野芳发而幽香，佳木秀而繁阴", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "树林阴翳", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2352,16 +3292,22 @@ const wordsData = [
     pinyin: "yǐn",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "称引，譬喻，引用", isCore: true, examples: [{ text: "不宜妄自菲薄，引喻失义", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "牵，拉，拖", isCore: false, examples: [{ text: "友人惭，下车引之", source: "陈太丘与友期", grade: "七上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "延长，延伸", isCore: false, examples: [{ text: "属引凄异", source: "三峡", difficultyLevel: 4 }] }
+      { id: 1, gloss: "称引，譬喻", isCore: true, examples: [
+        { text: "不宜妄自菲薄，引喻失义", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "牵，拉", isCore: false, examples: [
+        { text: "友人惭，下车引之", source: "陈太丘与友期行", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "延长", isCore: false, examples: [
+        { text: "属引凄异", source: "三峡", grade: "八上", difficultyLevel: 4 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["出师表", "陈太丘与友期", "三峡"]
+    sourceLessons: ["出师表", "陈太丘与友期行", "三峡"]
   },
   {
     id: 117,
@@ -2385,17 +3331,27 @@ const wordsData = [
     pinyin: "yú",
     category: "代词/形容词/数词",
     meanings: [
-      { id: 1, gloss: "我，我的", isCore: true, examples: [{ text: "尝贻余核舟一", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 2, gloss: "剩下，多余的，余下", isCore: true, examples: [{ text: "以残年余力", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "多，表示整数后不定的零数", isCore: false, examples: [{ text: "阅十余岁", source: "河中石兽", difficultyLevel: 2 }] },
-      { id: 4, gloss: "以外，以后，其他", isCore: false, examples: [{ text: "余人各复延至其家", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "我，我的", isCore: true, examples: [
+        { text: "尝贻余核舟一", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "余弟宗玄", source: "小石潭记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "剩下，多余的", isCore: true, examples: [
+        { text: "以残年余力", source: "愚公移山", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "多，表示整数后不定的零数", isCore: false, examples: [
+        { text: "阅十余岁", source: "河中石兽", grade: "七下", difficultyLevel: 2 },
+        { text: "寻十余里无迹", source: "河中石兽", grade: "七下", difficultyLevel: 2 }
+      ] },
+      { id: 4, gloss: "以外，以后（其余）", isCore: false, examples: [
+        { text: "余人各复延至其家，皆出酒食", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八上",
+    grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["核舟记", "愚公移山", "河中石兽", "桃花源记"]
+    sourceLessons: ["核舟记", "小石潭记", "愚公移山", "河中石兽", "桃花源记"]
   },
   {
     id: 119,
@@ -2418,11 +3374,13 @@ const wordsData = [
     pinyin: "yù",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "驾驭，驾驭驱使", isCore: true, examples: [{ text: "虽乘奔御风，不以疾也", source: "三峡", difficultyLevel: 4 }] }
+      { id: 1, gloss: "驾驭", isCore: true, examples: [
+        { text: "虽乘奔御风，不以疾也", source: "三峡", grade: "八上", difficultyLevel: 4 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "九下",
+    grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["三峡"]
@@ -2448,16 +3406,32 @@ const wordsData = [
     pinyin: "yuǎn",
     category: "形容词/动词",
     meanings: [
-      { id: 1, gloss: "遥远，距离远", isCore: true, examples: [{ text: "途中两狼，缀行甚远", source: "狼", grade: "七上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "深远，深刻", isCore: false, examples: [{ text: "肉食者鄙，未能远谋", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "疏远，不亲近", isCore: true, examples: [{ text: "亲贤臣，远小人", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "遥远（指空间距离大）", isCore: true, examples: [
+        { text: "而日中时远也", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 },
+        { text: "有朋自远方来，不亦乐乎", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "途中两狼，缀行甚远", source: "狼", grade: "七下", difficultyLevel: 2 },
+        { text: "可远观而不可亵玩焉", source: "爱莲说", grade: "七下", difficultyLevel: 2 },
+        { text: "香远益清", source: "爱莲说", grade: "七下", difficultyLevel: 2 },
+        { text: "俶尔远视，往来翕忽", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "忘路之远近", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "衔远山，吞长江", source: "岳阳楼记", grade: "九上", difficultyLevel: 2 },
+        { text: "今当远离", source: "出师表", grade: "九下", difficultyLevel: 2 },
+        { text: "非宁静无以致远", source: "诫子书", grade: "七上", difficultyLevel: 2 },
+        { text: "其远而无所至极邪", source: "北冥有鱼", grade: "八下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "深远", isCore: false, examples: [
+        { text: "肉食者鄙，未能远谋", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 3, gloss: "疏远，不亲近，不接近", isCore: true, examples: [
+        { text: "亲贤臣，远小人", source: "出师表", grade: "九下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "七上",
+    grade: "六下",
     textbookVersion: "人教版",
-    frequencyLevel: 4,
-    sourceLessons: ["狼", "曹刿论战", "出师表"]
+    frequencyLevel: 5,
+    sourceLessons: ["两小儿辩日", "《论语》十二章", "狼", "爱莲说", "小石潭记", "桃花源记", "岳阳楼记", "出师表", "诫子书", "北冥有鱼", "曹刿论战"]
   },
   {
     id: 123,
@@ -2465,16 +3439,31 @@ const wordsData = [
     pinyin: "yún",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "说，讲述", isCore: true, examples: [{ text: "古语有云", source: "书戴嵩画牛", difficultyLevel: 2 }] },
-      { id: 2, gloss: "句末语气词，无实义", isCore: false, examples: [{ text: "盖大苏泛赤壁云", source: "核舟记", grade: "八下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "天空里的云，云彩", isCore: false, examples: [{ text: "高峰入云，清流见底", source: "答谢中书书", difficultyLevel: 2 }] }
+      { id: 1, gloss: "说", isCore: true, examples: [
+        { text: "古语有云", source: "书戴嵩画牛", grade: "六上", difficultyLevel: 2 },
+        { text: "孔子云：何陋之有", source: "陋室铭", grade: "七下", difficultyLevel: 2 },
+        { text: "自云先世避秦时乱", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "句末语气词，无实义", isCore: false, examples: [
+        { text: "盖大苏泛赤壁云", source: "核舟记", grade: "七上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "天空里的云，云彩", isCore: false, examples: [
+        { text: "不义而富且贵，于我如浮云", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "高峰入云，清流见底", source: "答谢中书书", grade: "八上", difficultyLevel: 2 },
+        { text: "怒而飞，其翼若垂天之云", source: "北冥有鱼", grade: "八下", difficultyLevel: 3 },
+        { text: "若夫日出而林霏开，云归而岩穴暝", source: "醉翁亭记", grade: "九上", difficultyLevel: 3 },
+        { text: "当窗理云鬓", source: "木兰诗", grade: "七下", difficultyLevel: 2 }
+      ] },
+      { id: 4, gloss: "如此，这样", isCore: false, examples: [
+        { text: "子曰'汝安知鱼乐'云者", source: "庄子与惠子游于濠梁之上（八下）", grade: "八下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八下",
+    grade: "六上",
     textbookVersion: "人教版",
-    frequencyLevel: 3,
-    sourceLessons: ["书戴嵩画牛", "核舟记", "答谢中书书"]
+    frequencyLevel: 4,
+    sourceLessons: ["书戴嵩画牛", "陋室铭", "桃花源记", "核舟记", "《论语》十二章", "答谢中书书", "北冥有鱼", "醉翁亭记", "木兰诗", "庄子与惠子游于濠梁之上"]
   },
   {
     id: 124,
@@ -2497,15 +3486,27 @@ const wordsData = [
     pinyin: "zhī",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "知道，了解，认识", isCore: true, examples: [{ text: "然后知生于忧患而死于安乐也", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "通'智'，智慧，聪慧", isCore: false, examples: [{ text: "孰为汝多知乎", source: "两小儿辩日", difficultyLevel: 2 }] }
+      { id: 1, gloss: "知道", isCore: true, examples: [
+        { text: "以我酌油知之", source: "卖油翁", grade: "七下", difficultyLevel: 2 },
+        { text: "然后知生于忧患而死于安乐也", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "鲲之大，不知几尺也", source: "北冥有鱼", grade: "八下", difficultyLevel: 3 },
+        { text: "弗食，不知其旨也", source: "虽有嘉肴", grade: "八下", difficultyLevel: 2 },
+        { text: "乃不知有汉，无论魏晋", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "熟而为鸟知山林之乐", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 },
+        { text: "临表涕零，不知所云", source: "出师表", grade: "九下", difficultyLevel: 3 },
+        { text: "设亦知射乎", source: "卖油翁", grade: "七下", difficultyLevel: 2 },
+        { text: "两小儿笑曰'孰为汝多知乎！'", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "通'智'，智慧", isCore: false, examples: [
+        { text: "孰为汝多知乎", source: "两小儿辩日", grade: "六下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "九下",
+    grade: "六下",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["生于忧患，死于安乐", "两小儿辩日"]
+    sourceLessons: ["卖油翁", "生于忧患，死于安乐", "北冥有鱼", "虽有嘉肴", "桃花源记", "醉翁亭记", "出师表", "两小儿辩日"]
   },
   {
     id: 126,
@@ -2513,9 +3514,18 @@ const wordsData = [
     pinyin: "zhǐ",
     category: "动词/副词",
     meanings: [
-      { id: 1, gloss: "停止，停留", isCore: true, examples: [{ text: "一狼得骨止", source: "狼", grade: "七上", difficultyLevel: 1 }] },
-      { id: 2, gloss: "制止，阻止，阻挡", isCore: false, examples: [{ text: "河曲智叟笑而止之曰", source: "愚公移山", grade: "八上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "仅，只是，仅仅", isCore: true, examples: [{ text: "担中肉尽，止有剩骨", source: "狼", grade: "七上", difficultyLevel: 1 }] }
+      { id: 1, gloss: "停止", isCore: true, examples: [
+        { text: "一狼得骨止，一狼仍从", source: "狼", grade: "七上", difficultyLevel: 1 },
+        { text: "后狼止而前狼又至", source: "狼", grade: "七上", difficultyLevel: 1 }
+      ] },
+      { id: 2, gloss: "制止，阻止", isCore: false, examples: [
+        { text: "河曲智叟笑而止之曰", source: "愚公移山", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "仅，只是", isCore: true, examples: [
+        { text: "担中肉尽，止有剩骨", source: "狼", grade: "七上", difficultyLevel: 1 },
+        { text: "身以半入，只露尻尾", source: "狼", grade: "七上", difficultyLevel: 1 },
+        { text: "止增笑耳", source: "狼", grade: "七上", difficultyLevel: 1 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2530,18 +3540,34 @@ const wordsData = [
     pinyin: "zhì",
     category: "名词/动词",
     meanings: [
-      { id: 1, gloss: "标记，记号，符号", isCore: false, examples: [{ text: "寻向所志，遂迷", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 2, gloss: "做标记，做记号", isCore: false, examples: [{ text: "便扶向路，处处志之", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 3, gloss: "记载，记录", isCore: false, examples: [{ text: "《齐谐》者，志怪者也", source: "北冥有鱼", difficultyLevel: 4 }] },
-      { id: 4, gloss: "心志，情志，志向", isCore: true, examples: [{ text: "吾十有五而志于学", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 }] },
-      { id: 5, gloss: "志气，意志，毅力", isCore: true, examples: [{ text: "必先苦其心志", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "标记，记号", isCore: false, examples: [
+        { text: "寻向所志，遂迷", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "做标记，做记号", isCore: false, examples: [
+        { text: "便扶向路，处处志之", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "记载", isCore: false, examples: [
+        { text: "《齐谐》者，志怪者也", source: "北冥有鱼", grade: "八下", difficultyLevel: 4 }
+      ] },
+      { id: 4, gloss: "心志，情志，志向", isCore: true, examples: [
+        { text: "方鼓琴而志在太山", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 2 },
+        { text: "吾十有五而志于学", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "博学而笃志", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "匹夫不可夺志也", source: "《论语》十二章", grade: "七上", difficultyLevel: 2 },
+        { text: "非淡泊无以明志", source: "诫子书", grade: "七上", difficultyLevel: 2 },
+        { text: "非志无以成学", source: "诫子书", grade: "七上", difficultyLevel: 2 },
+        { text: "恢弘志士之气", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 5, gloss: "志气，意志", isCore: true, examples: [
+        { text: "必先苦其心志，劳其筋骨", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "七上",
+    grade: "六上",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["桃花源记", "北冥有鱼", "《论语》十二章", "生于忧患，死于安乐"]
+    sourceLessons: ["桃花源记", "北冥有鱼", "伯牙鼓琴", "《论语》十二章", "诫子书", "出师表", "生于忧患，死于安乐"]
   },
   {
     id: 128,
@@ -2549,12 +3575,16 @@ const wordsData = [
     pinyin: "zhì",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "取得，得到，获得", isCore: true, examples: [{ text: "家贫，无从致书以观", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "达到，实现，做到", isCore: true, examples: [{ text: "非宁静无以致远", source: "诫子书", grade: "八上", difficultyLevel: 3 }] }
+      { id: 1, gloss: "取得，得到", isCore: true, examples: [
+        { text: "家贫，无从致书以观", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "达到，实现", isCore: true, examples: [
+        { text: "非宁静无以致远", source: "诫子书", grade: "七上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "八上",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
     sourceLessons: ["送东阳马生序", "诫子书"]
@@ -2565,8 +3595,12 @@ const wordsData = [
     pinyin: "zhì",
     category: "动词/名词",
     meanings: [
-      { id: 1, gloss: "询问，质疑，追问", isCore: true, examples: [{ text: "余立侍左右，援疑质理", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "资质，天赋，禀赋", isCore: true, examples: [{ text: "德有不成者，非天质之卑", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "询问", isCore: true, examples: [
+        { text: "余立侍左右，援疑质理", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "资质", isCore: true, examples: [
+        { text: "德有不成者，非天质之卑", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2581,8 +3615,12 @@ const wordsData = [
     pinyin: "zhuān",
     category: "动词/形容词",
     meanings: [
-      { id: 1, gloss: "独有，独占，专享", isCore: true, examples: [{ text: "衣食所安，弗敢专也", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "专门，专一，一心", isCore: true, examples: [{ text: "心不若余之专耳", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "独有，独占，专享", isCore: true, examples: [
+        { text: "衣食所安，弗敢专也，必以分人", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "专门，专一", isCore: true, examples: [
+        { text: "则心不若余之专耳，岂他人之过哉", source: "送东阳马生序", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
@@ -2597,7 +3635,9 @@ const wordsData = [
     pinyin: "zǒu",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "跑，逃跑，奔跑", isCore: true, examples: [{ text: "双兔傍地走", source: "木兰诗", grade: "七下", difficultyLevel: 1 }] }
+      { id: 1, gloss: "跑，逃跑", isCore: true, examples: [
+        { text: "双兔傍地走", source: "木兰诗", grade: "七下", difficultyLevel: 1 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
@@ -2612,16 +3652,25 @@ const wordsData = [
     pinyin: "zú",
     category: "名词/形容词/动词",
     meanings: [
-      { id: 1, gloss: "脚，足", isCore: true, examples: [{ text: "愿驰千里足", source: "木兰诗", grade: "七下", difficultyLevel: 1 }] },
-      { id: 2, gloss: "足够，充足，够了", isCore: true, examples: [{ text: "今南方已定，兵甲已足", source: "出师表", grade: "九下", difficultyLevel: 2 }] },
-      { id: 3, gloss: "值得，够得上，能够", isCore: false, examples: [{ text: "不足为外人道也", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "脚", isCore: true, examples: [
+        { text: "愿驰千里足，送儿还故乡", source: "木兰诗", grade: "七下", difficultyLevel: 1 },
+        { text: "细若蚊足，钩画了了", source: "核舟记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 2, gloss: "足够，充足", isCore: true, examples: [
+        { text: "是故学然后知不足", source: "虽有嘉肴", grade: "八下", difficultyLevel: 2 },
+        { text: "今南方已定，兵甲已足", source: "出师表", grade: "九下", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "值得，够得上", isCore: false, examples: [
+        { text: "以为世无足复为鼓琴者", source: "伯牙鼓琴", grade: "六上", difficultyLevel: 2 },
+        { text: "不足为外人道也", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "七下",
+    grade: "六上",
     textbookVersion: "人教版",
     frequencyLevel: 4,
-    sourceLessons: ["木兰诗", "出师表", "桃花源记"]
+    sourceLessons: ["木兰诗", "核舟记", "虽有嘉肴", "出师表", "伯牙鼓琴", "桃花源记"]
   },
   {
     id: 133,
@@ -2644,19 +3693,36 @@ const wordsData = [
     pinyin: "zuò",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "振作，奋发，奋起", isCore: true, examples: [{ text: "困于心，衡于虑，而后作", source: "生于忧患，死于安乐", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "发出，出现，产生", isCore: false, examples: [{ text: "一鼓作气，再而衰，三而竭", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] },
-      { id: 3, gloss: "写作，创作，著作", isCore: true, examples: [{ text: "属予作文以记之", source: "岳阳楼记", grade: "九下", difficultyLevel: 3 }] },
-      { id: 4, gloss: "建造，建筑，修建", isCore: false, examples: [{ text: "作亭者谁", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }] },
-      { id: 5, gloss: "做，制作，烹饪", isCore: true, examples: [{ text: "便要还家，设酒杀鸡作食", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] },
-      { id: 6, gloss: "兴起，发生", isCore: false, examples: [{ text: "盗窃乱贼而不作", source: "大道之行也", difficultyLevel: 2 }] }
+      { id: 1, gloss: "振作，奋发", isCore: true, examples: [
+        { text: "困于心，衡于虑，而后作", source: "生于忧患，死于安乐", grade: "八上", difficultyLevel: 3 },
+        { text: "一鼓作气，再而衰，三而竭", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "发出，出现", isCore: false, examples: [
+        { text: "泉水激石，泠泠作响", source: "与朱元思书", grade: "八上", difficultyLevel: 2 }
+      ] },
+      { id: 3, gloss: "写作，创作", isCore: true, examples: [
+        { text: "属予作文以记之", source: "岳阳楼记", grade: "九上", difficultyLevel: 3 }
+      ] },
+      { id: 4, gloss: "建造，建筑", isCore: false, examples: [
+        { text: "作亭者谁", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }
+      ] },
+      { id: 5, gloss: "做，制作", isCore: true, examples: [
+        { text: "便要还家，设酒杀鸡作食", source: "桃花源记", grade: "八下", difficultyLevel: 2 },
+        { text: "若有作奸犯科及为忠善者", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 6, gloss: "劳作，劳动", isCore: false, examples: [
+        { text: "其中往来种作，男女衣着，悉如外人", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] },
+      { id: 7, gloss: "兴起", isCore: false, examples: [
+        { text: "盗窃乱贼而不作", source: "大道之行也", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
     grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 5,
-    sourceLessons: ["生于忧患，死于安乐", "曹刿论战", "岳阳楼记", "醉翁亭记", "桃花源记", "大道之行也"]
+    sourceLessons: ["生于忧患，死于安乐", "曹刿论战", "与朱元思书", "岳阳楼记", "醉翁亭记", "桃花源记", "出师表", "大道之行也"]
   },
   {
     id: 135,
@@ -2664,14 +3730,21 @@ const wordsData = [
     pinyin: "zuò",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "坐着，坐下，端坐", isCore: true, examples: [{ text: "船头坐三人", source: "核舟记", grade: "八下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "坐着，坐下（古人双膝着地，臀部压在脚跟上）", isCore: true, examples: [
+        { text: "少时，一狼径去，其一犬坐于前", source: "狼", grade: "七上", difficultyLevel: 1 },
+        { text: "天子坐明堂", source: "木兰诗", grade: "七下", difficultyLevel: 2 },
+        { text: "坐我西阁床", source: "木兰诗", grade: "七下", difficultyLevel: 2 },
+        { text: "船头坐三人", source: "核舟记", grade: "八下", difficultyLevel: 2 },
+        { text: "坐潭上，四面竹树环合", source: "小石潭记", grade: "八下", difficultyLevel: 2 },
+        { text: "起坐而喧哗者，众宾欢也", source: "醉翁亭记", grade: "九上", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八下",
+    grade: "七上",
     textbookVersion: "人教版",
     frequencyLevel: 3,
-    sourceLessons: ["核舟记"]
+    sourceLessons: ["狼", "木兰诗", "核舟记", "小石潭记", "醉翁亭记"]
   },
   {
     id: 136,
@@ -2694,14 +3767,17 @@ const wordsData = [
     pinyin: "bù yī",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "平民百姓，平民", isCore: true, examples: [{ text: "臣本布衣，躬耕于南阳", source: "出师表", grade: "九下", difficultyLevel: 2 }] }
+      { id: 1, gloss: "平民百姓", isCore: true, examples: [
+        { text: "臣本布衣，躬耕于南阳", source: "出师表", grade: "九下", difficultyLevel: 2 },
+        { text: "大王尝闻布衣之怒乎", source: "唐雎不辱使命", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
     grade: "九下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
-    sourceLessons: ["出师表"]
+    sourceLessons: ["出师表", "唐雎不辱使命"]
   },
   {
     id: 138,
@@ -2721,14 +3797,16 @@ const wordsData = [
   {
     id: 139,
     word: "其实",
-    pinyin: "qī shí",
+    pinyin: "qí shí",
     category: "代词",
     meanings: [
-      { id: 1, gloss: "其（它的）实（果实）", isCore: true, examples: [{ text: "叶徒相似，其实味不同", source: "橘逾淮为枳", difficultyLevel: 2 }] }
+      { id: 1, gloss: "其（它的）实（果实）", isCore: true, examples: [
+        { text: "叶徒相似，其实味不同", source: "橘逾淮为枳", grade: "非考", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八下",
+    grade: "非考",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["橘逾淮为枳"]
@@ -2739,11 +3817,13 @@ const wordsData = [
     pinyin: "qīn qī",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "内外亲属，亲属", isCore: true, examples: [{ text: "寡助之至，亲戚畔之", source: "得道多助，失道寡助", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "内外亲属，包括父系亲属和母系亲属", isCore: true, examples: [
+        { text: "寡助之至，亲戚畔之", source: "得道多助，失道寡助", grade: "八上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "九下",
+    grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["得道多助，失道寡助"]
@@ -2754,12 +3834,16 @@ const wordsData = [
     pinyin: "qū chí",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "奔走效劳，出力", isCore: true, examples: [{ text: "由是感激，遂许先帝以驱驰", source: "出师表", grade: "九下", difficultyLevel: 3 }] },
-      { id: 2, gloss: "策马快奔，驰骋", isCore: false, examples: [{ text: "将军约，军中不得驱驰", source: "周亚夫军细柳", difficultyLevel: 3 }] }
+      { id: 1, gloss: "奔走效劳", isCore: true, examples: [
+        { text: "由是感激，遂许先帝以驱驰", source: "出师表", grade: "九下", difficultyLevel: 3 }
+      ] },
+      { id: 2, gloss: "策马快奔", isCore: false, examples: [
+        { text: "将军约，军中不得驱驰", source: "周亚夫军细柳", grade: "八上", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: ["yi-ci-duo-yi"],
-    grade: "九下",
+    grade: "八上",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["出师表", "周亚夫军细柳"]
@@ -2770,11 +3854,13 @@ const wordsData = [
     pinyin: "wú lùn",
     category: "连词",
     meanings: [
-      { id: 1, gloss: "不要说，更不必说，更何况", isCore: true, examples: [{ text: "乃不知有汉，无论魏晋", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "不要说，更不必说", isCore: true, examples: [
+        { text: "乃不知有汉，无论魏晋", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["桃花源记"]
@@ -2785,7 +3871,9 @@ const wordsData = [
     pinyin: "xī shēng",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "祭祀用的纯色全体牲畜", isCore: true, examples: [{ text: "牺牲玉帛，弗敢加也", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }] }
+      { id: 1, gloss: "指祭祀用的纯色全体牲畜", isCore: true, examples: [
+        { text: "牺牲玉帛，弗敢加也，必以信", source: "曹刿论战", grade: "九下", difficultyLevel: 3 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
@@ -2800,11 +3888,13 @@ const wordsData = [
     pinyin: "hóng rú",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "博学的人，儒学家", isCore: true, examples: [{ text: "谈笑有鸿儒，往来无白丁", source: "陋室铭", difficultyLevel: 2 }] }
+      { id: 1, gloss: "博学的人", isCore: true, examples: [
+        { text: "谈笑有鸿儒，往来无白丁", source: "陋室铭", grade: "七下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "九下",
+    grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["陋室铭"]
@@ -2815,11 +3905,13 @@ const wordsData = [
     pinyin: "bái dīng",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "平民，没有功名的人", isCore: true, examples: [{ text: "谈笑有鸿儒，往来无白丁", source: "陋室铭", difficultyLevel: 2 }] }
+      { id: 1, gloss: "平民，指没有功名的人", isCore: true, examples: [
+        { text: "谈笑有鸿儒，往来无白丁", source: "陋室铭", grade: "七下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "九下",
+    grade: "七下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["陋室铭"]
@@ -2830,11 +3922,13 @@ const wordsData = [
     pinyin: "qiān mò",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "田间小路，农田道路", isCore: true, examples: [{ text: "阡陌交通，鸡犬相闻", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "田间小路", isCore: true, examples: [
+        { text: "阡陌交通，鸡犬相闻", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["桃花源记"]
@@ -2845,11 +3939,13 @@ const wordsData = [
     pinyin: "jiāo tōng",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "交错相通，互相通连", isCore: true, examples: [{ text: "阡陌交通，鸡犬相闻", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "交错相通", isCore: true, examples: [
+        { text: "阡陌交通，鸡犬相闻", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 3,
     sourceLessons: ["桃花源记"]
@@ -2860,11 +3956,13 @@ const wordsData = [
     pinyin: "wèn jīn",
     category: "动词",
     meanings: [
-      { id: 1, gloss: "询问渡口，探求，访求，了解", isCore: true, examples: [{ text: "后遂无问津者", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "询问渡口，探求，访求", isCore: true, examples: [
+        { text: "后遂无问津者", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["桃花源记"]
@@ -2875,11 +3973,13 @@ const wordsData = [
     pinyin: "jué jìng",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "与人世隔绝的地方，世外之地", isCore: true, examples: [{ text: "率妻子邑人来此绝境", source: "桃花源记", grade: "八上", difficultyLevel: 2 }] }
+      { id: 1, gloss: "与人世隔绝的地方", isCore: true, examples: [
+        { text: "率妻子邑人来此绝境", source: "桃花源记", grade: "八下", difficultyLevel: 2 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["桃花源记"]
@@ -2890,11 +3990,13 @@ const wordsData = [
     pinyin: "qī zi",
     category: "名词",
     meanings: [
-      { id: 1, gloss: "妻子儿女，家属", isCore: true, examples: [{ text: "率妻子邑人来此绝境", source: "桃花源记", grade: "八上", difficultyLevel: 1 }] }
+      { id: 1, gloss: "妻子儿女", isCore: true, examples: [
+        { text: "率妻子邑人来此绝境", source: "桃花源记", grade: "八下", difficultyLevel: 1 }
+      ] }
     ],
     difficulty: "基础",
     tags: [],
-    grade: "八上",
+    grade: "八下",
     textbookVersion: "人教版",
     frequencyLevel: 2,
     sourceLessons: ["桃花源记"]

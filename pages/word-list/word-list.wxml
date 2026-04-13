@@ -1,7 +1,11 @@
 <!--pages/word-list/word-list.wxml-->
 <view class="container">
-  <!-- 顶部筛选区 -->
-  <view class="filter-section">
+  <!-- Hero 头部区 -->
+  <view class="hero-card">
+  </view>
+
+  <!-- 筛选区 -->
+  <view class="filter-card">
     <!-- 搜索框 -->
     <view class="search-bar">
       <input
@@ -53,17 +57,18 @@
       </view>
     </view>
 
-    <!-- 统计信息 -->
-    <view class="stats-bar">
-      <text class="stats-text">共 {{filteredWords.length}} 个实词</text>
-      <text class="grade-tag" wx:if="{{userGrade}}" bindtap="onChangeGrade">
-        当前年级：{{userGrade}}（点击更改）
-      </text>
+    <!-- 筛选结果计数 -->
+    <view class="filter-count">
+      <text>已筛选出 {{filteredWords.length}} 个实词</text>
     </view>
   </view>
 
+  <!-- 段落标题 -->
+  <view class="section-label">词汇列表</view>
+
   <!-- 实词列表 -->
   <scroll-view class="word-list" scroll-y>
+    <view class="word-list-inner">
     <view
       class="word-card card-{{item.colorLevel}}"
       wx:for="{{filteredWords}}"
@@ -84,6 +89,7 @@
 
       <!-- 第二行：标签区 -->
       <view class="tags-row">
+        <text class="tag tag-match" wx:if="{{item.matchType}}">匹配：{{item.matchType}}</text>
         <text class="tag tag-grade" wx:if="{{item.grade}}">{{item.grade}}</text>
         <text class="tag tag-difficulty" wx:if="{{item.difficulty}}">{{item.difficulty}}</text>
         <text
@@ -103,8 +109,12 @@
 
     <!-- 空状态 -->
     <view class="empty-state" wx:if="{{filteredWords.length === 0}}">
+      <view class="empty-icon-wrap">
+        <text class="empty-icon-text">搜</text>
+      </view>
       <text class="empty-text">没有找到相关实词</text>
       <text class="empty-hint">试试调整筛选条件</text>
+    </view>
     </view>
   </scroll-view>
 </view>

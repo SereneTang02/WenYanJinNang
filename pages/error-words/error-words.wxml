@@ -1,30 +1,64 @@
 <!--pages/error-words/error-words.wxml-->
 <view class="container">
-  <!-- 顶部统计区 -->
-  <view class="stats-header">
-    <view class="stats-item">
-      <text class="stats-number">{{errorWords.length}}</text>
-      <text class="stats-label">个错题词</text>
+  <!-- Hero 头部区 -->
+  <view class="hero-card">
+    <view class="hero-top">
+      <view class="hero-icon-wrap">
+        <text class="hero-icon-text">错</text>
+      </view>
+      <view class="hero-info">
+        <view class="hero-title">错题本</view>
+        <view class="hero-sub">针对薄弱点，逐个击破</view>
+      </view>
     </view>
-    <view class="stats-divider"></view>
-    <view class="stats-item">
-      <text class="stats-number">{{totalErrorCount}}</text>
-      <text class="stats-label">累计错误</text>
+
+    <view class="stats-row">
+      <view class="stat-item">
+        <text class="stat-num">{{errorWords.length}}</text>
+        <text class="stat-label">错题词</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-num">{{totalErrorCount}}</text>
+        <text class="stat-label">累计错误</text>
+      </view>
     </view>
   </view>
 
   <!-- 操作按钮 -->
   <view class="action-bar" wx:if="{{errorWords.length > 0}}">
-    <button class="action-btn btn-primary" bindtap="onPracticeAll">
-      全部纠错练习
-    </button>
-    <button class="action-btn btn-danger" bindtap="onPracticeFocus">
-      重点突破（错≥3次）
-    </button>
+    <view class="action-card" bindtap="onPracticeAll">
+      <view class="action-left">
+        <view class="action-icon-wrap practice-bg">
+          <text class="action-icon-text">练</text>
+        </view>
+        <view class="action-text">
+          <view class="action-name">全部纠错练习</view>
+          <view class="action-desc">复习所有错题</view>
+        </view>
+      </view>
+      <text class="action-arrow">→</text>
+    </view>
+    <view class="action-card" bindtap="onPracticeFocus">
+      <view class="action-left">
+        <view class="action-icon-wrap focus-bg">
+          <text class="action-icon-text">攻</text>
+        </view>
+        <view class="action-text">
+          <view class="action-name">重点突破</view>
+          <view class="action-desc">错误≥3次的词汇</view>
+        </view>
+      </view>
+      <text class="action-arrow">→</text>
+    </view>
   </view>
+
+  <!-- 段落标题 -->
+  <view class="section-label" wx:if="{{errorWords.length > 0}}">错题列表</view>
 
   <!-- 错题列表 -->
   <scroll-view class="word-list" scroll-y wx:if="{{errorWords.length > 0}}">
+    <view class="word-list-inner">
     <view
       class="word-card card-{{item.colorLevel}}"
       wx:for="{{sortedErrorWords}}"
@@ -59,7 +93,7 @@
       <!-- 第三行：错题统计条 -->
       <view class="error-stats stats-{{item.colorLevel}}">
         <text class="stat-correct">✓ {{item.progress.correct}} 次</text>
-        <text class="stat-divider">|</text>
+        <text class="stats-sep">|</text>
         <text class="stat-wrong">✗ {{item.progress.wrong}} 次</text>
         <text class="stat-diff">差值 {{item.diff}}</text>
       </view>
@@ -74,11 +108,14 @@
         </view>
       </view>
     </view>
+    </view>
   </scroll-view>
 
   <!-- 空状态 -->
   <view class="empty-state" wx:if="{{errorWords.length === 0}}">
-    <text class="empty-icon">🎉</text>
+    <view class="empty-icon-wrap">
+      <text class="empty-icon-text">棒</text>
+    </view>
     <text class="empty-text">太棒了！暂无错题</text>
     <text class="empty-hint">继续保持，多多练习哦～</text>
   </view>
