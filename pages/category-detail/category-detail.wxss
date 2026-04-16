@@ -1,15 +1,16 @@
-/* pages/category-detail/category-detail.wxss */
+/* pages/category-detail/category-detail.wxss - 温润古典·书卷风 */
 .container {
   padding: 20rpx;
-  background: #f5f5f5;
+  background: #FBF6F0;
   min-height: 100vh;
 }
 
 .card {
-  background: white;
-  border-radius: 10rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 30rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
 }
 
 .header-card {
@@ -19,7 +20,7 @@
 
 .back-button {
   font-size: 40rpx;
-  color: #666;
+  color: #4A3C30;
   margin-bottom: 10rpx;
   cursor: pointer;
 }
@@ -27,13 +28,13 @@
 .header-title {
   font-size: 48rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 10rpx;
 }
 
 .header-subtitle {
   font-size: 28rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 .secondary-list {
@@ -52,7 +53,7 @@
 
 .secondary-card:active {
   transform: scale(0.98);
-  background: #f0f0f0;
+  background: rgba(232, 213, 184, 0.2);
 }
 
 .secondary-info {
@@ -62,29 +63,29 @@
 .secondary-name {
   font-size: 36rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 8rpx;
 }
 
 .secondary-desc {
   font-size: 26rpx;
-  color: #999;
+  color: #5C4D3E;
   margin-bottom: 8rpx;
 }
 
 .secondary-count {
   font-size: 24rpx;
-  color: #666;
+  color: #4A3C30;
 }
 
 .secondary-arrow {
   font-size: 60rpx;
-  color: #ccc;
+  color: #C9B18A;
 }
 
 .empty-state {
   text-align: center;
   padding: 100rpx 0;
-  color: #999;
+  color: #5C4D3E;
   font-size: 28rpx;
 }

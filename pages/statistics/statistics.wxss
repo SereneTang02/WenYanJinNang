@@ -1,6 +1,6 @@
-/* pages/statistics/statistics.wxss */
+/* pages/statistics/statistics.wxss - 温润古典·书卷风 */
 page {
-  background: #f0f2f5;
+  background: #FBF6F0;
 }
 
 .container {
@@ -9,9 +9,9 @@ page {
 
 /* ===== 顶部英雄卡片 ===== */
 .hero-card {
-  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  background: linear-gradient(180deg, #E8D5B8 0%, #F2E8D6 60%, #FBF6F0 100%);
   padding: 50rpx 36rpx 44rpx;
-  color: #fff;
+  color: #1A1008;
   border-radius: 0 0 48rpx 48rpx;
   margin-bottom: 36rpx;
   position: relative;
@@ -26,38 +26,43 @@ page {
   width: 220rpx;
   height: 220rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle, rgba(200, 168, 124, 0.15) 0%, transparent 70%);
 }
 
 .hero-title {
   font-size: 44rpx;
   font-weight: bold;
   margin-bottom: 8rpx;
+  color: #1A1008;
 }
 
 .hero-sub {
   font-size: 26rpx;
-  opacity: 0.75;
+  color: #4A3C30;
   margin-bottom: 36rpx;
 }
 
 /* 进度环区域 */
 .progress-ring-area {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20rpx;
+  padding: 24rpx 30rpx;
+  border: 1rpx solid rgba(200, 175, 140, 0.2);
 }
 
 .progress-ring {
-  width: 180rpx;
-  height: 180rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20rpx;
-  border: 6rpx solid rgba(255, 255, 255, 0.3);
+  margin-right: 30rpx;
+  border: 4rpx solid #C4882E;
+  flex-shrink: 0;
 }
 
 .progress-ring-inner {
@@ -67,30 +72,33 @@ page {
 }
 
 .ring-num {
-  font-size: 44rpx;
+  font-size: 36rpx;
   font-weight: bold;
+  color: #C4882E;
 }
 
 .ring-label {
-  font-size: 22rpx;
-  opacity: 0.8;
+  font-size: 20rpx;
+  color: #4A3C30;
 }
 
 .progress-detail {
-  font-size: 26rpx;
-  opacity: 0.85;
+  font-size: 28rpx;
+  color: #1A1008;
+  font-weight: 500;
 }
 
 .highlight {
   font-weight: bold;
   font-size: 30rpx;
+  color: #C4882E;
 }
 
 /* ===== 区域标题 ===== */
 .section-label {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   padding: 0 36rpx;
   margin-bottom: 20rpx;
 }
@@ -105,10 +113,11 @@ page {
 }
 
 .data-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 28rpx 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +126,7 @@ page {
 .data-icon-wrap {
   width: 56rpx;
   height: 56rpx;
-  border-radius: 14rpx;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,56 +136,80 @@ page {
 .data-icon-text {
   font-size: 26rpx;
   font-weight: bold;
-  color: #fff;
 }
 
 .icon-purple {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: rgba(200, 168, 124, 0.08);
+  border: 2rpx solid #C4882E;
+  color: #C4882E;
+}
+
+.icon-purple .data-icon-text {
+  color: #C4882E;
 }
 
 .icon-green {
-  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  background: rgba(123, 175, 110, 0.08);
+  border: 2rpx solid #4CAF50;
+  color: #4CAF50;
+}
+
+.icon-green .data-icon-text {
+  color: #4CAF50;
 }
 
 .icon-blue {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background: rgba(107, 152, 184, 0.08);
+  border: 2rpx solid #3A8FC2;
+  color: #3A8FC2;
+}
+
+.icon-blue .data-icon-text {
+  color: #3A8FC2;
 }
 
 .icon-red {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
+  background: rgba(201, 107, 92, 0.08);
+  border: 2rpx solid #E05A47;
+  color: #E05A47;
+}
+
+.icon-red .data-icon-text {
+  color: #E05A47;
 }
 
 .data-value {
   font-size: 44rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 6rpx;
 }
 
 .color-green {
-  color: #52c41a;
+  color: #4CAF50;
 }
 
 .color-blue {
-  color: #4A90E2;
+  color: #3A8FC2;
 }
 
 .color-red {
-  color: #f5576c;
+  color: #E05A47;
 }
 
 .data-label {
   font-size: 24rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 /* ===== 柱状图卡片 ===== */
 .chart-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 32rpx 24rpx;
   margin: 0 24rpx 36rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
 }
 
 .chart-bar-area {
@@ -197,14 +230,14 @@ page {
 
 .chart-count {
   font-size: 22rpx;
-  color: #666;
+  color: #4A3C30;
   font-weight: 500;
 }
 
 .chart-bar-bg {
   width: 36rpx;
   height: 140rpx;
-  background: #f0f2f5;
+  background: rgba(212, 196, 168, 0.2);
   border-radius: 18rpx;
   overflow: hidden;
   display: flex;
@@ -214,34 +247,35 @@ page {
 
 .chart-bar-fill {
   width: 100%;
-  background: #e0e0e0;
+  background: rgba(212, 196, 168, 0.35);
   border-radius: 18rpx;
   transition: height 0.4s ease;
   min-height: 0;
 }
 
 .chart-bar-fill.active {
-  background: linear-gradient(180deg, #4A90E2, #2E6BA6);
+  background: linear-gradient(180deg, #C4882E, #E8C36A);
 }
 
 .chart-date {
   font-size: 20rpx;
-  color: #bbb;
+  color: #5C4D3E;
 }
 
 .chart-summary {
   text-align: center;
   font-size: 24rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 /* ===== 鼓励卡片 ===== */
 .encourage-card {
-  background: linear-gradient(135deg, #fff9e6, #fff1cc);
-  border-radius: 20rpx;
+  background: linear-gradient(135deg, rgba(200, 168, 124, 0.06), rgba(200, 168, 124, 0.14));
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 32rpx;
   margin: 0 24rpx 36rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   display: flex;
   align-items: center;
 }
@@ -261,7 +295,7 @@ page {
 
 .encourage-text {
   font-size: 28rpx;
-  color: #d48806;
+  color: #9E6B2C;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -275,12 +309,12 @@ page {
   width: 100%;
   height: 88rpx;
   line-height: 88rpx;
-  background: #fff;
-  color: #ff4d4f;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  color: #E05A47;
+  border-radius: 24rpx;
   font-size: 30rpx;
-  border: none;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  border: 1rpx solid rgba(201, 107, 92, 0.2);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
 }
 
 .danger-btn::after {

@@ -10,7 +10,7 @@
   <view class="section-label">选择年级</view>
 
   <view class="grade-card" wx:for="{{categories}}" wx:key="grade" bindtap="selectCategory" data-grade="{{item.grade}}">
-    <view class="grade-icon-wrap" style="background: {{index % 2 === 0 ? 'linear-gradient(135deg, #4facfe, #00f2fe)' : 'linear-gradient(135deg, #667eea, #764ba2)'}}">
+    <view class="grade-icon-wrap">
       <text class="grade-icon-text">{{item.grade}}</text>
     </view>
     <view class="grade-info">

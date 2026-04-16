@@ -1,6 +1,6 @@
-/* pages/error-words/error-words.wxss */
+/* pages/error-words/error-words.wxss - 温润古典·书卷风 */
 page {
-  background: #f0f2f5;
+  background: #FBF6F0;
 }
 
 .container {
@@ -9,7 +9,7 @@ page {
 
 /* ===== Hero 头部区 ===== */
 .hero-card {
-  background: linear-gradient(160deg, #ff6b6b 0%, #ee5a6f 50%, #d94a5a 100%);
+  background: linear-gradient(180deg, #E05A47 0%, #E0A090 50%, #FBF6F0 100%);
   padding: 50rpx 36rpx 40rpx;
   color: #fff;
   border-radius: 0 0 48rpx 48rpx;
@@ -26,7 +26,7 @@ page {
   width: 240rpx;
   height: 240rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
 }
 
 .hero-top {
@@ -38,8 +38,9 @@ page {
 .hero-icon-wrap {
   width: 72rpx;
   height: 72rpx;
-  border-radius: 18rpx;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
+  border: 2rpx solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +65,7 @@ page {
 
 .hero-sub {
   font-size: 26rpx;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 /* 统计行 */
@@ -72,8 +73,9 @@ page {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+  border-radius: 20rpx;
   padding: 24rpx 0;
 }
 
@@ -92,13 +94,13 @@ page {
 
 .stat-label {
   font-size: 22rpx;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .stat-divider {
   width: 1rpx;
   height: 50rpx;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* ===== 操作按钮区 ===== */
@@ -108,19 +110,21 @@ page {
 }
 
 .action-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 24rpx 28rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20rpx;
+  transition: all 0.3s;
 }
 
 .action-card:active {
   transform: scale(0.98);
-  opacity: 0.9;
+  box-shadow: 0 2rpx 10rpx rgba(166, 138, 100, 0.12);
 }
 
 .action-left {
@@ -131,7 +135,7 @@ page {
 .action-icon-wrap {
   width: 72rpx;
   height: 72rpx;
-  border-radius: 18rpx;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,39 +145,48 @@ page {
 .action-icon-text {
   font-size: 32rpx;
   font-weight: bold;
-  color: #fff;
 }
 
 .practice-bg {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: rgba(107, 152, 184, 0.08);
+  border: 2rpx solid #3A8FC2;
+}
+
+.practice-bg .action-icon-text {
+  color: #3A8FC2;
 }
 
 .focus-bg {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  background: rgba(201, 107, 92, 0.08);
+  border: 2rpx solid #E05A47;
+}
+
+.focus-bg .action-icon-text {
+  color: #E05A47;
 }
 
 .action-name {
   font-size: 30rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 4rpx;
 }
 
 .action-desc {
   font-size: 22rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 .action-arrow {
   font-size: 32rpx;
-  color: #ccc;
+  color: #C9B18A;
 }
 
 /* ===== 段落标题 ===== */
 .section-label {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   padding: 0 36rpx;
   margin-bottom: 20rpx;
 }
@@ -189,11 +202,12 @@ page {
 }
 
 .word-card {
-  background-color: #fff;
-  border-radius: 20rpx;
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 30rpx;
   margin-bottom: 20rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   position: relative;
   transition: all 0.3s;
   border-left: 8rpx solid transparent;
@@ -202,23 +216,23 @@ page {
 
 .word-card:active {
   transform: scale(0.98);
-  opacity: 0.9;
+  box-shadow: 0 2rpx 10rpx rgba(166, 138, 100, 0.12);
 }
 
 /* 词卡颜色等级 */
 .card-white {
-  background-color: #fff;
-  border-left-color: #e8e8e8;
+  background-color: rgba(255, 255, 255, 0.88);
+  border-left-color: #C9B18A;
 }
 
 .card-orange {
-  background-color: #fff8f0;
-  border-left-color: #fa8c16;
+  background-color: rgba(200, 168, 124, 0.06);
+  border-left-color: #C4882E;
 }
 
 .card-red {
-  background-color: #fff1f0;
-  border-left-color: #ff4d4f;
+  background-color: rgba(201, 107, 92, 0.06);
+  border-left-color: #E05A47;
 }
 
 /* 第一行：词 + 词性 + 徽章 */
@@ -237,14 +251,14 @@ page {
 .word-text {
   font-size: 48rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-right: 16rpx;
 }
 
 .category-tag {
   font-size: 22rpx;
-  color: #666;
-  background-color: #f0f0f0;
+  color: #C4882E;
+  background-color: rgba(200, 168, 124, 0.1);
   padding: 6rpx 16rpx;
   border-radius: 20rpx;
 }
@@ -252,33 +266,33 @@ page {
 /* 状态徽章 */
 .error-badge {
   padding: 6rpx 16rpx;
-  border-radius: 8rpx;
+  border-radius: 12rpx;
   flex-shrink: 0;
 }
 
 .badge-white {
-  background-color: rgba(250, 173, 20, 0.1);
+  background-color: rgba(200, 168, 124, 0.1);
 }
 
 .badge-white .badge-text {
-  color: #faad14;
+  color: #C4882E;
 }
 
 .badge-orange {
-  background-color: rgba(250, 140, 22, 0.12);
+  background-color: rgba(200, 168, 124, 0.15);
 }
 
 .badge-orange .badge-text {
-  color: #fa8c16;
+  color: #9E6B2C;
   font-weight: bold;
 }
 
 .badge-red {
-  background-color: rgba(255, 77, 79, 0.12);
+  background-color: rgba(201, 107, 92, 0.1);
 }
 
 .badge-red .badge-text {
-  color: #ff4d4f;
+  color: #E05A47;
   font-weight: bold;
 }
 
@@ -302,28 +316,28 @@ page {
 }
 
 .tag-grade {
-  background-color: #e6fffb;
-  color: #13c2c2;
+  background-color: rgba(123, 175, 110, 0.1);
+  color: #4CAF50;
 }
 
 .tag-difficulty {
-  background-color: #f6f0ff;
-  color: #722ed1;
+  background-color: rgba(200, 168, 124, 0.1);
+  color: #9E6B2C;
 }
 
 .tag-yi-ci-duo-yi {
-  background-color: #fff7e6;
-  color: #fa8c16;
+  background-color: rgba(200, 168, 124, 0.1);
+  color: #C4882E;
 }
 
 .tag-zhong-kao-gao-pin {
-  background-color: #fff0f6;
-  color: #eb2f96;
+  background-color: rgba(201, 107, 92, 0.08);
+  color: #E05A47;
 }
 
 .tag-duo-yin-zi {
-  background-color: #f6ffed;
-  color: #52c41a;
+  background-color: rgba(107, 152, 184, 0.08);
+  color: #3A8FC2;
 }
 
 /* 错题统计条 */
@@ -331,35 +345,35 @@ page {
   display: flex;
   align-items: center;
   padding: 14rpx 20rpx;
-  background-color: #f9f9f9;
-  border-radius: 12rpx;
+  background-color: rgba(212, 196, 168, 0.1);
+  border-radius: 16rpx;
   margin-bottom: 20rpx;
   font-size: 24rpx;
 }
 
 .stats-orange {
-  background-color: #fff8f0;
+  background-color: rgba(200, 168, 124, 0.1);
 }
 
 .stats-red {
-  background-color: #fff1f0;
+  background-color: rgba(201, 107, 92, 0.08);
 }
 
 .stat-correct {
-  color: #52c41a;
+  color: #4CAF50;
 }
 
 .stats-sep {
-  color: #d9d9d9;
+  color: #C9B18A;
   margin: 0 16rpx;
 }
 
 .stat-wrong {
-  color: #ff4d4f;
+  color: #E05A47;
 }
 
 .stat-diff {
-  color: #999;
+  color: #5C4D3E;
   margin-left: 16rpx;
 }
 
@@ -369,16 +383,16 @@ page {
   justify-content: space-between;
   align-items: center;
   padding-top: 18rpx;
-  border-top: 1rpx dashed #e8e8e8;
+  border-top: 1rpx solid rgba(200, 175, 140, 0.15);
 }
 
 .action-link {
   font-size: 26rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 .action-link.primary {
-  color: #667eea;
+  color: #C4882E;
   font-weight: bold;
 }
 
@@ -395,7 +409,8 @@ page {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: rgba(123, 175, 110, 0.08);
+  border: 2rpx solid #4CAF50;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,17 +420,17 @@ page {
 .empty-icon-text {
   font-size: 48rpx;
   font-weight: bold;
-  color: #fff;
+  color: #4CAF50;
 }
 
 .empty-text {
   font-size: 36rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 20rpx;
 }
 
 .empty-hint {
   font-size: 28rpx;
-  color: #999;
+  color: #5C4D3E;
 }

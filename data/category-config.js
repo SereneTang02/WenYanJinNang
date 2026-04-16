@@ -14,14 +14,14 @@ const CATEGORY_CONFIG = {
       name: '难度',
       icon: '🎯',
       description: '按难度学习实词',
-      color: '#FF9800'
+      color: '#C4882E'
     },
     {
       id: 'partOfSpeech',
       name: '词性',
       icon: '📝',
       description: '按词性学习实词',
-      color: '#2196F3'
+      color: '#3A8FC2'
     }
   ],
 

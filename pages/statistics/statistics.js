@@ -124,7 +124,7 @@ Page({
       content: '清空后将删除所有学习记录和收藏，此操作不可恢复！',
       confirmText: '确认清空',
       cancelText: '取消',
-      confirmColor: '#F5222D',
+      confirmColor: '#E05A47',
       success: (res) => {
         if (res.confirm) {
           wx.removeStorageSync('studyRecords');

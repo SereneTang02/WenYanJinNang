@@ -1,6 +1,6 @@
-/* pages/word-list/word-list.wxss */
+/* pages/word-list/word-list.wxss - 温润古典·书卷风 */
 page {
-  background: #f0f2f5;
+  background: #FBF6F0;
 }
 
 .container {
@@ -12,9 +12,9 @@ page {
 
 /* ===== Hero 头部区 ===== */
 .hero-card {
-  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  background: linear-gradient(180deg, #E8D5B8 0%, #F2E8D6 60%, #FBF6F0 100%);
   padding: 50rpx 36rpx 64rpx;
-  color: #fff;
+  color: #1A1008;
   border-radius: 0 0 48rpx 48rpx;
   position: relative;
   overflow: hidden;
@@ -28,7 +28,7 @@ page {
   width: 240rpx;
   height: 240rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(200, 168, 124, 0.1);
 }
 
 .hero-top {
@@ -40,8 +40,9 @@ page {
 .hero-icon-wrap {
   width: 72rpx;
   height: 72rpx;
-  border-radius: 18rpx;
-  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(200, 168, 124, 0.08);
+  border: 2rpx solid #C4882E;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +52,7 @@ page {
 .hero-icon-text {
   font-size: 32rpx;
   font-weight: bold;
-  color: #fff;
+  color: #C4882E;
 }
 
 .hero-info {
@@ -61,12 +62,13 @@ page {
 .hero-title {
   font-size: 40rpx;
   font-weight: bold;
+  color: #1A1008;
   margin-bottom: 6rpx;
 }
 
 .hero-sub {
   font-size: 26rpx;
-  opacity: 0.75;
+  color: #4A3C30;
 }
 
 /* 统计行 */
@@ -74,8 +76,9 @@ page {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 20rpx;
   padding: 24rpx 0;
 }
 
@@ -89,27 +92,29 @@ page {
 .stat-num {
   font-size: 48rpx;
   font-weight: bold;
+  color: #C4882E;
   margin-bottom: 6rpx;
 }
 
 .stat-label {
   font-size: 22rpx;
-  opacity: 0.8;
+  color: #4A3C30;
 }
 
 .stat-divider {
   width: 1rpx;
   height: 50rpx;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(200, 175, 140, 0.3);
 }
 
 /* ===== 筛选区 ===== */
 .filter-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 24rpx;
   margin: -24rpx 24rpx 20rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   position: relative;
   z-index: 1;
 }
@@ -122,11 +127,12 @@ page {
 
 .search-input {
   width: 100%;
-  height: 70rpx;
+  height: 72rpx;
   padding: 0 100rpx 0 30rpx;
-  background-color: #f0f2f5;
-  border-radius: 35rpx;
+  background-color: #F5F0E8;
+  border-radius: 36rpx;
   font-size: 28rpx;
+  color: #1A1008;
   box-sizing: border-box;
 }
 
@@ -136,6 +142,7 @@ page {
   top: 50%;
   transform: translateY(-50%);
   font-size: 32rpx;
+  color: #5C4D3E;
 }
 
 /* 筛选栏 */
@@ -154,60 +161,60 @@ page {
 
 .filter-label {
   font-size: 26rpx;
-  color: #666;
+  color: #4A3C30;
   margin-right: 10rpx;
 }
 
 .picker-button {
   padding: 10rpx 20rpx;
-  background-color: #f0f2f5;
+  background-color: #F5F0E8;
   border-radius: 20rpx;
   font-size: 26rpx;
-  color: #333;
+  color: #1A1008;
 }
 
 .arrow {
   margin-left: 5rpx;
   font-size: 20rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 .reset-button {
   padding: 10rpx 30rpx;
-  background-color: #f0f2f5;
-  color: #999;
+  background-color: #F5F0E8;
+  color: #5C4D3E;
   border-radius: 20rpx;
   font-size: 26rpx;
   margin-bottom: 10rpx;
 }
 
 .reset-button:active {
-  background-color: #e8e8e8;
+  background-color: #EDE5D8;
 }
 
 /* 年级信息 */
 .grade-info {
   padding-top: 14rpx;
-  border-top: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid rgba(200, 175, 140, 0.18);
   margin-top: 10rpx;
 }
 
 .grade-tag {
   font-size: 24rpx;
-  color: #4A90E2;
+  color: #C4882E;
 }
 
 /* 筛选计数 */
 .filter-count {
   padding-top: 14rpx;
-  border-top: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid rgba(200, 175, 140, 0.18);
   margin-top: 10rpx;
   text-align: center;
 }
 
 .filter-count text {
   font-size: 24rpx;
-  color: #4A90E2;
+  color: #C4882E;
   font-weight: 500;
 }
 
@@ -215,7 +222,7 @@ page {
 .section-label {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   padding: 36rpx 36rpx 20rpx;
 }
 
@@ -229,11 +236,12 @@ page {
 }
 
 .word-card {
-  background-color: #fff;
-  border-radius: 20rpx;
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 30rpx 24rpx;
   margin-bottom: 20rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   position: relative;
   transition: all 0.3s;
   border-left: 8rpx solid transparent;
@@ -242,23 +250,23 @@ page {
 
 .word-card:active {
   transform: scale(0.98);
-  opacity: 0.9;
+  box-shadow: 0 2rpx 10rpx rgba(166, 138, 100, 0.12);
 }
 
 /* 词卡颜色等级 */
 .card-white {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.88);
   border-left-color: transparent;
 }
 
 .card-orange {
-  background-color: #fff8f0;
-  border-left-color: #fa8c16;
+  background-color: rgba(200, 168, 124, 0.06);
+  border-left-color: #C4882E;
 }
 
 .card-red {
-  background-color: #fff1f0;
-  border-left-color: #ff4d4f;
+  background-color: rgba(201, 107, 92, 0.06);
+  border-left-color: #E05A47;
 }
 
 /* 第一行：词 + 词性 + 徽章 */
@@ -277,14 +285,14 @@ page {
 .word-text {
   font-size: 48rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-right: 16rpx;
 }
 
 .category-tag {
   font-size: 22rpx;
-  color: #666;
-  background-color: #f0f0f0;
+  color: #C4882E;
+  background-color: rgba(200, 168, 124, 0.12);
   padding: 6rpx 16rpx;
   border-radius: 20rpx;
 }
@@ -292,25 +300,25 @@ page {
 /* 状态徽章 */
 .error-badge {
   padding: 6rpx 16rpx;
-  border-radius: 8rpx;
+  border-radius: 12rpx;
   flex-shrink: 0;
 }
 
 .badge-orange {
-  background-color: rgba(250, 140, 22, 0.12);
+  background-color: rgba(200, 168, 124, 0.12);
 }
 
 .badge-orange .badge-text {
-  color: #fa8c16;
+  color: #C4882E;
   font-weight: bold;
 }
 
 .badge-red {
-  background-color: rgba(255, 77, 79, 0.12);
+  background-color: rgba(201, 107, 92, 0.1);
 }
 
 .badge-red .badge-text {
-  color: #ff4d4f;
+  color: #E05A47;
   font-weight: bold;
 }
 
@@ -338,40 +346,40 @@ page {
 }
 
 .tag-grade {
-  background-color: #e6fffb;
-  color: #13c2c2;
+  background-color: rgba(123, 175, 110, 0.1);
+  color: #4CAF50;
 }
 
 .tag-match {
-  background-color: #fff1f0;
-  color: #ff4d4f;
+  background-color: rgba(201, 107, 92, 0.08);
+  color: #E05A47;
   font-weight: 500;
 }
 
 .tag-difficulty {
-  background-color: #f6f0ff;
-  color: #722ed1;
+  background-color: rgba(107, 152, 184, 0.1);
+  color: #3A8FC2;
 }
 
 .tag-yi-ci-duo-yi {
-  background-color: #fff7e6;
-  color: #fa8c16;
+  background-color: rgba(200, 168, 124, 0.12);
+  color: #C4882E;
 }
 
 .tag-zhong-kao-gao-pin {
-  background-color: #fff0f6;
-  color: #eb2f96;
+  background-color: rgba(201, 107, 92, 0.08);
+  color: #B85C4A;
 }
 
 .tag-duo-yin-zi {
-  background-color: #f6ffed;
-  color: #52c41a;
+  background-color: rgba(123, 175, 110, 0.1);
+  color: #4CAF50;
 }
 
 /* 义项数量 */
 .meanings-count {
   font-size: 24rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 /* ===== 空状态 ===== */
@@ -387,7 +395,8 @@ page {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4A90E2, #5BA3F5);
+  background: rgba(200, 168, 124, 0.08);
+  border: 2rpx solid #C4882E;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -397,17 +406,17 @@ page {
 .empty-icon-text {
   font-size: 48rpx;
   font-weight: bold;
-  color: #fff;
+  color: #C4882E;
 }
 
 .empty-text {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 20rpx;
 }
 
 .empty-hint {
   font-size: 26rpx;
-  color: #999;
+  color: #5C4D3E;
 }

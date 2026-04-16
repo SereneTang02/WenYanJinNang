@@ -1,9 +1,8 @@
 <!--pages/login/login.wxml-->
 <view class="container">
-  <!-- 背景装饰圆 - 带动画 -->
-  <view class="bg-circle bg-circle-1"></view>
-  <view class="bg-circle bg-circle-2"></view>
-  <view class="bg-circle bg-circle-3"></view>
+  <!-- 山水画背景 -->
+  <image class="bg-painting" src="/image/山水画背景.png" mode="aspectFill" />
+  <view class="bg-painting-mask"></view>
 
   <!-- Logo 区域 -->
   <view class="logo-section">
@@ -17,7 +16,7 @@
       <view class="logo-glow"></view>
     </view>
     <view class="app-name">古文实词背诵</view>
-    <view class="app-slogan">轻松掌握120个常用实词</view>
+    <view class="app-slogan">轻松掌握150个常用实词</view>
   </view>
 
   <!-- 特色功能 - 动画图标 -->

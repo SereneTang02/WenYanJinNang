@@ -1,6 +1,6 @@
-/* pages/study/study.wxss */
+/* pages/study/study.wxss - 温润古典·书卷风 */
 page {
-  background: #f0f2f5;
+  background: #FBF6F0;
 }
 
 .container {
@@ -9,9 +9,9 @@ page {
 
 /* ===== 顶部栏 ===== */
 .hero-card {
-  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  background: linear-gradient(180deg, #E8D5B8 0%, #F2E8D6 60%, #FBF6F0 100%);
   padding: 50rpx 36rpx 36rpx;
-  color: #fff;
+  color: #1A1008;
   border-radius: 0 0 48rpx 48rpx;
   margin-bottom: 30rpx;
   text-align: center;
@@ -27,43 +27,47 @@ page {
   width: 240rpx;
   height: 240rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle, rgba(200, 168, 124, 0.12) 0%, transparent 70%);
 }
 
 .hero-title {
   font-size: 40rpx;
   font-weight: bold;
   margin-bottom: 8rpx;
+  color: #1A1008;
 }
 
 .hero-sub {
   font-size: 28rpx;
-  opacity: 0.8;
+  color: #4A3C30;
+  opacity: 1;
   margin-bottom: 16rpx;
 }
 
 .progress-bar-bg {
-  height: 8rpx;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4rpx;
+  height: 10rpx;
+  background: rgba(200, 175, 140, 0.2);
+  border-radius: 5rpx;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: #fff;
-  border-radius: 4rpx;
+  background: linear-gradient(90deg, #C4882E, #E8C36A);
+  border-radius: 5rpx;
   transition: width 0.3s ease;
 }
 
 /* ===== 词卡片 ===== */
 .word-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 36rpx 30rpx;
   margin: 0 24rpx 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   position: relative;
+  backdrop-filter: blur(10rpx);
 }
 
 /* 任务类型标签 */
@@ -72,50 +76,51 @@ page {
   top: 0;
   right: 30rpx;
   padding: 8rpx 20rpx;
-  border-radius: 0 0 12rpx 12rpx;
+  border-radius: 0 0 14rpx 14rpx;
   font-size: 22rpx;
   font-weight: bold;
   color: #fff;
 }
 
 .tag-current {
-  background: #4A90E2;
+  background: linear-gradient(135deg, #3A8FC2, #89B4D4);
 }
 
 .tag-review {
-  background: #52c41a;
+  background: linear-gradient(135deg, #4CAF50, #96C88A);
 }
 
 .tag-preview {
-  background: #fa8c16;
+  background: linear-gradient(135deg, #C4882E, #E8C36A);
 }
 
 /* 词头 */
 .word-header {
   text-align: center;
   padding-bottom: 30rpx;
-  border-bottom: 1rpx solid #f0f0f0;
+  border-bottom: 2rpx solid rgba(200, 175, 140, 0.18);
 }
 
 .word-title {
   font-size: 72rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 12rpx;
 }
 
 .word-pinyin {
   font-size: 32rpx;
-  color: #666;
+  color: #4A3C30;
   margin-bottom: 12rpx;
 }
 
 .word-category-tag {
   display: inline-block;
-  padding: 6rpx 20rpx;
-  background: #4A90E2;
-  color: #fff;
-  border-radius: 16rpx;
+  padding: 8rpx 24rpx;
+  background: rgba(200, 168, 124, 0.12);
+  color: #9E6B2C;
+  border: 2rpx solid #C9B18A;
+  border-radius: 20rpx;
   font-size: 24rpx;
 }
 
@@ -127,24 +132,25 @@ page {
 
 .hint-text {
   font-size: 28rpx;
-  color: #999;
+  color: #5C4D3E;
   margin-bottom: 40rpx;
   display: block;
 }
 
 .flip-btn {
   display: inline-block;
-  padding: 20rpx 80rpx;
-  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  padding: 22rpx 80rpx;
+  background: linear-gradient(135deg, #C4882E, #9E6B2C);
   color: #fff;
-  border-radius: 40rpx;
+  border-radius: 44rpx;
   font-size: 32rpx;
   font-weight: bold;
-  box-shadow: 0 6rpx 20rpx rgba(74, 144, 226, 0.3);
+  box-shadow: 0 8rpx 24rpx rgba(166, 138, 100, 0.25);
 }
 
 .flip-btn:active {
   opacity: 0.85;
+  transform: scale(0.98);
 }
 
 /* 义项区域 */
@@ -160,7 +166,7 @@ page {
 
 .meaning-num {
   font-size: 28rpx;
-  color: #4A90E2;
+  color: #C4882E;
   font-weight: bold;
   flex-shrink: 0;
 }
@@ -171,29 +177,30 @@ page {
 
 .meaning-gloss {
   font-size: 32rpx;
-  color: #333;
+  color: #1A1008;
   font-weight: 500;
   margin-bottom: 8rpx;
 }
 
 .meaning-note {
   font-size: 24rpx;
-  color: #fa8c16;
+  color: #C4882E;
   margin-bottom: 8rpx;
 }
 
 .meaning-example {
   font-size: 26rpx;
-  color: #666;
+  color: #4A3C30;
   line-height: 1.6;
-  padding: 10rpx 14rpx;
-  background: #f6f7f9;
-  border-radius: 10rpx;
+  padding: 12rpx 16rpx;
+  background: rgba(200, 168, 124, 0.08);
+  border-radius: 12rpx;
   margin-bottom: 8rpx;
+  border-left: 4rpx solid rgba(200, 168, 124, 0.3);
 }
 
 .example-source {
-  color: #999;
+  color: #5C4D3E;
   font-size: 24rpx;
 }
 
@@ -206,27 +213,28 @@ page {
 
 .ans-btn {
   flex: 1;
-  height: 88rpx;
-  line-height: 88rpx;
+  height: 92rpx;
+  line-height: 92rpx;
   text-align: center;
-  border-radius: 44rpx;
+  border-radius: 46rpx;
   font-size: 32rpx;
   font-weight: bold;
   color: #fff;
 }
 
 .btn-wrong {
-  background: linear-gradient(135deg, #ff7875, #f5222d);
-  box-shadow: 0 6rpx 16rpx rgba(245, 34, 45, 0.25);
+  background: linear-gradient(135deg, #E05A47, #D98A7E);
+  box-shadow: 0 6rpx 20rpx rgba(201, 107, 92, 0.25);
 }
 
 .btn-right {
-  background: linear-gradient(135deg, #73d13d, #52c41a);
-  box-shadow: 0 6rpx 16rpx rgba(82, 196, 26, 0.25);
+  background: linear-gradient(135deg, #4CAF50, #96C88A);
+  box-shadow: 0 6rpx 20rpx rgba(123, 175, 110, 0.25);
 }
 
 .ans-btn:active {
   opacity: 0.85;
+  transform: scale(0.98);
 }
 
 /* 收藏 */
@@ -240,34 +248,37 @@ page {
 
 .collect-icon {
   font-size: 36rpx;
-  color: #ffd666;
+  color: #C4882E;
   margin-right: 8rpx;
 }
 
 .collect-text {
   font-size: 26rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 /* ===== 完成卡片 ===== */
 .complete-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
+  border-radius: 24rpx;
   padding: 60rpx 36rpx;
   margin: 0 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 20rpx rgba(166, 138, 100, 0.08);
   text-align: center;
+  backdrop-filter: blur(10rpx);
 }
 
 .complete-icon-wrap {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #73d13d, #52c41a);
+  background: linear-gradient(135deg, #4CAF50, #96C88A);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(123, 175, 110, 0.25);
 }
 
 .complete-check {
@@ -279,15 +290,16 @@ page {
 .complete-title {
   font-size: 40rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 32rpx;
 }
 
 .complete-stats {
-  background: #f6f7f9;
-  border-radius: 16rpx;
+  background: rgba(200, 168, 124, 0.08);
+  border-radius: 20rpx;
   padding: 24rpx 30rpx;
   margin-bottom: 36rpx;
+  border: 1rpx solid rgba(200, 175, 140, 0.12);
 }
 
 .stat-row {
@@ -298,16 +310,16 @@ page {
 }
 
 .stat-key {
-  color: #666;
+  color: #4A3C30;
 }
 
 .stat-val {
   font-weight: bold;
 }
 
-.color-green { color: #52c41a; }
-.color-red { color: #f5222d; }
-.color-blue { color: #4A90E2; }
+.color-green { color: #4CAF50; }
+.color-red { color: #E05A47; }
+.color-blue { color: #3A8FC2; }
 
 .complete-actions {
   display: flex;
@@ -317,9 +329,9 @@ page {
 
 .action-btn {
   width: 100%;
-  height: 88rpx;
-  line-height: 88rpx;
-  border-radius: 44rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  border-radius: 46rpx;
   font-size: 32rpx;
   font-weight: bold;
   border: none;
@@ -332,13 +344,13 @@ page {
 }
 
 .btn-primary-action {
-  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  background: linear-gradient(135deg, #C4882E, #9E6B2C);
   color: #fff;
-  box-shadow: 0 6rpx 20rpx rgba(74, 144, 226, 0.3);
+  box-shadow: 0 8rpx 24rpx rgba(166, 138, 100, 0.25);
 }
 
 .btn-secondary-action {
-  background: #fff;
-  color: #4A90E2;
-  border: 2rpx solid #4A90E2;
+  background: rgba(255, 255, 255, 0.88);
+  color: #9E6B2C;
+  border: 2rpx solid #C9B18A;
 }

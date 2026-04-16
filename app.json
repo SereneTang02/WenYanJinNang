@@ -20,14 +20,14 @@
   ],
   "window": {
     "navigationBarTitleText": "古文实词背诵",
-    "navigationBarBackgroundColor": "#4A90E2",
-    "navigationBarTextStyle": "white",
-    "backgroundColor": "#f8f8f8"
+    "navigationBarBackgroundColor": "#FBF6F0",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FBF6F0"
   },
   "tabBar": {
-    "color": "#666666",
-    "selectedColor": "#4A90E2",
-    "backgroundColor": "#ffffff",
+    "color": "#B0A090",
+    "selectedColor": "#A68B6B",
+    "backgroundColor": "#FBF6F0",
     "borderStyle": "white",
     "list": [
       {

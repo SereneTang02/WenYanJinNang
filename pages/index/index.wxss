@@ -1,6 +1,6 @@
-/* pages/index/index.wxss */
+/* pages/index/index.wxss - 温润古典·书卷风 */
 page {
-  background: #f0f2f5;
+  background: #FBF6F0;
 }
 
 .container {
@@ -9,47 +9,68 @@ page {
 
 /* ===== 顶部英雄卡片 ===== */
 .hero-card {
-  background: linear-gradient(160deg, #4A90E2 0%, #357ABD 50%, #2E6BA6 100%);
+  background: linear-gradient(180deg, #E8D5B8 0%, #F2E8D6 60%, #FBF6F0 100%);
   padding: 50rpx 36rpx 40rpx;
-  color: #fff;
+  color: #1A1008;
   border-radius: 0 0 48rpx 48rpx;
   margin-bottom: 36rpx;
   position: relative;
   overflow: hidden;
 }
 
+/* 水墨装饰 - 左上云 */
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -30rpx;
+  left: -40rpx;
+  width: 220rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(200, 175, 140, 0.15) 0%, transparent 70%);
+}
+
+/* 水墨装饰 - 右上云 */
 .hero-card::after {
   content: '';
   position: absolute;
-  top: -60rpx;
-  right: -60rpx;
-  width: 240rpx;
-  height: 240rpx;
+  top: -20rpx;
+  right: -30rpx;
+  width: 180rpx;
+  height: 140rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: radial-gradient(ellipse, rgba(200, 175, 140, 0.12) 0%, transparent 70%);
 }
 
 .hero-top {
   margin-bottom: 36rpx;
+  position: relative;
+  z-index: 1;
 }
 
 .greeting-text {
-  font-size: 44rpx;
+  font-size: 42rpx;
   font-weight: bold;
-  margin-bottom: 8rpx;
+  margin-bottom: 10rpx;
+  letter-spacing: 6rpx;
+  color: #1A1008;
 }
 
 .greeting-sub {
   font-size: 26rpx;
-  opacity: 0.75;
+  color: #4A3C30;
+  letter-spacing: 3rpx;
 }
 
 /* 每日进度条 */
 .daily-progress {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
   padding: 20rpx 24rpx;
   margin-bottom: 32rpx;
+  border: 1rpx solid rgba(200, 175, 140, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .progress-header {
@@ -61,24 +82,25 @@ page {
 
 .progress-title {
   font-size: 26rpx;
-  opacity: 0.9;
+  color: #4A3C30;
 }
 
 .progress-num {
   font-size: 26rpx;
   font-weight: bold;
+  color: #9E6B2C;
 }
 
 .progress-bar-bg {
   height: 12rpx;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(200, 175, 140, 0.15);
   border-radius: 6rpx;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: #fff;
+  background: linear-gradient(90deg, #C4882E, #E8C36A);
   border-radius: 6rpx;
   transition: width 0.5s ease;
   min-width: 0;
@@ -89,6 +111,8 @@ page {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .stat-item {
@@ -99,29 +123,34 @@ page {
 }
 
 .stat-num {
-  font-size: 48rpx;
+  font-size: 46rpx;
   font-weight: bold;
   margin-bottom: 6rpx;
+  color: #1A1008;
 }
 
 .stat-label {
   font-size: 22rpx;
-  opacity: 0.8;
+  color: #5C4D3E;
 }
 
 .stat-divider {
   width: 1rpx;
   height: 50rpx;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(200, 175, 140, 0.3);
 }
 
 /* ===== 区域标题 ===== */
 .section-label {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   padding: 0 36rpx;
   margin-bottom: 20rpx;
+  letter-spacing: 4rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 /* ===== 快捷功能网格 ===== */
@@ -134,78 +163,93 @@ page {
 }
 
 .action-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 24rpx;
   padding: 28rpx 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
 }
 
 .action-card:active {
   transform: scale(0.97);
-  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .action-icon-wrap {
-  width: 72rpx;
-  height: 72rpx;
-  border-radius: 18rpx;
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16rpx;
+  border: 2rpx solid;
 }
 
 .action-icon-text {
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: bold;
-  color: #fff;
 }
 
 .random-bg {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #C4882E;
+  background: rgba(200, 168, 124, 0.08);
+  color: #C4882E;
 }
+
+.random-bg .action-icon-text { color: #C4882E; }
 
 .category-bg {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
+  border-color: #4CAF50;
+  background: rgba(123, 175, 110, 0.06);
 }
+
+.category-bg .action-icon-text { color: #4CAF50; }
 
 .practice-bg {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border-color: #3A8FC2;
+  background: rgba(107, 152, 184, 0.06);
 }
 
+.practice-bg .action-icon-text { color: #3A8FC2; }
+
 .pk-bg {
-  background: linear-gradient(135deg, #f6d365, #fda085);
+  border-color: #E05A47;
+  background: rgba(201, 107, 92, 0.06);
 }
+
+.pk-bg .action-icon-text { color: #E05A47; }
 
 .action-name {
   font-size: 30rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 6rpx;
 }
 
 .action-desc {
   font-size: 22rpx;
-  color: #999;
+  color: #5C4D3E;
 }
 
 /* ===== 今日任务卡片 ===== */
 .task-card {
-  background: #fff;
-  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 24rpx;
   padding: 32rpx;
   margin: 0 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  border: 1rpx solid rgba(200, 175, 140, 0.18);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s;
 }
 
 .task-card:active {
   transform: scale(0.98);
-  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .task-left {
@@ -215,19 +259,19 @@ page {
 .task-title {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #1A1008;
   margin-bottom: 8rpx;
 }
 
 .task-sub {
   font-size: 24rpx;
-  color: #999;
+  color: #5C4D3E;
   margin-bottom: 8rpx;
 }
 
 .task-progress-info {
   font-size: 24rpx;
-  color: #4A90E2;
+  color: #9E6B2C;
   font-weight: 500;
 }
 
@@ -239,14 +283,15 @@ page {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4A90E2, #5BA3F5);
+  background: linear-gradient(135deg, #C4882E, #E8C36A);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4rpx 16rpx rgba(200, 168, 124, 0.25);
 }
 
 .task-circle-text {
-  color: #fff;
+  color: #FFFDF8;
   font-size: 26rpx;
   font-weight: bold;
 }
